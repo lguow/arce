@@ -1,0 +1,44 @@
+
+/*<![CDATA[*/
+
+/* ------------------------------------------------------------------
+ *	Box:
+ *		rounded corner box, base on MODx
+ *
+ *	Reference:
+ *		http://www.modxcms.com/simple-rounded-corner-css-boxes.html
+ */
+
+.mBox, .mBox .mBox-head, .mBox .mBox-head h2, .mBox .mBox-body {
+	background: transparent url("mBox/mBox.png") no-repeat;
+}
+
+
+.mBox {
+    background-position: right bottom;
+    width: 25.00000em;
+    padding-right: 1.25000em; 
+    margin: 1.66667em auto; 
+}
+
+
+.mBox .mBox-head {
+    background-position: right top;
+	padding-right: 1.25000em;
+	margin-right: -1.25000em;
+}
+
+
+.mBox .mBox-head h2 {
+    background-position: left top;
+	margin:0;
+	padding: 0.83333em 0 0 0.83333em;
+}
+
+.mBox .mBox-body {
+    background-position: left bottom;
+	padding: 0 0 0.83333em 0.83333em;
+}
+
+
+/*]]>*/

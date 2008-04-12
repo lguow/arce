@@ -1,0 +1,90 @@
+
+/*<![CDATA[*/
+
+/* ------------------------------------------------------------------
+ *	dBox:
+ *		rounded corner box, base on dialog2
+ *
+ *	Reference:
+ *		http://www.schillmania.com/projects/dialog2/
+ */
+
+
+html {
+	background: transparent url("../photo/dtClean.jpg");
+}
+
+.dBox {
+	position:absolute;
+	left: 36.91667em;
+	top: 5.66667em;
+
+	margin: 0.00000em auto;
+	min-width:8em;
+	max-width: 63.33333em; /* based on image dimensions - not quite consistent with drip styles yet */
+	z-index:1;
+	margin-left: 1.00000em; /* default, width of left corner */
+	margin-bottom:0.5em; /* spacing under dialog */
+	width: 50.00000em
+}
+
+.dBox .dBox-content,
+.dBox .dBox-top,
+.dBox .dBox-bottom,
+.dBox .dBox-bottom div {
+	 background:transparent url("dBox/dBox.png") no-repeat right top;
+}
+
+.dBox .dBox-content {
+	 position:relative;
+	 zoom:1;
+	 _overflow-y:hidden;
+	 padding: 0.00000em 1.00000em 0.00000em 0.00000em;
+}
+
+.dBox .dBox-top {
+	 /* top+left vertical slice */
+	 position:absolute;
+	 left: 0.00000em;
+	 top: 0.00000em;
+	 width: 1.00000em; /* top slice width */
+	 margin-left: -1.00000em;
+	 height:100%;
+	 _height: 133.33333em; /* arbitrary long height, IE 6 */
+	 background-position:left top;
+}
+
+.dBox .dBox-bottom {
+	 /* bottom */
+	 position:relative;
+	 width:100%;
+}
+
+.dBox .dBox-bottom,
+.dBox .dBox-bottom div {
+	 height: 2.50000em; /* height of bottom cap/shade */
+	 font-size: 0.08333em;
+}
+
+.dBox .dBox-bottom {
+	background-position:right bottom;
+}
+
+.dBox .dBox-bottom div {
+	 position:relative;
+	 width: 6.66667em; /* bottom corner width */
+	 margin-left: -1.00000em;
+	 background-position: left bottom;
+}
+
+.dBox h1,
+div.dBox div.dBox-content p {
+	margin: 0.00000em; /* margins will blow out backgrounds, leaving whitespace. */
+	padding:0.5em 0.00000em 0.5em 0.00000em;
+}
+
+.dBox h1 {
+	padding-bottom: 0.00000em;
+}
+
+/*]]>*/

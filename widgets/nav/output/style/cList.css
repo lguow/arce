@@ -1,0 +1,24 @@
+
+/*<![CDATA[*/
+  ol {
+    counter-reset: section;                /* Creates a new instance of the
+                                              section counter with each ol
+                                              element */
+    list-style-type: none;
+  }
+  li:before {
+    counter-increment: section;            /* Increments only this instance
+                                              of the section counter */
+    content: counters(section, ".") " ";   /* Adds the value of all instances
+                                              of the section counter separated
+                                              by a ".". */
+  }
+  
+  ol ol {
+	margin-left: 2em;
+  }
+
+  ol ol ol {
+	margin-left: 4em;
+  }
+/*]]>*/

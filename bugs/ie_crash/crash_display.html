@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+  <title>IE Bug</title>
+    <script type="text/javascript">
+    <!--
+   function showhideBlock(blockElementId, titleElementId)
+   {
+      var blockElement = document.getElementById(blockElementId);
+      var titleElement = document.getElementById(titleElementId);
+      
+      if (titleElement.className=="closedBlockTitle")  
+      {
+        blockElement.style.display="block";  
+        titleElement.className="blockTitle";
+      } 
+      else  
+      {
+        blockElement.style.display="none";
+        titleElement.className="closedBlockTitle";
+      }
+    }
+    -->
+    </script>
+    <style type="text/css">
+    .blockTitle {
+       display: inline; 
+       position: relative
+    }
+
+    .closedBlockTitle {
+       width: 50%; 
+       position: relative
+    }
+  </style>
+  </head>
+  <body>
+    <h3 class="blockTitle" id="title1" onclick="showhideBlock('block1', 'title1')">Title 1</h3>
+    <div id="block1">Content 1</div>
+    <h3 class="blockTitle" id="title2" onclick="showhideBlock('block2', 'title2')">Title 2</h3>
+    <div id="block2">Content 2</div>
+    <h3 class="blocTitle" id="title3" onclick="showhideBlock('block3', 'title3')">Title 3</h3>
+    <div id="block3">Content 3</div>
+    <hr />
+    <div>
+      <p>This bug happens in a very specific situation : </p>
+      <p>The page contains three titles and three blocks. The title's 
+      "onclick" collapse the block and switch the title's style. When 
+      collapsing the three blocks (1,2,3) and uncollapsing them (3,2,1), IE 
+      crash.</p>
+      <p>Here are the title styles :</p>
+      <pre>
+          .blockTitle {
+              display: inline;
+              position: relative;
+          }
+
+          .closedBlockTitle {
+              width: 50%;
+              position: relative;
+          }
+      </pre>
+      <p>Here is the javascript function : </p>
+      <pre>
+          function showhideBlock(blockElementId, titleElementId) {
+            var blockElement = document.getElementById(blockElementId);
+            var titleElement = document.getElementById(titleElementId);
+
+            if (titleElement.className=="closedBlockTitle") {
+              blockElement.style.display="block";
+              titleElement.className="blockTitle";
+            } else  {
+              blockElement.style.display="none";
+              titleElement.className="closedBlockTitle";
+            }
+          }
+      </pre>
+      <p>Note : all css styles are important. If one is not present, IE 
+      does'nt crash.</p>
+      <p>Note : putting an "alert(...)" between the 2 javascript commands 
+      that update styles avoid the crash too.</p>    
+    </div>
+  </body>
+</html>

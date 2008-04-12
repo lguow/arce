@@ -1,0 +1,45 @@
+
+/*<![CDATA[*/
+
+/* ------------------------------------------------------------------
+ *	Box:
+ *		img shadow, base on mBox
+ *
+ */
+
+/* set the image to use and establish the lower-right position */
+.mBox, .mBox .mBox-head, .mBox .mBox-body, .mBox .mBox-head h2 {
+    background: transparent url("mBox_glow/mBox_glow.png") no-repeat right bottom;
+    margin: 0;
+    padding: 0; 
+}
+
+.mBox {
+	float:left;
+    padding-right: 1.25000em;       /* the gap on the right edge of the image (not content padding) */
+}
+
+/* set the top-right image */
+.mBox .mBox-head {
+    background-position: right top;
+    margin-right: -1.25000em;       /* pull the right image over on top of border */
+    padding-right: 1.25000em;       /* right-image-gap + right-inside padding */
+}
+
+/* set the top-left image */
+.mBox .mBox-head h2 {
+    background-position: left top;
+    padding-top: 1.16667em;
+}
+
+/* set the lower-left corner image */
+.mBox .mBox-body {
+    background-position: left bottom;
+    padding: 0 0 1.25000em 1.25000em; 
+}
+
+.mBox .mBox-body img{
+	display:block;				/* fix image gap */
+}
+/*]]>*/
+

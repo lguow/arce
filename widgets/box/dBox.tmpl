@@ -1,0 +1,120 @@
+<!--
+	$Date: 2008-03-31 17:01:57 +0800 (Mon, 31 Mar 2008) $
+	$Rev: 106 $
+-->
+<style type="text/css">
+/*<![CDATA[*/
+
+/* ------------------------------------------------------------------
+ *	dBox:
+ *		rounded corner box, base on dialog2
+ *
+ *	Reference:
+ *		http://www.schillmania.com/projects/dialog2/
+ */
+
+
+html {
+	background: transparent url("../photo/dtClean.jpg");
+}
+
+.dBox {
+	position:absolute;
+	left:443px;
+	top:68px;
+
+	margin:0px auto;
+	min-width:8em;
+	max-width:760px; /* based on image dimensions - not quite consistent with drip styles yet */
+	z-index:1;
+	margin-left:12px; /* default, width of left corner */
+	margin-bottom:0.5em; /* spacing under dialog */
+	width: 600px
+}
+
+.dBox .dBox-content,
+.dBox .dBox-top,
+.dBox .dBox-bottom,
+.dBox .dBox-bottom div {
+	 background:transparent url("dBox/dBox.png") no-repeat right top;
+}
+
+.dBox .dBox-content {
+	 position:relative;
+	 zoom:1;
+	 _overflow-y:hidden;
+	 padding:0px 12px 0px 0px;
+}
+
+.dBox .dBox-top {
+	 /* top+left vertical slice */
+	 position:absolute;
+	 left:0px;
+	 top:0px;
+	 width:12px; /* top slice width */
+	 margin-left:-12px;
+	 height:100%;
+	 _height:1600px; /* arbitrary long height, IE 6 */
+	 background-position:left top;
+}
+
+.dBox .dBox-bottom {
+	 /* bottom */
+	 position:relative;
+	 width:100%;
+}
+
+.dBox .dBox-bottom,
+.dBox .dBox-bottom div {
+	 height:30px; /* height of bottom cap/shade */
+	 font-size:1px;
+}
+
+.dBox .dBox-bottom {
+	background-position:right bottom;
+}
+
+.dBox .dBox-bottom div {
+	 position:relative;
+	 width:80px; /* bottom corner width */
+	 margin-left:-12px;
+	 background-position: left bottom;
+}
+
+.dBox h1,
+div.dBox div.dBox-content p {
+	margin:0px; /* margins will blow out backgrounds, leaving whitespace. */
+	padding:0.5em 0px 0.5em 0px;
+}
+
+.dBox h1 {
+	padding-bottom:0px;
+}
+
+/*]]>*/
+</style>
+
+
+<div class="dBox" id="dBox">
+	<div class="dBox-content">
+		<div class="dBox-top"></div>
+		<!-- Your content goes here -->
+
+		<h1>Even <em>More</em> Rounded Corners With CSS</h1>
+		<p>Here is a very simple example dialog.</p>
+		<p>Note that if gradients are used, you will need a "min-height" (or fixed height) rule on the body of the dialog. If these examples appear funny at the bottom, it is because they do not enforce the min-height rule.</p>
+
+		<!-- Your content end here -->
+	</div>
+	<div class="dBox-bottom">
+		<div><!--empty element for layout--></div>
+	</div>
+</div>
+
+
+<script src="../../../tools/mootools/mootools-release-1.11.js" type="text/javascript">
+</script> <script type="text/javascript">
+//<![CDATA[
+        $("dBox").makeDraggable();
+//]]>
+</script>

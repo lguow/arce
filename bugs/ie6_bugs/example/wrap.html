@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>wrap/padding test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+	div { background-color: #fff; border: 1px dashed #141;
+	      padding: 1em; margin-bottom: 1em; }
+	span, li { padding: 0 25px; letter-spacing: 0.6em; white-space: nowrap;
+		   background-color: #ddd; border: 1px solid #669; display: inline; }
+	div.w span { display: inline-block; }
+	ul { list-style-type: none; margin: 0; padding: 0; }
+	div.w li { display: inline-block; }
+	span.x { white-space: normal; }
+    </style>
+  </head>
+  <body style="background-color: #fff">
+    <div>
+	The spans below all have 25px left/right padding.
+	Spans without normal white-space handling wrap ok.
+	<br/>
+	<span class="x">span one</span>
+	<span class="x">span two</span>
+	<span class="x">span three</span>
+	<span class="x">span four</span>
+	<br/>
+	Now with white-space: nowrap.  When rendered by IE6 (strict mode) a span that
+	gets wrapped to the next line loses its padding-left.
+	<br/>
+	<span>span one</span>
+	<span>span two</span>
+	<span>span three</span>
+	<span>span four</span>
+	<br/>
+	The whole line can wrap and lose left padding on the first span if there is
+	trailing whitespace in each span.  For some reason IE6 connects this whitespace
+	with nowrap into the next span (even though the whitespace between spans
+	allows wrapping in other browsers).
+	<br/>
+	<span>span one </span>
+	<span>span two </span>
+	<span>span three </span>
+	<span>span four </span>
+    </div>
+    <div>
+	Also for lists with inline items.  As IE6 ignores &lt;/li&gt; tags (this bug
+	also listed on quirksmode.org) these won't wrap between items whether or not
+	there is trailing whitespace in the items.
+	<ul>
+	  <li>li nr one</li>
+	  <li>li nr two</li>
+	  <li>li nr three</li>
+	  <li>li nr four</li>
+	</ul>
+    </div>
+    <div class="w">
+	The problems disappear for spans if they use display: inline-block.
+	<br/>
+	<span>span one </span>
+	<span>span two </span>
+	<span>span three </span>
+	<span>span four </span>
+	<br/>
+	This does not work for list items.
+	<ul>
+	  <li>li nr one</li>
+	  <li>li nr two</li>
+	  <li>li nr three</li>
+	  <li>li nr four</li>
+	</ul>
+    </div>
+  </body>
+</html>

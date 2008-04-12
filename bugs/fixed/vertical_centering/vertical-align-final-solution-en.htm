@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-2">
+<title>Universal vertical center solution</title>
+<style>
+.greenBorder {border: 1px solid green;}
+</style>
+</head>
+
+<body>
+
+<h1>Vertical Centering in CSS - Example</h1>
+
+<div class="greenBorder" style="display: table; height: 400px; #position: relative; overflow: hidden;">
+	<div style=" #position: absolute; #top: 50%;display: table-cell; vertical-align: middle;">
+		<div class="greenBorder" style="#position: relative; #top: -50%; ">
+			any text<br>
+			any height<br>
+			any content, for example generated from DB<br>
+			everything is vertically centered
+		</div>
+	</div>
+</div>
+
+<p>Please view source for details or read the
+<a href="../css-vertical-center-solution.html">CSS 
+vertical centering article</a>.
+<p>See also the <a href="vertical-align-valid-solution-en.html">structural and 
+valid example</a>.
+</body>
+</html>

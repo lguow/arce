@@ -1,0 +1,124 @@
+<!--
+	$Date: 2008-03-31 23:03:38 +0800 (Mon, 31 Mar 2008) $
+	$Rev: 108 $
+-->
+<style type="text/css">
+
+/*<![CDATA[*/
+#container {
+	margin:0 auto;
+	width:90%;
+}
+
+table.zTable {
+	border-left:1px solid #96C8F5;
+	width:100%;
+	text-indent:1em;
+	line-height:2.5em;
+}
+
+
+table.zTable thead th, table.zTable tfoot th{
+	background:url(zTable/zTable.png) no-repeat left top;
+	border:1px solid #96C8F5;
+	border-left:none;
+	color:#1867AF;
+	font-weight:bold;
+	line-height:3em;
+}
+
+table.zTable tfoot th {
+	background-position:left bottom;
+	border:none;
+	line-height:2.5em;
+}
+
+table.zTable tbody th, table.zTable tbody td, table.zTable tfoot th {
+	border-bottom:1px solid #96C8F5;
+	border-right:1px solid #96C8F5;
+	vertical-align:top;
+}
+
+table.zTable tbody th{
+	color:#1867AF;
+}
+
+table.zTable tr.zTable-alt {
+	background:#ECF5FD;
+}
+
+table.zTable tbody tr:hover td, table.zTable tbody tr:hover th{
+	background:#D6E9FA;
+}
+
+/*]]>*/
+
+</style>
+
+
+<table cellspacing="0" summary="MacBook Pro Technical Specifications" class="zTable">
+	<caption>MacBook Pro Configurations</caption>
+	<thead>
+		<tr>
+			<th scope="col">MacBook Pro</th>
+			<th scope="col">MA895LL/A</th>
+			<th scope="col">MA896LL/A</th>
+			<th scope="col">MA897LL/A</th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<th scope="row">Price</th>
+			<th>$1,999.00</th>
+			<th>$2,499.00</th>
+			<th>$2,799.00</th>
+		</tr>
+	</tfoot>
+	<tbody>
+		<tr>
+			<th scope="row">Display</th>
+			<td colspan="2">15.4-inch (diagonal), 1440 by 900 resolution, TFT widescreen</td>
+			<td>17-inch (diagonal), 1680 by 1050 resolution, TFT widescreen</td>
+		</tr>
+		<tr>
+			<th scope="row">Processor</th>
+			<td>2.2GHz Intel Core 2 Duo</td>
+			<td colspan="2">2.4GHz Intel Core 2 Duo</td>
+		</tr>
+		<tr>
+			<th scope="row">Memory</th>
+			<td colspan="3">2GB (two SO-DIMMs) 667MHz DDR2 SDRAM (PC2-5300)</td>
+		</tr>
+		<tr>
+			<th scope="row">Hard disk drive3</th>
+			<td>120GB Serial ATA; 5400 rpm</td>
+			<td colspan="2">160GB Serial ATA; 5400 rpm</td>
+		</tr>
+		<tr>
+			<th scope="row">Weight4</th>
+			<td colspan="2">5.4 pounds</td>
+			<td>6.8 pounds</td>
+		</tr>
+		<tr>
+			<th scope="row">Video</th>
+			<td colspan="3">Built-in iSight camera, DVI, VGA (DVI to VGA adapter included)</td>
+		</tr>
+		<tr>
+			<th scope="row">Modem</th>
+			<td colspan="3">Apple USB Modem (sold separately)</td>
+		</tr>
+		<tr>
+			<th scope="row">Thickness</th>
+			<td colspan="3">1.0 inch</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<script src="../../../tools/prototype/prototype1.6.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+	$$(".zTable").each(function(table) {
+		table.select("tbody > tr:nth-child(even)").invoke('addClassName', 'zTable-alt')
+	})
+</script>
+

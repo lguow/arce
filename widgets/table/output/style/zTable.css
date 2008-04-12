@@ -1,0 +1,51 @@
+
+
+/*<![CDATA[*/
+#container {
+	margin:0 auto;
+	width:90%;
+}
+
+table.zTable {
+	border-left: 0.08333em solid #96C8F5;
+	width:100%;
+	text-indent:1em;
+	line-height:2.5em;
+}
+
+
+table.zTable thead th, table.zTable tfoot th{
+	background:url(zTable/zTable.png) no-repeat left top;
+	border: 0.08333em solid #96C8F5;
+	border-left:none;
+	color:#1867AF;
+	font-weight:bold;
+	line-height:3em;
+}
+
+table.zTable tfoot th {
+	background-position:left bottom;
+	border:none;
+	line-height:2.5em;
+}
+
+table.zTable tbody th, table.zTable tbody td, table.zTable tfoot th {
+	border-bottom: 0.08333em solid #96C8F5;
+	border-right: 0.08333em solid #96C8F5;
+	vertical-align:top;
+}
+
+table.zTable tbody th{
+	color:#1867AF;
+}
+
+table.zTable tr.zTable-alt {
+	background:#ECF5FD;
+}
+
+table.zTable tbody tr:hover td, table.zTable tbody tr:hover th{
+	background:#D6E9FA;
+}
+
+/*]]>*/
+

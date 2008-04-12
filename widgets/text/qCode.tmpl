@@ -1,0 +1,44 @@
+<!--
+	$Date: 2008-03-31 17:01:57 +0800 (Mon, 31 Mar 2008) $
+	$Rev: 106 $
+-->
+<style type="text/css">
+
+html,body {
+	margin: 0;
+	padding: 0;
+	background-color: #ffffff;
+}
+
+body {
+	margin-left: 233px;
+	color: #242424;
+	width: 35em;
+}
+
+pre {
+	font-family: monospace;
+	color: #070606;
+	background-color: #eef0eb;
+	margin: 2em 0;
+	padding: 1em 0;
+	border: 1px dotted #b7c4d3;
+	border-width: 1px 0;
+	font-size: 120%;
+	line-height: 130%;
+	margin-left: -233px;
+	padding-left: 233px;
+	/*for IE*/
+	zoom: 1;
+}
+
+</style>
+
+
+<pre style="margin-right: -584px;">setPosition: function (dx,dy) {
+	dragDrop.draggedObject.style.left = dragDrop.startX + dx + 'px';
+	dragDrop.draggedObject.style.top = dragDrop.startY + dy + 'px';
+},
+</pre>
+<p>First we have to discuss the events we need. Obviously, a drag and drop needs mousedown,
+mousemove and mouseup for selecting the element, dragging it, and releasing it.</p>

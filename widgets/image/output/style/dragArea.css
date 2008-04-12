@@ -1,0 +1,24 @@
+
+/*<![CDATA[*/
+#dragRectangle {
+	position: absolute;
+	border: 0.08333em solid #78A5D1;
+	background: #F9FBFD;
+	display:none;
+	opacity:0.5;
+	-moz-user-select: none;
+	filter:alpha(opacity=50);
+	z-index:100;
+}
+
+#selectItems div{
+	position:absolute;
+	background: url('dragArea/Asleep.png');
+	width: 10.66667em; 
+	height: 10.66667em;
+}
+
+.dragged {
+	z-index:10;
+}
+/*]]>*/

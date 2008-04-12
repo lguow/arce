@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>IE6 Hover Crash Demo</title>
+<style type="text/css">
+.border {
+	border:1px dotted red;
+	width:50%;
+}
+
+:link:hover {color:#f00;}
+
+:link .images {
+	width:300px;
+	display:none;
+}
+:link:hover .images {
+	position:absolute;
+	top:10px;
+	left:230px;
+	display:block;
+}
+
+/* UNCOMMENT THIS CODE TO MAKE IT WORK?
+:link .images, :visited .images {
+	width:300px;
+	display:none;
+}
+:link:hover .images, :visited:hover .images {
+	position:absolute;
+	top:10px;
+	left:230px;
+	display:block;
+}
+*/
+
+h2 {
+	color:#900;
+	font-style:italic;
+	background-color:#edf;
+}
+strong {
+	color:#f00;
+}
+.indent {
+	margin-left:30px;
+}
+</style>
+</head>
+
+<body>
+<h1>IE6 Hover Crash Demo</h1>
+
+<p><strong>CAUTION: THIS DEMO MAY CRASH INTERNET EXPLORER 6!</strong> I take no responsibility for any problems caused as a result of viewing this demo. Use it at your own risk. It is highly likely to crash IE6, as well as slow down the computer heavily. You will need to manually 'kill' the program once it has crashed, by pressing <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>DEL</kbd>, or right-clicking on the IE taskbar button and choosing 'Close', followed by 'End Now'. This may take a while.</p>
+
+<ul>
+<li class="border"><a href="#">Line 1
+<div class="images">Line 2: HOVERING OVER THIS LINE MAY CRASH THE BROWSER!
+<br />Line 3: What is happening here?</div></a></li>
+</ul>
+</div>
+
+
+<h2 id="test">Test Header</h2>
+
+<ul>
+<li class="border"><a href="#"><img src="../images/tips/grassbird.jpg" width="100" height="81" alt="Picture of a bird sat in the grass." />
+<div class="images"><img src="../images/tips/grassbird.jpg" width="300" height="243" alt="Picture of a bird sat in the grass." />
+<br />Line 3: Do you see squares after this?</div></a></li>
+</ul>
+
+
+<h2>What to do and observe here</h2>
+
+<ol class="noborder">
+<li><em>Carefully</em> hover over the first line. You should see Line 2 disappearing, along with the start of Line 3! You may also see squares added to the end of the line. The text also takes on some of the style of the header below it!</li>
+<li>Hover over Line 3 (if you can without it crashing) and it flickers a lot between states.</li>
+<li>Now hover over either the 2nd line of text in the first list, or the larger of the images in the second list. IE freezes!</li>
+<li>The image is an identical list added to show how the hover effect sometimes works. See the Workaround details further on.</li>
+</ol>
+
+
+<h2>Notes</h2>
+
+<ol class="noborder">
+<li>Tested with IE6 on Windows XP SP2.</li>
+<li>The thumbnail and the large image are the same file, so we can rule out delays in loading a larger image.</li>
+<li>When crashed, I noted IE6 used 100% CPU, then started to increment the Page File. On my system, I saw this climb to 1.12Gb! The RAM was also down from around 390,000K to hovering between 2,000-4,000K.</li>
+<li>Also in the Task Manager (seen when pressing <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>DEL</kbd> in XP) I'm seeing <em>two</em> Internet Explorer processes running. They both say "Not Responding" but have different versions of the IE logo. Sometimes it's incredibly difficult to close them down. I'm not sure what's going on.</li>
+<li>Adding a background colour to all links causes Line 1 to crash the browser on hover too.</li>
+<li>Adding a border around links stops Line 3 changing to the header styles.</li>
+<li>If you change the links to proper URLs, they appear correctly, until clicked on.</li>
+<li>The dotted border around the lists is so you can safely move to the edge of the page without crashing the demo. I also made them 50% wide.</li>
+</ol>
+
+
+<h2>Workaround</h2>
+
+<p>To avoid this crash add a <code>:visited</code> state to the hover code, like this:</p>
+
+<p><code>:link .images<strong>, :visited .images</strong> {
+<br /><span class="indent"></span>width:300px;
+<br /><span class="indent"></span>display:none;
+<br />}</code></p>
+
+<p>Do the same for both lines that style the links. Note that you need to click on the link to get the hover effect to work! (So lines 2 and 3  appear.) In other browsers, just hovering over the link is enough. However, it seems to be very temperamental. To be honest, it doesn't always work.</p>
+
+<p>When using an image it tends to work more often. But again, not always. I found if you click once, then go back by removing the hash from the URL, it sometimes works! Also, if you click on the image first and it works, then the text hover will work after that.</p>
+
+<hr />
+
+<p>Created by Chris Hester 28 February 2006 &middot; Last updated: 2 August 2006 &middot; <a href="http://www.designdetector.com/2006/02/ie-hover-crash-demo.php#comments">Comments</a></p>
+
+</body>
+</html>

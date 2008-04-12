@@ -1,0 +1,69 @@
+
+/*<![CDATA[*/
+/*
+	Reference:
+		http://veerle.duoh.com/blog/comments/a_css_styled_calendar/
+*/
+
+.sCal {
+	width: 11.75000em;
+	border-left: 0.08333em solid #A2ADBC;
+	color: #616B76;
+	text-align: center;
+	background-color: #fff;
+}
+
+.sCal-nav, .sCal-nav a {
+	color: #fff;	
+	text-align: center;
+	text-decoration: none;
+}	
+
+.sCal caption {
+	width: 11.75000em;
+	background: #A2ADBC;
+	color: #fff;
+	text-align: center;
+}
+
+.sCal th {
+	font: bold 0.91667em/ 1.66667em "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color: #616B76;
+	background: #D9E2E1;
+	border-right: 0.08333em solid #A2ADBC;
+	border-bottom: 0.08333em solid #A2ADBC;
+	border-top: 0.08333em solid #A2ADBC;
+}
+
+.sCal .sCal-today, .sCal td.sCal-today a, .sCal td.sCal-today a:link, .sCal td.sCal-today a:visited {
+	color: #F6F4DA;
+	font-weight: bold;
+	background: #DF9496;
+}
+
+.sCal td {
+	border-right: 0.08333em solid #A2ADBC;
+	border-bottom: 0.08333em solid #A2ADBC;
+	width: 1.66667em;
+	height: 1.66667em;
+	text-align: center;
+	background: url(sCal/bg_calendar.gif) no-repeat right bottom;
+}
+
+.sCal td a {
+	text-decoration: none;
+	font-weight: bold;
+	display: block;
+}
+
+.sCal td a:link, .sCal td a:visited {	
+	color: #608194;
+	background: url(sCal/bg_calendar.gif) no-repeat;
+}
+
+.sCal td a:hover, .sCal td a:active {
+	color: #6aa3ae;
+	background: url(sCal/bg_calendar.gif) no-repeat right top;
+}
+
+/*]]>*/

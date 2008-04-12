@@ -1,0 +1,142 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi">
+	<head>
+		<title>CSS 'bottom' and 'right' properties in IE (Strict)</title>
+		<meta http-equiv="content-type" content="application/xhtml+xml; charset=iso-8859-15" />
+		<meta http-equiv="description" name="description" content="Firefox-valikko" />
+		<meta http-equiv="author" name="author" content="Vesa Piittinen" />
+		<style type="text/css">
+		div {
+			margin : 0px;
+			padding : 0px;
+			position : absolute;
+		}
+		div.container {
+			border : #3050c0 solid 2px;
+			height : 300px;
+			position : relative;
+			width : 700px;
+		}
+		div.container_over {
+			border : #3050c0 solid 2px;
+			height : 300px;
+			overflow : hidden;
+			position : relative;
+			width : 700px;
+		}
+		div#iebugged {
+			border : #7090a0 solid 2px;
+			bottom : 0px;
+			left : 0px;
+			right : 0px;
+			top : 0px;
+		}
+		div#iefixed {
+			border : #7090a0 solid 2px;
+			height : 100%;
+			left : 0px;
+			top : 0px;
+			width : 100%;
+		}
+		#leftframe {
+			background-color : #7090c0;
+			bottom : 0px;
+			left : 0px;
+			top : 0px;
+			width : 100px;
+		}
+		#rightframe {
+			background-color : #5070b0;
+			bottom : 0px;
+			left : 100px;
+			right : 0px;
+			top : 100px;
+		}
+		#topframe {
+			background-color : #3050a0;
+			height : 100px;
+			left : 100px;
+			right : 0px;
+			top : 0px;
+		}
+		#leftframe_ie {
+			background-color : #7090c0;
+			bottom : 0px;
+			height : 100%;
+			left : 0px;
+			top : 0px;
+			width : 100px;
+		}
+		#rightframe_ie {
+			background-color : #5070b0;
+			height : 100%;
+			left : 0px;
+			padding-left : 100px;
+			padding-top : 100px;
+			top : 0px;
+			width : 100%;
+		}
+		#topframe_ie {
+			background-color : #3050a0;
+			height : 100px;
+			left : 0px;
+			padding-left : 100px;
+			top : 0px;
+			width : 100%;
+		}
+		#filler {
+			background-color : darkblue;
+			color : white;
+			left : 2em;
+			right : 0;
+		}
+		#filler_ie {
+			background-color : darkblue;
+			color : white;
+			left : 2em;
+			padding-right : 2em;
+			width : 100%;
+		}
+		</style>
+	</head>
+	<body>
+		<p>To make this work properly for IE and the other browsers, you should add &lt;!--[if lte IE 6]&gt; and &lt;![endif]--&gt; around the overriding CSS.</p>
+		<div class="container">
+			<div id="iebugged">Border should take all contents of the container.</div>
+		</div>
+		<p />
+		<div class="container">
+			<div id="iefixed">Border should take all contents of the container (fix for IE).</div>
+		</div>
+		<p />
+		<div class="container">
+			<div id="leftframe">1</div>
+			<div id="topframe">2</div>
+			<div id="rightframe">3</div>
+		</div>
+		<p />
+		<div class="container">
+			<div id="rightframe_ie">3 (fix for IE)</div>
+			<div id="topframe_ie">2 (fix for IE)</div>
+			<div id="leftframe_ie">1 (fix for IE)</div>
+		</div>
+		<p />
+		<div class="container">
+			<div id="filler">1 - to show it actually works as intended, I guess I must write a lot of text to back up my words. So that it becomes visible it lines up text correctly and not in some odd places.</div>
+			You shouldn't see all of this text.<br />
+			You shouldn't see all of this text.<br />
+			You shouldn't see all of this text.<br />
+			You shouldn't see all of this text.<br />
+		</div>
+		<p />
+		<div class="container_over">
+			<div id="filler_ie">1 - to show it actually works as intended, I guess I must write a lot of text to back up my words. So that it becomes visible it lines up text correctly and not in some odd places. (fix for IE)</div>
+			You shouldn't see all of this text.<br />
+			You shouldn't see all of this text.<br />
+			You shouldn't see all of this text.<br />
+			You shouldn't see all of this text.<br />
+		</div>
+	</body>
+</html>

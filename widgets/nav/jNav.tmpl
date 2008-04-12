@@ -1,0 +1,93 @@
+<!--
+	$Date: 2008-03-31 15:44:06 +0800 (Mon, 31 Mar 2008) $
+	$Rev: 104 $
+-->
+<style type="text/css" media="screen">
+
+/*
+inspired by coda(http://www.panic.com/coda)
+*/
+
+#nav {
+	background: url("jNav/jNav.png") no-repeat left bottom;	
+	width:800px;
+	height:100px;
+	margin: 20px auto;
+}
+
+#nav li{
+	list-style:none;
+	display:inline;
+}
+
+
+#nav li a {
+	float:left;
+	background: url("jNav/jNav.png") no-repeat;	
+	width:200px;
+	height:0px;
+	padding-top:100px;
+	overflow: hidden;
+}
+
+#nav li#nav-home a {
+	background-position:0 0;
+}
+
+#nav li#nav-blog a {
+	background-position:-200px 0;
+}
+
+#nav li#nav-work a {
+	background-position:-400px 0;
+}
+
+#nav li#nav-about a {
+	background-position:-600px 0;
+}
+
+
+</style>
+
+<div id="nav">
+    <ul>
+        <li id="nav-home">
+            <a href="#">Home</a>
+        </li>
+
+        <li id="nav-blog">
+            <a href="#">Blog</a>
+        </li>
+
+        <li id="nav-work">
+            <a href="#">Work</a>
+        </li>
+
+        <li id="nav-about">
+            <a href="#">About</a>
+        </li>
+    </ul>
+</div>
+
+
+<script src="../../../tools/mootools/mootools-release-1.11.js" type="text/javascript"></script>
+<script type="text/javascript" charset="utf-8">
+	var list = $$('#nav li a');
+	list.each(function(element) {
+
+		var fx = new Fx.Styles(element, {duration:350, wait:false});
+
+		element.addEvent('mouseover', function(){
+			fx.start({
+				'opacity': 0
+			});
+		});
+
+		element.addEvent('mouseout', function(){
+			fx.start({
+				'opacity':1
+			});
+		});
+
+	});
+</script>

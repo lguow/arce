@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	
+	<title>Test CCS Posistioning</title>
+<style type="text/css">
+div.container {
+position : relative;
+top : 100px;
+left : 100px;
+width : 300px;
+height : 300px;
+background-color : #909090
+}
+div.problemDiv {
+position : absolute;
+top : 50px;
+bottom: 50px;
+left: 50px;
+right: 50px;
+background-color : #E0E0E0
+}
+</style>
+</head>
+
+<body>
+<p>A workaround is now available <a href="cssTopAndBottomWorkaround.html">here</a>.  Many thanks to Johan Olsson for pointing me to <a href="http://www.fu2k.org/alex/css/frames/">http://www.fu2k.org/alex/css/frames/</a> for the fix.</p>
+<div class="container">
+This div is 300px by 300px
+<div class="problemDiv">
+This div should be 200px by 200px because of an offset of 50px from every side
+</div>
+</div>
+
+
+</body>
+</html>

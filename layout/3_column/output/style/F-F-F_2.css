@@ -1,0 +1,56 @@
+
+/*<![CDATA[*/
+
+/*
+
+	α = column 1 width (#middle)
+	β = column 2 width (#left)
+	γ = column 3 width (#right)
+
+	Δ = predefined balancing unit
+
+	#middle {
+	  float:left;
+	  width:α;
+	  margin:0 [-(α+(β-Δ))] 0 β;
+	}
+
+	#left {
+	  float:left;
+	  width:β;
+	  margin:0 0 0 -Δ;
+	}
+
+	#right {
+	  float:right;
+	  width:γ;
+	}
+
+ */
+
+#header, #container, #footer {
+	width: 80.00000em;
+}
+
+#content {
+  float: left;
+  width: 44.16667em;
+  margin:0 -63.33333em 0 19.16667em;
+  /*
+	BugFix (IE6):
+		IE Doubled Float-Margin Bug
+  */
+  display:inline;	
+}
+
+#aside {
+  float:left;
+  width: 19.16667em;
+}
+
+#extra {
+  float:right;
+  width: 16.66667em;
+}
+
+/*]]>*/

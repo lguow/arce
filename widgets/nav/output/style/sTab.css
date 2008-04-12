@@ -1,0 +1,39 @@
+
+/*
+	reference:
+		http://www.brunildo.org/test/NavBar4.php
+*/
+
+#sNav a, #sNav span {
+	border: 0.08333em solid #999;
+	border-left: none;
+	padding: 0.25000em 0.66667em;
+}
+#sNav a {
+	color: #666;
+	text-decoration: none;
+	background-color: #eee;
+}
+#sNav a:hover {
+	color: #753;
+	background-color: #f6f4f2;
+}
+#sNav span {
+	color: #960;
+	background-color: #fffcfa;
+	border-bottom-color: #fffcfa;
+}
+#sNav li, #sNav a, #sNav span {
+	float: left;
+}
+#sNav ul {
+	border-left: 0.08333em solid #999;
+	display: table;
+	position: relative;
+	top: 0.08333em;
+	zoom:1;
+}
+#sNav {
+	border-bottom: 0.08333em solid #999;
+}
+

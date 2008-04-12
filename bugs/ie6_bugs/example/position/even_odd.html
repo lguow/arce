@@ -1,0 +1,218 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"  "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+	<head>
+
+		<title>IE positioning Bug</title>
+        
+	<style type="text/css">
+		body
+		{
+			padding: 0;
+			margin: 0;
+			padding-bottom: 1em
+		}
+            
+		
+		.container div
+		{
+			height: 30px;
+			width: 30px;
+			background-color: green
+		}
+
+		.box1
+		{
+		position: absolute;
+		top: -20px;
+		left: -20px
+		}
+		.box2 {
+		position: absolute;
+		top: -20px;
+		right: -20px
+		}
+		.box3
+		{
+			position: absolute;
+			right: -20px
+		}
+		
+		.box4
+		{
+			position: absolute;
+			left: -20px
+		}
+
+		.box3,
+		.box4
+		{
+			bottom: -20px
+		}
+		
+		.container
+		{
+			position: relative;
+			border: 20px solid red;
+			height: 300px;
+			margin-bottom: 25px
+		}
+		
+		.container p
+		{
+					padding-top: 10px
+		}
+		
+		#content1
+		{
+
+			width: 401px
+		}
+
+		
+
+		#content1 p
+		{
+			width: 601px;
+			height: 302px;
+
+		}
+		
+		#content2
+		{
+			width: 200px;
+
+		}
+		#content2 p
+		{
+			width: 400px;
+			height: 101px
+		}
+		
+		
+		
+	</style>
+</head>
+<body>
+	<div id="content" class="container">
+	<p>
+		If the height of a relatively positioned block is an an even number or the width an odd number, any element that&rsquo;s positioned absolutly inside that block and use bottom or right will be 1px out. They will be either 1px too high or 1px to the left of their correct position. This depends on the width or height of the containing block. If both occur the positioned element will be incorrectly positioned on both axes.
+	</p>
+	<p>
+		This box has no width or height set. The four divs in the corners are .box1, .box2, .box3 and .box4. The divs are positioned absolutly. There coordiantes are top: 0 left: 0;
+		top: 0 right: 0; bottom: -20px right: 0 and finally left: 0 bottom: -20px. The bottom is at -20px to overlap the container's border</p>
+		<p>I'm using overlapping the border to emphasizes the problem. The possitioning is a problem all values, not just when the position is negative. Try increasing the font size in your browser and you will se the effect on this block. Try all five options: smallest, small, medium, larger and largest. At lest one should be correct and some will be out. Resizing the window can also force the bug.
+		</p>
+		<p>
+			Padding to for the height for ie 6 and less. 
+		</p>
+		<p>
+			Padding to for the height for ie 6 and less. 
+		</p>
+		<p>
+			Padding to for the height for ie 6 and less. 
+		</p>
+		<p>
+			Padding to for the height for ie 6 and less. 
+		</p>
+		<div class="box1">Box 1</div><div class="box2">Box 2</div><div class="box3">Box 3</div><div class="box4">Box 4</div></div>
+	
+	<div id="content1" class="container"><p>This div has an <strong>odd width</strong> and and <strong>even height</strong>. Note the bottom and right corners are one pixel out. This p is 110px tall: 10px padding and 100px in height. it is 401px wide in ie 7 and 601px wide in ie 6 or less</p><div class="box1">Box 1</div><div class="box2">Box 2</div><div class="box3">Box 3</div><div class="box4">Box 4</div></div>
+	
+	<div id="content2" class="container"><p>This div has an <strong>odd height</strong> and <strong>even width</strong>. Note the bottom and right corners are correct. This p is 111px tall: 10px padding and 101px in height and is 400px wide</p><div class="box1">Box 1</div><div class="box2">Box 2</div><div class="box3">Box 3</div><div class="box4">Box 4</div></div>
+	<p>If you are using a standards complient browser this page may be difficult or impossable to read. 
+	I have an <a href="nostyle.html">unstyled version</a> for you to read</p>
+	
+		<p>
+			<a href="../bugs.php">return to my bugs page</a>
+		</p>
+	
+	<p> the css used in this page:</p>
+	<pre><code>
+		body
+		{
+			padding: 0;
+			margin: 0;
+			padding-bottom: 1em
+		}
+            
+		
+		.container div
+		{
+			height: 30px;
+			width: 30px;
+			background-color: green
+		}
+
+		.box1
+		{
+		position: absolute;
+		top: -20px;
+		left: -20px
+		}
+		.box2 {
+		position: absolute;
+		top: -20px;
+		right: -20px
+		}
+		.box3
+		{
+			position: absolute;
+			right: -20px
+		}
+		
+		.box4
+		{
+			position: absolute;
+			left: -20px
+		}
+
+		.box3,
+		.box4
+		{
+			bottom: -20px
+		}
+		
+		.container
+		{
+			position: relative;
+			border: 20px solid red;
+			height: 300px;
+			margin-bottom: 25px
+		}
+		
+		.container p
+		{
+					padding-top: 10px
+		}
+		
+		#content1
+		{
+
+			width: 401px
+		}
+
+		
+
+		#content1 p
+		{
+			width: 601px;
+			height: 302px;
+
+		}
+		
+		#content2
+		{
+			width: 200px;
+
+		}
+		#content2 p
+		{
+			width: 400px;
+			height: 101px
+		}
+		</code></pre>
+		
+	
+	</body>
+</html>

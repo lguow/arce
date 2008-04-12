@@ -1,0 +1,417 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0061)http://www.positioniseverything.net/explorer/floatIndent.html -->
+<HTML><HEAD><TITLE>Internet Explorer Float/Margin Bugs</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<STYLE type=text/css>BODY {
+	FONT-SIZE: 100%; MARGIN: 0px 15%; COLOR: #000; FONT-FAMILY: arial, helvetica, geneva, sans-serif; BACKGROUND-COLOR: #ccddcc
+}
+.box {
+	BORDER-RIGHT: #efce8c 2px solid; PADDING-RIGHT: 1em; BORDER-TOP: #efce8c 2px solid; PADDING-LEFT: 1em; BACKGROUND: url(images/75pxWide.png) #fff no-repeat; PADDING-BOTTOM: 1em; BORDER-LEFT: #efce8c 2px solid; WIDTH: 80%; PADDING-TOP: 1em; BORDER-BOTTOM: #efce8c 2px solid; POSITION: relative
+}
+.sidebar {
+	BORDER-RIGHT: #000 2px dotted; PADDING-RIGHT: 1em; BORDER-TOP: #000 2px dotted; PADDING-LEFT: 1em; FONT-SIZE: 0.8em; FLOAT: right; PADDING-BOTTOM: 1em; MARGIN-LEFT: 75px; BORDER-LEFT: #000 2px dotted; WIDTH: 15em; COLOR: #000; PADDING-TOP: 1em; BORDER-BOTTOM: #000 2px dotted; BACKGROUND-COLOR: #f8eece
+}
+PRE {
+	FONT-SIZE: 0.9em; COLOR: #000
+}
+.caption {
+	FONT-SIZE: 0.8em; RIGHT: 1em; COLOR: red; BOTTOM: 0px; FONT-STYLE: italic; POSITION: absolute
+}
+.alignright {
+	MARGIN-TOP: 0px; FONT-SIZE: 0.8em; RIGHT: 20px; POSITION: absolute; TOP: 20px; TEXT-ALIGN: right
+}
+A {
+	COLOR: #000
+}
+H1 {
+	MARGIN: 0.5em 0px 1.5em
+}
+</STYLE>
+
+<META content="MSHTML 6.00.2800.1314" name=GENERATOR></HEAD>
+<BODY>
+<H1>Floats, Margins and IE </H1>
+<P class=alignright><A 
+href="http://www.positioniseverything.net/explorer.html"><STRONG>Return to 
+Explorer Exposed</STRONG></A><BR><A 
+href="http://www.positioniseverything.net/guests.html"><STRONG>Return to Guest 
+Demos</STRONG></A><BR><A 
+href="http://www.positioniseverything.net/explorer/threepxtest.html"><STRONG>Next 
+Explorer demo</STRONG></A> </P>
+<P>Internet Explorer's problems rendering floats have been thoroughly analyzed, 
+thanks in large part to Big John's efforts characterizing and publicizing them. 
+We do still stumble onto undocumented oddities, though, and this demo presents 
+one that hasn't been isolated yet—or we haven't heard about it if it has—and as 
+a delightful by-product, suggests a simpler work-around (or maybe a hack) than 
+we have been using for a bothersome rendering issue that's been around a while. 
+</P>
+<P><STRONG>The bug demonstrated here causes in-line elements (images, text) 
+adjacent to a floated div to appear to be indented from their expected 
+location.</STRONG> The indentation is caused by IE/Win's weird handling of 
+margins on floated elements. The happy by-product is a cleaner way to defeat the 
+<A 
+href="http://www.positioniseverything.net/explorer/doubled-margin.html"><STRONG>doubled-margin 
+bug</STRONG></A>.</P>
+<P>(Note: If you're looking at this in some browser other than Internet Explorer 
+on Windows, you're likely to wonder what the heck I'm talking about. All other 
+browsers I have tested render the examples below properly and ignore the 
+work-arounds—you have to use IE/Win to really see what's going on, but I've 
+included screenshots in case you just can't bring yourself to open IE.) </P>
+<P>Most of the CSS sits in a style block in the header of this page, but where I 
+alter the styles to demonstrate the bug I've put the changes in-line so they'll 
+be easy to find, and there are obvious comments in the source at the beginning 
+of each example to make it even easier. </P>
+<P>The relevant style declarations in the header are: </P><PRE>body{
+   font-size: 100%;
+   background-color: #ccddcc;
+   color: #000;
+   font-family: arial, helvetica, geneva, sans-serif;
+   margin: 0 15%;
+}
+
+.box{
+   clear: both; 
+   width: 80%; 
+   background: #fff url(images/75pxWide.png) no-repeat; 
+   color: #000; 
+   padding: 1em; 
+   border: 2px solid #EFCE8C;
+}
+
+.sidebar{
+   float: right;
+   width: 15em;
+   font-size: 80%;
+   border: 2px dotted #000;
+   padding: 1em;
+   margin-left: 75px;
+   background-color: #f8eece;
+   color: #000;
+}
+</PRE>
+<P>The in-line styles used in each demo are documented below those demos. </P>
+<P>Each example uses the same basic mark-up: </P><PRE>&lt;div class="box"&gt;
+   &lt;div class="sidebar"&gt; a floated box with some content
+   &lt;/div&gt;
+   some content
+&lt;/div&gt;
+</PRE>
+<P>Changes in mark-up will also be documented when they're used. </P>
+<H2>What's With The Blue Thing? </H2>
+<P>Not all of us can visualize a 75 pixel width, or know when we're looking at 
+one, so to help out I've included a blue, 75-pixel-wide image in all of the 
+examples. It's easy to spot because it's blue and says "This is 75 px wide." In 
+all cases this image is applied as a background to the div holding the example 
+and so takes up no space. It's there just to make it easier to see when a false 
+margin is being applied.<BR></P>
+<H2>Let's Start With Something We Know </H2>
+<P>First a review—the infamous IE margin-doubling bug, after IE's box-model 
+errors probably the most annoying problems they have. When an element with a 
+left-margin is floated left, IE will double the left margin of the floated 
+element. (See a <A 
+href="http://www.positioniseverything.net/explorer/doubled-margin.html">full 
+treatment</A> of the double-margin bug.) Here's a simple example: </P><!--*******************************************
+*******************Example 1*******************
+********************************************-->
+<DIV class=box>
+<DIV class=sidebar style="FLOAT: left">This div is floated left with a left 
+margin of 75px. It should almost butt up against the 75 pixel wide background 
+image (1em of padding will separate them), but as you can see, the actual margin 
+rendered is twice what is set in the CSS. </DIV>Floating a box so that a section 
+of text will wrap around it is a fairly common technique in Web design. We use 
+it to place images on a page as well as to create sidebars, like this one, which 
+work well for testimonials and similar pieces of information. <SPAN 
+class=caption>Example 1</SPAN> 
+<DIV style="CLEAR: both"></DIV></DIV>
+<P>Mark-up looks like this— </P><PRE>&lt;div class="box"&gt;
+   &lt;div class="sidebar" style="float: left"&gt;content
+   &lt;/div&gt;
+   content
+&lt;/div&gt;
+</PRE>
+<P>...and here's a screen shot (IE6/WinXP):<BR><IMG height=88 alt="" 
+src="Float-Margin Bugs.files/floats1.png" width=566> </P>
+<P>The standard work around for the bug is to wrap an additional div around the 
+floated div, apply the float to the wrapper and remove the float on the interior 
+div, like so— </P><PRE>&lt;div class="box"&gt;
+   <STRONG>&lt;div style="float: left&gt;</STRONG>
+      &lt;div class="sidebar" <STRONG>style="float: none"</STRONG>&gt;content 
+      &lt;/div&gt;
+   <STRONG>&lt;/div&gt;</STRONG> 
+   content 
+&lt;/div&gt;
+</PRE>
+<P>Now the floated element has no margin, and the element with the margin isn't 
+floated, with this result—<BR></P><!--*******************************************
+*******************Example 2*******************
+********************************************-->
+<DIV class=box>
+<DIV style="FLOAT: left">
+<DIV class=sidebar style="FLOAT: none">Nesting another div inside the floated 
+div and applying the margin (and whatever other styles are required) to the 
+nested div lets us work around the margin-doubling bug. </DIV></DIV>Floating a 
+box so that a section of text will wrap around it is a fairly common technique 
+in Web design. We use it to place images on a page as well as to create 
+sidebars, like this one, which work well for testimonials and similar pieces of 
+information. <SPAN class=caption>Example 2</SPAN> 
+<DIV style="CLEAR: both"></DIV></DIV>
+<P>Screen Shot:<BR><IMG height=86 alt="" 
+src="Float-Margin Bugs.files/floats2.png" width=523> </P>
+<P>Which is what we would see without the wrapper div except for the bug, and 
+what we do see in other browsers. </P>
+<H2>The Fake Indent </H2>
+<P>That double-margin effect is plenty peculiar itself, but under some other 
+conditions IE gets even weirder, applying the margin of a floated element, in 
+full, at two different places on the page. Look at the following example: </P><!--*******************************************
+*******************Example 3*******************
+********************************************-->
+<DIV class=box>
+<DIV class=sidebar>This box is floated right and has a margin-left of 75px. Not 
+only does that margin create white space to the left of this box, but it also 
+creates white space to the left of where the div occurs in the document mark-up. 
+</DIV>The box to the right appears in the document mark-up just before the first 
+word of this section of text. The 75 pixel margin for the floated box is 
+rendered to the left of the box, but is also responsible for <STRONG>the first 
+line of this text appearing to be indented 75px</STRONG>. This bug only occurs 
+when the floated box is adjacent to an in-line element. This section of text is 
+unstyled in order to show the bug—if it were enclosed in &lt;p&gt; tags the bug 
+would not appear. <SPAN class=caption>Example 3</SPAN> 
+<DIV style="CLEAR: both"></DIV></DIV>
+<P>Screen shot:<BR><IMG height=87 alt="" 
+src="Float-Margin Bugs.files/floats3.png" width=526> </P>
+<P>You can see that he first line of the text is indented 75 pixels right. That 
+75 pixels comes from the 75 pixel left-margin of the sidebar div. I'll prove it 
+to you. </P>
+<P>If I change the mark-up to this— </P><PRE>&lt;div class="box"&gt;
+   &lt;div class="sidebar" <STRONG>style="margin-left: 0"</STRONG>&gt;content 
+   &lt;/div&gt; 
+   content
+&lt;/div&gt; 
+</PRE>
+<P>—removing the offending 75 pixel margin, IE delivers this: </P><!--*******************************************
+*******************Example 4*******************
+********************************************-->
+<DIV class=box>
+<DIV class=sidebar style="MARGIN-LEFT: 0px">This box is floated right and has 
+had the margin-left removed. Notice how the apparent indent of the text in the 
+larger box disappears. </DIV>The box to the right appears in the document 
+mark-up just before the first word of this section of text. Removing the 
+margin-left of the floated div from the above example also removes the apparent 
+indentation of this text. <SPAN class=caption>Example 4</SPAN> 
+<DIV style="CLEAR: both"></DIV></DIV>
+<P>Screen shot:<BR><IMG height=89 alt="" 
+src="Float-Margin Bugs.files/floats4.png" width=526> </P>
+<P>Miraculous! No indent. And just to see if the bug is symmetrical, we can swap 
+the direction of the floats: </P><PRE>&lt;div class="box" <STRONG>style="background-position: right top"</STRONG>&gt;
+   &lt;div class="sidebar" <STRONG>style="float: left; margin-right: 75px; 
+      margin-left: 0;</STRONG>"&gt;content
+   &lt;/div&gt; 
+   content
+&lt;/div&gt;
+</PRE><!--*******************************************
+*******************Example 5*******************
+********************************************-->
+<DIV class=box style="BACKGROUND-POSITION: right top">
+<DIV class=sidebar 
+style="FLOAT: left; MARGIN-LEFT: 0px; MARGIN-RIGHT: 75px">This time the box is 
+floated left and has a margin-right of 75px. The white space to the right of 
+this box is what we expect, but the white space to the right of the end of the 
+first line of text is a result of the bug. </DIV>X X X X X X X X X X The bug 
+causes a "reverse indent", or a 75 pixel margin to the right of the first line 
+of text—notice none of the Xs above overlaps the 75 pixel wide background image. 
+Instead, that first line wraps 75 pixels before we should expect it to. <SPAN 
+class=caption>Example 5</SPAN> 
+<DIV style="CLEAR: both"></DIV></DIV>
+<P>Screen shot:<BR><IMG height=87 alt="" 
+src="Float-Margin Bugs.files/floats5.png" width=527> </P>
+<P>And one more time, with a different kind of in-line element getting the fake 
+indent, in this case a string of images: </P><!--*******************************************
+*******************Example 6*******************
+********************************************-->
+<DIV class=box>
+<DIV class=sidebar>
+<P>Since images are in-line elements just like bare text, the string of images 
+to the left display the same bug, with the first line appearing to have a 75 
+pixel indent. </P>
+<DIV style="CLEAR: both"></DIV></DIV><IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <SPAN class=caption>Example 
+6</SPAN> 
+<DIV style="CLEAR: both"></DIV></DIV>
+<P>Screen shot:<BR><IMG height=84 alt="" 
+src="Float-Margin Bugs.files/floats6.png" width=526> </P>
+<H2>So what gives? </H2>
+<P>Well, there's nothing scientific going on here—this is a simple case of an IE 
+rendering error. If you look at this page in a standards-compliant browser (yes, 
+I know they're recommendations, not standards) none of the margins are 
+borked—not on the examples where IE messes them up, and not on the examples 
+where work-arounds are applied. </P>
+<P>It's important to notice that IE applies this "indentation" only to in-line 
+elements. If the text in the examples were surrounded by &lt;p&gt; tags, or 
+&lt;div&gt; tags, which is much more common than having bare text, the IE bug 
+would not show up.</P>
+<H2>How Do You Fix It? </H2>
+<P>The work around for this bug is preposterously simple, counter-intuitive and 
+utterly in violation of the W3C recommendations—<STRONG>simply change the style 
+of the floated element to "display: inline"</STRONG> and the problem disappears. 
+</P>
+<P>So do this— </P><PRE>&lt;div class="box"&gt;
+   &lt;div class="sidebar" <STRONG>style="display: inline"</STRONG>&gt;content
+   &lt;/div&gt; 
+   content
+&lt;/div&gt;
+</PRE>
+<P>and get this— </P><!--*******************************************
+*******************Example 7*******************
+********************************************-->
+<DIV class=box>
+<DIV class=sidebar style="DISPLAY: inline">This box is floated right and has a 
+margin-left of 75px. With this div styled display:inline, the margin is applied 
+only to the left of the element, even in IE. </DIV>Notice that every line of 
+this text lines up on the left, and overwrites the background-image, 
+demonstrating that the browser is no longer applying the floated element's 
+margin to the first line of the text. <SPAN class=caption>Example 7</SPAN> 
+<DIV style="CLEAR: both"></DIV></DIV>
+<P>Screen shot:<BR><IMG height=87 alt="" 
+src="Float-Margin Bugs.files/floats7.png" width=528> </P>
+<P>and this— </P><!--*******************************************
+*******************Example 8*******************
+********************************************-->
+<DIV class=box style="BACKGROUND-POSITION: right top">
+<DIV class=sidebar 
+style="DISPLAY: inline; FLOAT: left; MARGIN-LEFT: 0px; MARGIN-RIGHT: 75px">This 
+time the box is floated left and has a margin-right of 75px. And now the first 
+line of text contains Xs that happily over-write the background image. </DIV>X X 
+X X X X X X X X Now the text is happy to overwrite the background-image because 
+by changing the floated element to "display: inline" we have essentially erased 
+the bug, while altering a style that all other browsers, rightly, simply ignore 
+for floated elements. <SPAN class=caption>Example 8</SPAN> 
+<DIV style="CLEAR: both"></DIV></DIV>
+<P>Screen shot:<BR><IMG height=87 alt="" 
+src="Float-Margin Bugs.files/floats8.png" width=526> </P>
+<P>and this— </P><!--*******************************************
+*******************Example 9*******************
+********************************************-->
+<DIV class=box>
+<DIV class=sidebar style="DISPLAY: inline">
+<P>The images are happy too, now ignoring this box's 75 pixel left margin and 
+obscuring the background image. </P></DIV><IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <IMG height=30 alt="" 
+src="Float-Margin Bugs.files/30pxWide.png" width=30> <SPAN class=caption>Example 
+9</SPAN> 
+<DIV style="CLEAR: both"></DIV></DIV>
+<P>Screen shot:<BR><IMG height=80 alt="" 
+src="Float-Margin Bugs.files/floats9.png" width=526> </P>
+<H2>The Spec </H2>
+<P>The W3C specifications are very clear on the subject of the display function 
+relative to floats: </P>
+<P><A href="http://www.w3.org/TR/CSS2/visuren.html#floats">9.5.1 Positioning the 
+float: the 'float' property</A> </P>
+<P>"This property specifies whether a box should float to the left, right, or 
+not at all. It may be set for elements that generate boxes that are not 
+absolutely positioned. The values of this property have the following meanings: 
+</P>
+<DL>
+  <DT><STRONG>left</STRONG> 
+  <DD>The element generates a block box that is floated to the left. Content 
+  flows on the right side of the box, starting at the top (subject to the 
+  'clear' property). <SPAN style="BACKGROUND-COLOR: yellow">The 'display' is 
+  ignored, unless it has the value 'none'</SPAN>. 
+  <DT><STRONG>right</STRONG> 
+  <DD>Same as 'left', but content flows on the left side of the box, starting at 
+  the top. 
+  <DT><STRONG>none</STRONG> 
+  <DD>The box is not floated. " </DD></DL>
+<P>According to the highlighted section of the spec, changing the display type, 
+unless you change it to "none", should have no effect. Lucky for us IE ignored 
+this part of the spec, allowing a simple, relatively harmless fix for their 
+rendering bug. </P>
+<H2>As An Extra Bonus... </H2>
+<P>Changing the display property of the floated element to display: inline is a 
+clean, simple way to fix fake indentation, but as an added treat, <STRONG>the 
+same fix works for the double margin bug</STRONG>. </P>
+<P>Here's a copy of Example 1 above demonstrating the double-margin bug. </P><!--*******************************************
+***************Example 1 (Again)***************
+********************************************-->
+<DIV class=box>
+<DIV class=sidebar style="FLOAT: left">This div is floated left with a left 
+margin of 75px. It should butt up against the 75 pixel wide background image, 
+but as you can see (if you're looking in IE), the actual margin rendered is 
+twice what is set in the CSS. </DIV>Floating a box so that a section of text 
+will wrap around it is a fairly common technique in Web design. We use it to 
+place images on a page as well as to create sidebars, like this one, which work 
+well for testimonials and similar pieces of information. <SPAN 
+class=caption>Example 1</SPAN> 
+<DIV style="CLEAR: both"></DIV></DIV>
+<P>Screen shot:<BR><IMG height=88 alt="" 
+src="Float-Margin Bugs.files/floats1.png" width=566> </P>
+<P>And now the same example, except with the float styled "display: inline". 
+</P>
+<DIV class=box>
+<DIV class=sidebar style="DISPLAY: inline; FLOAT: left">This div is floated left 
+with a left margin of 75px. It should butt up against the 75 pixel wide 
+background image, but as you can see (if you're looking in IE), the actual 
+margin rendered is twice what is set in the CSS. </DIV>Floating a box so that a 
+section of text will wrap around it is a fairly common technique in Web design. 
+We use it to place images on a page as well as to create sidebars, like this 
+one, which work well for testimonials and similar pieces of information. <SPAN 
+class=caption>Example 11</SPAN> </DIV>
+<P>Screen shot:<BR><IMG height=84 alt="" 
+src="Float-Margin Bugs.files/floats11.png" width=526> </P><PRE>&lt;div class="box"&gt;
+   &lt;div class="sidebar" style="float: left; <STRONG>display: inline</STRONG>"&gt;content
+   &lt;/div&gt;
+   content
+&lt;/div&gt;
+</PRE>
+<P style="MARGIN-BOTTOM: 1em">And there you have it! With a little CSS 
+declaration and without changing the mark-up at all, we can now hack the 
+second-most-troubling IE rendering bug around. </P>
+<P 
+style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 30px; PADDING-TOP: 20px">I'd 
+like to thank Big John for generously sharing his expertise while I constructed 
+this demo and for his encouragement to see it through.<BR><A 
+href="mailto:stevec@topdogstrategy.com">Steve Clason</A><BR><A 
+href="http://www.topdogstrategy.com/">http://www.topdogstrategy.com/</A> 
+</P></BODY></HTML>

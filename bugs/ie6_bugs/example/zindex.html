@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-15">
+		<title>IE z-index bug</title>
+		<style type="text/css">
+
+			body { margin: 0; padding: 0; }
+			#container { position: relative; }
+			#box1 { position: absolute; top: 100px; left: 510px; width: 200px; height: 200px; background-color: yellow; z-index: 20; }
+			#box2 { position: absolute; top: 50px; left: 460px; width: 200px; height: 200px; background-color: lime; z-index: 10; }
+			#content { width: 420px; padding: 20px; }
+
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="box1">This box should be on top</div>
+		</div>
+		<div id="box2">This box should not be on top; IE however seems to create a new stacking context for positioned elements, even when the computed z-index of that element is 'auto'.</div>
+		<div id="content">
+			<h1>IE z-index bug</h1>
+			<p>To the right are 2 boxes that are absolutely positioned; the lime-green box has a z-index value of 10 and the yellow box has a z-index of 20. The only difference between the boxes is that the yellow box is wrapped in a division that has position:relative and is the first box defined in the sourcecode.</p>
+			<p>Basically the fact that the yellow box is wrapped in a relative positioned element should not effect the stacking order: <a href="http://www.w3.org/TR/CSS21/visuren.html#z-index">the CSS specification</a> clearly states that only positioned elements that have a computed z-index value other than 'auto' generate a new stacking context. The relative positioned element does not have a z-index value defined, so it should not influence the stacking order of it's child-elements.</p>
+			<p>It appears that in Internet Explorer (windows) positioned elements <em>do</em> generate a new stacking context, starting with a z-index value of 0, causing the lime-green box to appear above the yellow box.</p>
+			<p>This is a serious violation of the CSS specifications, causing headages and a lot of misunderstanding of what z-index really does.</p>
+			<p><small>Updated 12-01-2006, crisp@xs4all.nl</small></p>
+		</div>
+	</body>
+</html>

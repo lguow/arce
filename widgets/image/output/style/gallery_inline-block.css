@@ -1,0 +1,37 @@
+
+
+.gallery {
+	list-style-type: none;
+}
+
+.gallery li {
+	margin: 0.83333em;
+	border: 0.08333em solid #eee;
+	display: -moz-inline-box;	/* fix firefox2*/
+	display: inline-block;
+	vertical-align:bottom;
+	text-align:center;
+}
+
+.gallery li:hover {
+	border: 0.08333em solid #6AA5DC;
+	background: #E6F1FA;
+}
+
+.gallery li p{
+	margin:0;
+}
+
+.gallery .figure {
+	width: 15.00000em;
+	padding: 1.66667em 0;
+}
+
+
+#ie6 .gallery li {
+	display:inline;	 /* for ie6-7 ie8 don't need this*/
+}
+
+#ie7 .gallery li {
+	display:inline;	 /* for ie6-7 ie8 don't need this*/
+}

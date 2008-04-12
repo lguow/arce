@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head>
+
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+<title>IE6 bug with overflow and position:relative</title>
+<style type="text/css">
+body{
+	color:black;
+	font-family:sans-serif;
+	font-size:.9em;
+	background-color:white;
+	height:65em;
+}
+h1{
+	color:#666;
+	font-size:1.3em;
+	font-weight:bold;
+}
+ul.nav{
+	padding:0;margin:1em 0;
+}
+ul.nav li{
+	display:inline;
+	border-left:1px solid black;
+	margin:0; padding:0 0 0 5px;
+	white-space:nowrap;
+}
+ul.nav li.title{
+	border:none;
+	padding:0;
+}
+a{
+	color:#66c;
+}
+.selected a{
+	font-weight:bold;
+	color:black;
+	text-decoration:none;
+}
+address{
+	position:absolute;
+	top:4px;
+	right:5px;
+	font-size:.8em;
+}
+.htmlcode, .csscode{
+	white-space:pre;
+	display:block;
+	margin:.5em 1em;
+	background-color:#eea;
+	font-size:.75em;
+	padding:.5em;
+}
+
+/* start bug demo css */
+.scrollme{
+	height:70px;
+	overflow:auto;
+	background-color:#ccc;
+}
+.scrollme p{
+	position:relative;
+	background-color:#fcf;
+	width:100px;
+}
+/* end */
+</style>
+</head>
+<body>
+<h1>IE6 bug with overflow and position:relative</h1>
+<p>This page demonstrates a bug in Windows Internet Explorer 6 strict/transitional modes which causes
+relative positioned content to spill outside of an overflow constricted container. Static positioned
+content within that container will appear correctly (ie, not overflowing), exactly where it would have
+if the relative positioned content was rendered correctly. Scrollbars will appear and work for
+<code>overflow:scroll</code> and <code>overflow:auto</code>, even if they scroll through only empty
+space.</p>
+<p>This bug does not appear in quirks mode, which is the only known workaround (to this author) at
+this time.  Also, note that I had to make body hardcoded longer than height:auto provides, because
+the overflowing relative positioned content will (correctly) not cause the page to scroll further.</p>
+<p>CSS for this example:</p>
+<code class="csscode">
+.scrollme{
+	height:70px;
+	overflow:auto;
+	background-color:#ccc;
+}
+.scrollme p{
+	position:relative;
+	background-color:#fcf;
+	width:100px;
+}
+</code>
+<p>HTML for this example:</p>
+<code class="htmlcode">
+&lt;div class="scrollme"&gt;
+&lt;p>blix&lt;/p&gt;
+&lt;p&gt;blix&lt;/p&gt;
+blarg
+&lt;p&gt;blix&lt;/p&gt;
+&lt;p&gt;blix&lt;/p&gt;
+&lt;p&gt;blix&lt;/p&gt;
+blarg
+&lt;/div&gt;
+</code>
+
+<ul class="nav overflow">
+	<li class="title">Select overflow:</li>
+	<li class="selected"><a href="bug_overflow_positionrelative.php?doctype=xhtmlstrict&overflow=auto">auto</a></li>
+	<li><a href="bug_overflow_positionrelative.php?doctype=xhtmlstrict&overflow=scroll">scroll</a></li>
+	<li><a href="bug_overflow_positionrelative.php?doctype=xhtmlstrict&overflow=hidden">hidden</a></li>
+</ul>
+<ul class="nav doctype">
+	<li class="title">Select doctype:</li>
+	<li class="selected"><a href="bug_overflow_positionrelative.php?doctype=xhtmlstrict&overflow=auto">xhtml strict</a></li>
+	<li><a href="bug_overflow_positionrelative.php?doctype=xhtmltransitional&overflow=auto">xhtml transitional</a></li>
+	<li><a href="bug_overflow_positionrelative.php?doctype=htmlstrict&overflow=auto">html strict</a></li>
+	<li><a href="bug_overflow_positionrelative.php?doctype=htmltransitional&overflow=auto">html transitional</a></li>
+	<li><a href="bug_overflow_positionrelative.php?doctype=none&overflow=auto">none</a></li>
+</ul>
+
+<div class="scrollme">
+<p>blix</p>
+<p>blix</p>
+blarg
+<p>blix</p>
+<p>blix</p>
+<p>blix</p>
+blarg
+</div>
+
+<address class="contactinfo">
+Contact (click to email): <a href="http://www.mt-olympus.com/apollo/email.php?m=emmett">Emmett the Sane</a>
+</address>
+</body>
+</html>

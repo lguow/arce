@@ -1,0 +1,38 @@
+
+/*<![CDATA[*/
+
+html, body {
+	height: 100%;
+}
+
+#container {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -4em; /* the bottom margin is the negative value of the footer's height */
+}
+
+#footer {
+	height: 4em;
+}
+
+
+
+#header {
+	display:none;
+}
+
+/*
+ *	Notes:
+ *		anit "equal height"
+ */
+
+#container {
+	overflow: visible !important;
+}
+
+#main, #aside, #extra, #content {
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+}
+/*]]>*/

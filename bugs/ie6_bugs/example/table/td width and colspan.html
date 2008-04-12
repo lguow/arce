@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- STATUS OK -->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+	<title></title>
+</head>
+
+<body id="">
+
+<style type="text/css">
+/*<![CDATA[*/
+table {
+	width: 300px;
+}
+
+td {
+	width: 100px;
+}
+/*]]>*/
+</style>
+
+<h2>td width and colspan</h2>
+
+<div id="header"></div>
+
+<div class="floater">
+<p>This bug appears in Explorer Windows from 4 onwards.</p>
+</div>
+
+<p class="intro">An obscure and potentially annoying bug in Explorer Windows 4-6: if you give TD's a <code>width</code>
+and then use <code>colspan</code>, Explorer Windows still obeys the width for the colspanned TD.</p>
+
+<h3>Example</h3>
+
+<p>Styles:</p>
+
+<pre>
+table {
+	width: 300px;
+}
+
+td {
+	width: 100px;
+}
+</pre>
+
+<p>Please remember that widths on tables or table elements are not very strictly obeyed: all browsers, including
+Explorer Windows, read the styles above as: "If at all possible, please make the table 300 pixels wide and
+all TD's 100 pixels wide".<br>
+In the second example I stretched one TD so that the <code>width</code> declaration becomes impossible to maintain.
+All browsers cheerfully ignore the <code>width</code> and stretch up the table to accomodate the long text.</p>
+
+<p>I also added one TD with <code>colspan="2"</code> to each table. Logically, the width should become 200 pixels.
+Although Explorer Windows stretches the TD correctly, the TD's content is still kept at 100 pixels. The text
+'TD with colspan=2' fits on one line in all other browsers: the TD with colspan="2" gives it enough space. Explorer
+Windows, though, breaks off the text so that it would fit in a 100 pixels wide TD.</p>
+
+<table border=1>
+<tr>
+	<td>Normal TD</td>
+	<td>Normal TD</td>
+	<td>Normal TD</td>
+</tr>
+<tr>
+	<td colspan=2 >TD with colspan=2</td>
+	<td>Normal TD</td>
+</tr>
+</table>
+
+<table border=1>
+<tr>
+	<td>StretchStretchStretchStretchStretchStretch</td>
+	<td>Normal TD</td>
+	<td>Normal TD</td>
+</tr>
+<tr>
+	<td colspan=2 >TD with colspan=2</td>
+	<td>Normal TD</td>
+</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Create Resizing Thumbnails With Overflow Property</title>
+<meta name="description" content="Create Resizing Thumbnails With Overflow Property">
+</meta>
+
+<style>
+
+/* general */
+
+	body {
+		margin:0;
+		padding:40px 80px;
+		background:#fff;
+		font:70% Arial, Helvetica, sans-serif;
+		color:#555;
+		line-height:180%;
+	}
+	
+	h1, h2{
+		font-size:180%;
+		font-weight:normal;
+		color:#555;
+	}
+	h2{
+		font-size:140%;
+	}	
+	p{
+		margin:1em 0;
+	}
+	p.text{
+		width:500px;
+	}	
+	a{
+		color:#f20;
+		text-decoration:none;
+	}
+	a:hover{
+		color:#999;
+	}
+	img{
+		border:none;
+	}
+
+/* // general */
+
+/* thumbnail list */
+
+	ul#thumbs, ul#thumbs li{
+		margin:0;
+		padding:0;
+		list-style:none;
+	}
+	
+	ul#thumbs li{
+		float:left;
+		margin-right:5px;
+		border:1px solid #999;	
+		padding:2px;
+	}
+	ul#thumbs a{
+		display:block;
+		float:left;
+		width:100px;
+		height:100px;
+		line-height:100px;
+		overflow:hidden;
+		position:relative;
+		z-index:1;		
+	}
+	ul#thumbs a img{
+		float:left;
+		position:absolute;
+		top:-20px;
+		left:-50px;	
+	}
+	
+	/* mouse over */
+	
+		ul#thumbs a:hover{
+			overflow:visible;
+			z-index:1000;
+			border:none;		
+		}
+		ul#thumbs a:hover img{
+			border:1px solid #999;	
+			background:#fff;
+			padding:2px;			
+		}	
+	
+	/* // mouse over */
+
+	/* clearing floats */
+	
+		ul#thumbs:after, li#thumbs:after{
+			content:"."; 
+			display:block; 
+			height:0; 
+			clear:both; 
+			visibility:hidden;
+			}
+		ul#thumbs, li#thumbs{
+			display:block;
+			}
+		/*  \*/
+		ul#thumbs, li#thumbs{
+			min-height:1%;
+			}
+		* html ul#thumbs, * html li#thumbs{
+			height:1%;
+			}	
+	
+	/* // clearing floats */
+
+/* // thumbnail list */
+
+
+/* single thumbnail */
+
+	p.thumb{
+		float:left;
+		margin:.5em 0;
+		margin-right:10px;
+		border:1px solid #999;	
+		padding:2px;
+	}
+	p.thumb a{
+		display:block;
+		float:left;
+		width:100px;
+		height:100px;
+		line-height:100px;
+		overflow:hidden;
+		position:relative;
+		z-index:1;	
+	}	
+	p.thumb a img{
+		float:left;
+		position:absolute;
+		top:-20px;
+		left:-50px;	
+	}
+	
+	/* mouse over */
+	
+		p.thumb a:hover{
+			overflow:visible;
+			z-index:1000;
+			border:none;		
+		}
+		p.thumb a:hover img{
+			border:1px solid #999;	
+			background:#fff;
+			padding:2px;			
+		}	
+	
+	/* // mouse over */	
+
+/* // single thumbnail */
+
+
+</style>
+</head>
+<body>
+
+	<h1>Resizing Thumbnails Using Overflow Property</h1>
+	
+	<h2>Thumbnail List</h2>
+	
+	<ul id="thumbs">
+		<li><a href="http://cssglobe.com/"><img src="image.jpg" /></a></li>
+		<li><a href="http://cssglobe.com/"><img src="image.jpg" /></a></li>
+		<li><a href="http://cssglobe.com/"><img src="image.jpg" /></a></li>
+		<li><a href="http://cssglobe.com/"><img src="image.jpg" /></a></li>
+		<li><a href="http://cssglobe.com/"><img src="image.jpg" /></a></li>
+	</ul>
+	
+	<h2>Single Thumbnail</h2>
+	
+	<p class="thumb"><a href="http://cssglobe.com/"><img src="image.jpg" /></a></p>
+	
+	<p class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce nec pede. Vivamus euismod, odio eu sagittis tempor, ligula felis congue nunc, sit amet imperdiet mi nulla sed quam. In pulvinar bibendum urna. Nulla massa. Proin vulputate ornare risus. Nunc vel augue. Quisque vel magna. Cras tristique dignissim libero. Curabitur sagittis nibh eget arcu euismod blandit. Phasellus rhoncus. Proin congue risus sed dui.<br />
+Mauris non metus. Donec sem ligula, feugiat a, porta quis, sagittis ut, elit. Nulla pellentesque justo. Morbi feugiat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed eros lorem, dapibus eget, varius in, hendrerit id, tortor. Fusce gravida arcu non lorem. Suspendisse nibh. Morbi et arcu. Vestibulum sodales interdum massa. </p>
+	
+	<p><a href="http://www.cssglobe.com/post/1305/create-resizing-thumbnails-using-overflow-property" title="read more about this trick">&laquo; back to the article</a></p>
+	
+	<p>Resizing thumbnails are brought to you by <a href="http://cssglobe.com" title="web standards magazine and css news">Css Globe</a></p>
+
+
+</body>
+</html>

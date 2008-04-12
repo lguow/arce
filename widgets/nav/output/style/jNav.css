@@ -1,0 +1,45 @@
+
+
+/*
+inspired by coda(http://www.panic.com/coda)
+*/
+
+#nav {
+	background: url("jNav/jNav.png") no-repeat left bottom;	
+	width: 66.66667em;
+	height: 8.33333em;
+	margin: 1.66667em auto;
+}
+
+#nav li{
+	list-style:none;
+	display:inline;
+}
+
+
+#nav li a {
+	float:left;
+	background: url("jNav/jNav.png") no-repeat;	
+	width: 16.66667em;
+	height: 0.00000em;
+	padding-top: 8.33333em;
+	overflow: hidden;
+}
+
+#nav li#nav-home a {
+	background-position:0 0;
+}
+
+#nav li#nav-blog a {
+	background-position: -16.66667em 0;
+}
+
+#nav li#nav-work a {
+	background-position: -33.33333em 0;
+}
+
+#nav li#nav-about a {
+	background-position: -50.00000em 0;
+}
+
+

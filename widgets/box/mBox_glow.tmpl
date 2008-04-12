@@ -1,0 +1,65 @@
+<!--
+	$Date: 2008-03-31 17:01:57 +0800 (Mon, 31 Mar 2008) $
+	$Rev: 106 $
+-->
+<style type="text/css">
+/*<![CDATA[*/
+
+/* ------------------------------------------------------------------
+ *	Box:
+ *		img shadow, base on mBox
+ *
+ */
+
+/* set the image to use and establish the lower-right position */
+.mBox, .mBox .mBox-head, .mBox .mBox-body, .mBox .mBox-head h2 {
+    background: transparent url("mBox_glow/mBox_glow.png") no-repeat right bottom;
+    margin: 0;
+    padding: 0; 
+}
+
+.mBox {
+	float:left;
+    padding-right: 15px;       /* the gap on the right edge of the image (not content padding) */
+}
+
+/* set the top-right image */
+.mBox .mBox-head {
+    background-position: right top;
+    margin-right: -15px;       /* pull the right image over on top of border */
+    padding-right: 15px;       /* right-image-gap + right-inside padding */
+}
+
+/* set the top-left image */
+.mBox .mBox-head h2 {
+    background-position: left top;
+    padding-top: 14px;
+}
+
+/* set the lower-left corner image */
+.mBox .mBox-body {
+    background-position: left bottom;
+    padding: 0 0 15px 15px; 
+}
+
+.mBox .mBox-body img{
+	display:block;				/* fix image gap */
+}
+/*]]>*/
+
+</style>
+
+
+<div class="mBox">  
+	<div class="mBox-head"><h2><!-- forDesign --></h2></div>
+	<div class="mBox-body">
+		<img src="photo/bird1.jpg" />
+	</div>
+</div>
+
+<div class="mBox">  
+	<div class="mBox-head"><h2><!-- forDesign --></h2></div>
+	<div class="mBox-body">
+		<img src="photo/bird2.jpg" />
+	</div>
+</div> 

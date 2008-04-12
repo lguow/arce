@@ -1,0 +1,252 @@
+<!--
+	$Date: 2008-03-30 21:46:54 +0800 (Sun, 30 Mar 2008) $
+	$Rev: 101 $
+-->
+<style type="text/css">
+/* ==============================================================
+ * widgets: base-extra
+ *     make HTML element more beauty
+ * 
+ * Author:
+ *     nwind@live.com
+ * 
+ * License:
+ *     MIT license
+ *
+ * Version:
+ *     0.2, 2008-01-23
+ *
+ * Reference:
+ *     inspired by Tripoli <http://www.monc.se/tripoli/>
+ *	
+ *
+================================================================== */
+#container {
+	width: 80%;
+}
+
+html {
+	border:none;
+}
+
+/* 
+ * Note:
+ *     Tables still need 'cellspacing="0"' in the markup. 
+ *     This code may break your <table> layout
+ */
+table { border-collapse: separate; border-spacing: 0; }
+
+ul, ol{
+	margin-left: 2em;
+}
+
+
+/* -------------- hide Element ----------------- */
+.hide {
+	position:absolute;
+	left:0px;
+	top:-500px;
+	width:1px;
+	height:1px;
+	overflow:hidden;
+}
+
+
+/* ---------------- clearfix ------------------- */
+.clearfix:after {
+	content:"."; 
+	display:block; 
+	height:0; 
+	clear:both; 
+	visibility:hidden; 
+}
+
+.clearfix {
+	display:inline-block; 
+	display:block;
+} 
+
+
+/* ----------------- hasLayout -----------------*/
+.gainlayout { zoom: 1; }
+
+
+/* ----------------- transparency -----------------*/
+.trans { -moz-opacity: 0.8; opacity: 0.8; filter: alpha(Opacity=80);}
+
+
+/*
+ * Note:
+ *     replace '&' with '<span class="amp">&amp;</span>'
+ *
+ * Reference:
+ *     http://www.simplebits.com
+ *
+ */
+span.amp {
+	font-family: Baskerville,"Goudy Old Style","Palatino","Book Antiqua",serif;
+	font-style: italic;
+	font-size: 1.1em;
+}
+
+/*
+ * Note:
+ *     List should be hung
+ *
+ * Reference:
+ *     http://www.markboulton.co.uk/journal/comments/-five_simple_steps_to_better_typography_part_2/ 
+ */
+ul {
+	list-style-position: outside;
+}
+
+
+/* ------------------------------------------------------------------
+ *	## Others ##:
+ *		
+ */
+
+del {
+	background-color:#fdcccc;
+	border:1px solid #c99;
+	text-decoration:line-through;
+}
+
+ins {
+	background-color:#CFC;
+	border:1px solid #9c9;
+}
+
+hr {
+	border:0;
+	height:1px;
+	background-color:transparent;
+	border-top:3px solid #f2f2f2;
+	clear:both;
+	margin:.7em 0;
+}
+</style>
+
+
+<hr>
+
+<p>Sed scelerisque sagittis lorem. Phasellus sodales. Nulla urna justo, vehicula in, suscipit nec, molestie sed, tellus. Quisque justo. Nam libero leo, elementum in, dapibus a, suscipit vitae, purus. Duis arcu. Integer dignissim fermentum enim. Morbi convallis felis vel nibh. Etiam viverra augue non enim.</p>
+
+<h1>Level 1 heading</h1>
+
+<p>Sed scelerisque sagittis lorem. Phasellus sodales. Nulla urna justo, vehicula in, suscipit nec, molestie sed, tellus. Quisque justo. Nam libero leo, elementum in, dapibus a, suscipit vitae, purus. Duis arcu. Integer dignissim fermentum enim. Morbi convallis felis vel nibh. Etiam viverra augue non enim.</p>
+
+<p>Sed scelerisque sagittis lorem. Phasellus sodales. Nulla urna justo, vehicula in, suscipit nec, molestie sed, tellus. Quisque justo. Nam libero leo, elementum in, dapibus a, suscipit vitae, purus. Duis arcu. Integer dignissim fermentum enim. Morbi convallis felis vel nibh. Etiam viverra augue non enim.</p>
+
+<h2>Level 02 Heading</h2>
+
+<p>Sed scelerisque sagittis lorem. Phasellus sodales. Nulla urna justo, vehicula in, suscipit nec, molestie sed, tellus. Quisque justo. Nam libero leo, elementum in, dapibus a, suscipit vitae, purus. Duis arcu. Integer dignissim fermentum enim. Morbi convallis felis vel nibh. Etiam viverra augue non enim.</p>
+
+<h3>Level 03 Heading</h3>
+
+<p>Sed scelerisque sagittis lorem. Phasellus sodales. Nulla urna justo, vehicula in, suscipit nec, molestie sed, tellus. Quisque justo. Nam libero leo, elementum in, dapibus a, suscipit vitae, purus. Duis arcu. Integer dignissim fermentum enim. Morbi convallis felis vel nibh. Etiam viverra augue non enim.</p>
+
+<h4>Level 04 Heading</h4>
+
+<p>Sed scelerisque sagittis lorem. Phasellus sodales. Nulla urna justo, vehicula in, suscipit nec, molestie sed, tellus. Quisque justo. Nam libero leo, elementum in, dapibus a, suscipit vitae, purus. Duis arcu. Integer dignissim fermentum enim. Morbi convallis felis vel nibh. Etiam viverra augue non enim.</p>
+
+<h5>Level 05 Heading</h5>
+
+<p>Sed scelerisque sagittis lorem. Phasellus sodales. Nulla urna justo, vehicula in, suscipit nec, molestie sed, tellus. Quisque justo. Nam libero leo, elementum in, dapibus a, suscipit vitae, purus. Duis arcu. Integer dignissim fermentum enim. Morbi convallis felis vel nibh. Etiam viverra augue non enim.</p>
+
+<h6>Level 06 Heading</h6>
+
+<p>Sed scelerisque sagittis lorem. Phasellus sodales. Nulla urna justo, vehicula in, suscipit nec, molestie sed, tellus. Quisque justo. Nam libero leo, elementum in, dapibus a, suscipit vitae, purus. Duis arcu. Integer dignissim fermentum enim. Morbi convallis felis vel nibh. Etiam viverra augue non enim.</p>
+
+<blockquote><p>Paragraph inside Blockquote: Nam libero leo, elementum in, dapibus a, suscipit vitae, purus. Duis arcu. Integer dignissim fermentum enim. Morbi convallis felis vel nibh. Sed scelerisque sagittis lorem.</p></blockquote>
+
+<address>Address: address 224, Sweden</address>
+
+<pre>
+Object.extend = function(destination, source) {
+  for (var property in source)
+    destination[property] = source[property];
+  return destination;
+};
+</pre>
+
+
+<p>
+	<a href="#">the a tag</a><br />
+	<a name="ant">the anchor</a><br />
+
+	<abbr title="test">the abbr tag</abbr><br />
+	<acronym>the acronym tag</acronym><br />
+	<b>the b tag</b><br />
+	<big>the big tag</big><br />
+
+	<cite>the cite tag</cite><br />
+	<code>the code tag</code><br />
+	<del>the del tag</del><br />
+	<dfn>the dfn tag</dfn><br />
+
+	<em>the em tag</em><br />
+	<i>the i tag</i><br />
+	<ins>the ins tag</ins><br />
+
+	<kbd>the kbd tag</kbd><br />
+	<q>the q tag <q>inside</q> a q tag</q><br />
+	<s>the s tag</s><br />
+	<samp>the samp tag</samp><br />
+
+	<small>the small tag</small><br />
+	<span>the span tag</span><br />
+	<strike>the strike tag</strike><br />
+	<strong>the strong tag</strong><br />
+
+	<sub>the sub tag</sub><br />
+	<sup>the sup tag</sup><br />
+	<tt>the tt tag</tt><br />
+	<var>the var tag</var><br />
+
+	<u>the u tag</u>
+</p>
+
+<hr>
+
+<ul>
+	<li>Unordered list 01</li>
+	<li>Unordered list 02</li>
+	<li>Unordered list 03
+		<ul>
+			<li>Unordered list inside list level 2</li>
+			<li>Unordered list inside list level 2
+				<ul>
+					<li>Unordered list inside list level 3</li>
+					<li>Unordered list inside list level 3</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+<ol>
+	<li>Ordered list 01</li>
+	<li>Ordered list 02</li>
+	<li>Ordered list 03
+		<ol>
+			<li>Ordered list inside list level 2</li>
+			<li>Ordered list inside list level 2
+				<ol>
+
+					<li>Ordered list inside list level 3</li>
+					<li>Ordered list inside list level 3</li>
+				</ol>
+			</li>
+		</ol>
+	</li>
+</ol>
+
+<dl>
+	<dt>Description list title 01</dt>
+
+	<dd>Description list description 01</dd>
+	<dt>Description list title 02</dt>
+	<dd>Description list description 02</dd>
+	<dd>Description list description 03</dd>
+</dl>

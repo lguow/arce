@@ -1,0 +1,63 @@
+/* ==================================================================
+ * Base: color.css
+ * 		
+ * 
+ * Author:
+ *     nwind@live.com
+ * 
+ * License:
+ *     MIT license
+ *
+ * Version:
+ *     $Date: 2008-04-01 11:30:47 +0800 (Tue, 01 Apr 2008) $
+ *     $Rev: 109 $
+================================================================== */
+
+
+/* ------------------------------------------------------------------
+ *	## Base ##:
+ *		color for normal text
+ *  
+ */
+
+html {
+	color:#000;
+	background:#fff;
+}
+
+/* 
+   BugFix:
+       <legend> doesn't inherit in IE 
+ */
+legend {
+	color: #000;
+}
+
+
+/* ------------------------------------------------------------------
+ *	## Link ##:
+ *		color for link
+ *
+ *	Reference:
+ *		http://dbaron.org/css/1999/09/links
+ */
+
+:link:focus, :visited:focus { color: #CC6633; }
+
+:link { color: #356aa0; }
+
+:visited { color: #6B97A9; }
+
+:link:hover, :visited:hover { color: #AD7328; }
+
+:link:active, :visited:active { color: #356a00; }
+
+
+/* ------------------------------------------------------------------
+ *	## HeadLine ##:
+ *		color for headline
+ */
+
+h1, h2, h3, h4, h5 {
+	color:#111; 
+}

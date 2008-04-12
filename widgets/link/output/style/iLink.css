@@ -1,0 +1,26 @@
+
+
+	/* Make sure the icons are not cut */
+	a[href^="http:"], a[href^="mailto:"], a[href^="http:"]:visited, 
+	a[href$=".pdf"], a[href$=".doc"], a[href$=".xls"], a[href$=".rss"], 
+	a[href$=".rdf"], a[href^="aim:"] {
+	  padding: 0.08333em 2.08333em 0 0;
+	  margin: -0.16667em 0;
+	  background: url("iLink/iLink.png") no-repeat right center;
+	}
+
+	/* External links */
+	a[href^="http:"]          { background-position: right -19.83333em; } 
+	a[href^="mailto:"]        { background-position: right -16.58333em; }
+	a[href^="http:"]:visited  { background-position: right -10.25000em; }
+
+	/* Files */
+	a[href$=".pdf"]   { background-position: right -3.50000em; }  
+	a[href$=".doc"]   { background-position: right -6.83333em; }  
+	a[href$=".xls"]   { background-position: right -13.41667em; }  
+
+	/* Misc */
+	a[href$=".rss"], 
+	a[href$=".rdf"]   { background-position: right -23.25000em; }
+	a[href^="aim:"]   { background-position: right -0.33333em; }
+	

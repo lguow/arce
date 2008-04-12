@@ -1,0 +1,85 @@
+<html>
+<head>
+	
+<title>Workaround CCS Posistioning</title>
+<style type="text/css">
+div.cssContainer{
+	position: relative;
+	top: 100px;
+	left: 100px;
+	width: 300px;
+	height: 300px;
+	background-color: #909090;
+}
+div.cssProblemDiv{
+	position: absolute;
+	top: 50px;
+	bottom: 50px;
+	left: 50px;
+	right: 50px;
+	background-color: #E0E0E0;
+}
+
+
+div.problemDivFix{
+	height: expression(parseInt(getCSSAtt(this.parentNode, "height")) - parseInt(getCSSAtt(this, "top")) - parseInt(getCSSAtt(this, "bottom")) + "px");
+	width: expression(parseInt(getCSSAtt(this.parentNode, "width")) - parseInt(getCSSAtt(this, "left")) - parseInt(getCSSAtt(this, "right")) + "px");
+}
+</style>
+<script type="text/javascript">
+//This function is the key
+// e is the element you want the style of
+// att is the string name of the attribute to look for
+function getCSSAtt(e, att){
+	var s = null;
+	if(e.currentStyle) s = e.currentStyle;
+	else if(document.defaultView && document.defaultView.getComputedStyle) s = document.defaultView.getComputedStyle(e, '');
+	return s[att];
+}
+
+
+function init(){
+	var container = document.getElementById("container")
+	container.style.position = "relative"
+	container.style.top = "100px"
+	container.style.left = "100px"
+	container.style.width = "300px"
+	container.style.height = "300px"
+	container.style.backgroundColor = "#909090"
+
+	var problemDiv = document.getElementById("problemDiv")
+	problemDiv.style.position = "absolute"
+	problemDiv.style.top = "50px"
+	problemDiv.style.bottom = "50px"
+	problemDiv.style.left = "50px"
+	problemDiv.style.right = "50px"
+	
+	problemDiv.style.backgroundColor = "#E0E0E0"
+}
+</script>
+</head>
+
+<body onload="init()">
+<p><strong>Updated 9/16/5</strong></p>
+<p>View source to see how it is done.  Note that the style is now obtained using my getCSSAtt function.
+The style attribute of a DOMElement (the one referenced by obj.style) will only list values that were explicitly given by a javascript and not CSS class styles.  
+The getCSSAtt function will use either the currentStyle attribute of a DOMElement or document.defaultView.getComputedStyle function to find the value, regardless of 
+how the style attribute was set</p>
+<p>The javascript code embedded in the CSS (in the problemDivFix class) cannot be embedded in the style attribute with javascript ironically, so that has to be done in a CSS class statement</p>
+<a href="cssTopAndBottom.html">Back to buggy page</a>
+
+<div id ="container">
+A div styled 300px by 300px by javascript
+<div id="problemDiv" class="problemDivFix">
+This div should be 200px by 200px because of an offset of 50px from every side. Styled with javascript.
+</div>
+</div>
+<BR><BR>
+<div class="cssContainer">
+A div styled 300px by 300px by CSS
+<div class="cssProblemDiv problemDivFix">
+This div should be 200px by 200px because of an offset of 50px from every side.  Styled with CSS.
+</div>
+</div>
+</body>
+</html>

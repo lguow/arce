@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>
+			Dont ignore closing LI tags
+		</title>
+		<style type="text/css">
+
+#demo1 {
+	width: 30em;
+}
+#demo1 li {
+	background-color: red;
+}
+#demo1 a {
+	display: block;
+	background-color: #9af;
+	text-decoration: underline;
+}
+
+#demo2 {
+	width: 30em;
+}
+#demo2 ul {
+	background-color: lime;
+}
+#demo2 li ul {
+	background-color: red;
+}
+
+.success { color: green; }
+.failure { color: red; }
+
+		</style>
+	</head>
+	<body>
+
+<p>Internet Explorer on Windows completely ignores closing &lt;/li&gt; tags. This has two annoying effects.</p>
+
+<p>1. The first is that if the list item contains a block level link, any blank space after the
+LI is rendered as a blank line (workaround is to remove the blank space, or set the display:inline; style on the LI elements):</p>
+
+<ul id="demo1">
+	<li><a href="#">There should be no red showing between these links</a></li>
+	<li><a href="#">(it is OK to have some red behind the bullets)</a></li>
+</ul>
+
+<p>2. If another UL is nested inside the UL, but NOT inside a LI (NOTE - this is invalid HTML, the nested UL should be a
+child of an LI element), IE inserts the UL inside the preceding LI - this alters both the response to CSS, and the DOM of
+the document:</p>
+
+<ul id="demo2">
+	<li id="demo21">list item</li>
+	<ul id="demo22">
+		<li>nested list item</li>
+	</ul>
+</ul>
+
+<p>Microsoft are well aware of this problem, and have ignored it since IE4.</p>
+
+<p><a href="../">Back to HowToCreate</a></p>
+
+	</body>
+</html>

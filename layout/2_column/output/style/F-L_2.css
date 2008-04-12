@@ -1,0 +1,18 @@
+
+/*<![CDATA[*/
+
+#header, #container, #footer{
+	width:80%;
+	margin:0 auto;
+}
+
+#aside {
+	float:left;
+	width: 16.66667em;
+}
+
+#content {
+	margin-left: 16.66667em;
+}
+
+/*]]>*/

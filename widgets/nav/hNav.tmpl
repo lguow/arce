@@ -1,0 +1,64 @@
+<!--
+	$Date: 2008-03-28 19:40:55 +0800 (Fri, 28 Mar 2008) $
+	$Rev: 100 $
+-->
+<style type="text/css" media="screen">
+	
+
+#nav li{
+	list-style:none;
+	display:inline;
+}
+#nav li a, #nav li span {
+	background: url("hNav/hNav.png") no-repeat;	
+}
+
+#nav li a {
+	float:left;
+	background-position: left top;
+	padding-left: 10px;
+	margin-left:5px;
+}
+#nav li a span {
+	background-position: right top;
+	padding-right:10px;
+	text-align:center;
+	display:block;
+	line-height:25px;
+}	
+#nav li a:hover, #nav li.nav-current a {
+	background-position: left -92px;
+	color:#356aa0;
+}
+#nav li a:hover span, #nav li.nav-current a span{
+	background-position: right -92px;
+	text-shadow:1px 1px 2px #aaa;
+}
+
+
+
+</style>
+
+<div id="nav">
+    <ul>
+        <li class="nav-current">
+            <a><span>Home</span></a>
+        </li>
+
+        <li>
+            <a href="#"><span>About</span></a>
+        </li>
+
+        <li>
+            <a href="#"><span>Work</span></a>
+        </li>
+
+        <li>
+            <a href="#"><span>Products</span></a>
+        </li>
+
+        <li>
+            <a href="#"><span>Contact Us</span></a>
+        </li>
+    </ul>
+</div>

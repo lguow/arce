@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- STATUS OK -->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="base.css" />
+    <style type="text/css">
+	/*<![CDATA[*/
+	.floated {width: 100px;float: left;}
+	a:hover {background: none #FFFFCC scroll repeat 0% 0%;}
+    /*]]>*/
+    </style>
+	<!--[if lte IE 6]>
+	<style type="text/css">
+	.nonfloated {
+		height: 1px;
+	}
+	</style>
+	<![endif]-->
+</head>
+
+<body>
+
+<div id="container">
+	<div class="floated">
+		<p>The content in the bottom of the float, such as this paragraph, is vulnerable to the Guillotine.The content in the bottom of the float, such as this paragraph, is vulnerable to the Guillotine.The content in the bottom of the float, such as this paragraph, is vulnerable to the Guillotine.</p>
+	</div>
+
+	<ul class="nonfloated">
+		<li><a href="#">Fix the Guillotine</a></li>
+		<li><a href="#">Fix the Guillotine</a></li>
+		<li><a href="#">Chop the float</a></li>
+		<li><a href="#">Chop the float</a></li>
+	</ul>
+</div>
+
+</body>
+</html>

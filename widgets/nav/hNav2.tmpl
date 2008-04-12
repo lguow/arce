@@ -1,0 +1,83 @@
+<!--
+	$Date: 2008-03-28 19:40:55 +0800 (Fri, 28 Mar 2008) $
+	$Rev: 100 $
+-->
+<style type="text/css" media="screen">
+	
+
+html {
+	background: url("pattern_127.gif") repeat top left;
+}
+
+#nav li a, #nav li span {
+	background: url("hNav/hNav2.png") no-repeat;	
+}
+
+#nav li{
+	list-style:none;
+	display:inline;
+}
+
+
+#nav li a{
+	background-position: left top;
+	float:left;
+	padding-left: 10px;
+	margin-left:5px;
+	line-height:25px;
+}
+
+#nav li a span{
+	background-position: right top;
+	color:#AEB9CB;
+	padding-right: 10px;
+	display:block;
+	text-decoration:none;
+}
+
+#nav li a:hover {
+	background-position: left -178px;
+	color:#181F2C;
+}
+#nav li a:hover span {
+	background-position: right -178px;
+	color:#2F3644;
+}
+
+#nav li.nav-current a{
+	background-position: left -92px;
+}
+
+#nav li.nav-current a span{
+	background-position: right -92px;
+	cursor:default;
+	color:#2F3644;
+}
+
+
+
+</style>
+
+<div id="nav">
+    <ul>
+        <li class="nav-current">
+            <a><span>Home</span></a>
+        </li>
+
+        <li>
+            <a href="#"><span>About</span></a>
+        </li>
+
+        <li>
+            <a href="#"><span>Work</span></a>
+        </li>
+
+        <li>
+            <a href="#"><span>Products</span></a>
+        </li>
+
+        <li>
+            <a href="#"><span>Contact Us</span></a>
+        </li>
+    </ul>
+</div>

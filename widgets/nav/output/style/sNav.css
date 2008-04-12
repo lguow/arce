@@ -1,0 +1,25 @@
+
+	
+	#nav {
+		width: 16.66667em;
+	}
+	#nav li {
+		margin: 0.41667em 0;
+	}
+	#nav li a {
+		background:#F4F4F4;
+		border-left: 0.66667em solid #ccc;
+		display:block;
+		padding-left: 1.00000em;
+		height: 2.08333em;
+		line-height: 2.08333em;
+	}
+	#nav li a:hover, #nav li.nav-current a {
+		background:#EAEAEA none repeat scroll 0%;
+		border-left: 0.83333em solid #356aa0;
+		padding-left: 0.83333em;
+		color:#356aa0;
+		text-shadow: 0.16667em 0.16667em 0.33333em #aaa;
+		font-weight: bold;
+	}
+

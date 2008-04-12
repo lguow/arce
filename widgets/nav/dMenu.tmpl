@@ -1,0 +1,60 @@
+<!-- ==============================================================
+ * nav: dMenu
+ *      mouseover drop down menu
+ * 
+ * Note:
+ *     require ie >= 7
+ *
+ * Version:
+ *     $Date: 2008-04-05 18:45:56 +0800 (Sat, 05 Apr 2008) $
+ *     $Rev: 111 $
+ *	
+================================================================== -->
+
+<style type="text/css">
+
+
+dl.dMenu {
+	position:relative;
+
+	margin-left:100px;
+}
+dl.dMenu dt {
+	border:1px solid #666;
+	width:70px;
+	height:23px;
+	line-height:23px;
+}
+dl.dMenu dd {
+	display:none;
+	width:200px;
+	height:300px;
+	position:absolute;
+	top:24px;
+	background:#fff;	/* fix hover bug in ie7*/
+	border:1px solid #666;
+}
+dl.dMenu dd .dMenu-cover {
+	background:#fff;
+	width:70px;
+	position:absolute;
+	top:-1px;
+	height:1px;
+}
+dl.dMenu:hover dt {
+	border-bottom-color:#fff;
+}
+dl.dMenu:hover dd {
+	display:block;
+}
+
+
+</style>
+
+<dl class="dMenu">
+	<dt>menu</dt>
+	<dd>
+		<div class="dMenu-cover"><!-- for layout --></div>
+		<a href="#">link</a>
+	</dd>
+</dl>

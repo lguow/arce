@@ -1,0 +1,36 @@
+
+.gallery {
+	list-style-type: none;
+}
+
+.gallery li {
+	margin: 0.83333em;
+	border: 0.08333em solid #eee;
+	width: 15.00000em;
+	height: 16.66667em;
+	float: left;
+	text-align:center;
+}
+
+.gallery li:hover {
+	border: 0.08333em solid #6AA5DC;
+	background: #E6F1FA;
+}
+
+.gallery li p{
+	margin:0;
+}
+
+.gallery .figure {
+	height: 13.33333em;
+	position: relative;
+}
+
+.gallery .figure a{
+	display: block;
+	bottom: 0;
+	left:0;
+	width: 100%;
+	position: absolute;
+}
+

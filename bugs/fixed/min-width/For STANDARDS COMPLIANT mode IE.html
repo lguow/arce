@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<title> min-width in Internet Explorer - fixed </title>
+
+<style type="text/css">
+body {background:#fff; font-family:"trebuchet ms", "times new roman", times, serif; font-size:76%;}
+.css {color:#983; font-family:"times new roman", serif;}
+.play {font-family:"trebuchet ms", tahoma, arial, verdana, sans-serif; margin:0; color:#000; font-weight:normal;}
+
+/* for all browsers that understand min-width */
+.width {width:90%; min-width:400px;}
+
+/* the bodge for IE6 browsers */
+* html .minwidth {border-left:400px solid #fff; position:relative; float:left; z-index:1;}
+* html .container {margin-left:-400px; position:relative; float:left; z-index:2;}
+
+
+/* General styling */
+h1 {
+  font-size: 5.3em;
+  letter-spacing: -3px;
+  color:#06a;
+  font-weight:normal;
+  margin:0;
+  font-family:"times new roman", times, serif;
+  }
+
+h2 {
+  font-size: 2em;
+  color:#f60;
+  font-weight:normal;
+  margin-top:0; 
+  }
+
+.b1 {height:1px; font-size:1px; overflow:hidden; display:block; background:#aaa; margin:0 5px;}
+.b2 {height:1px; font-size:1px; overflow:hidden; display:block; background:#fff; border-right:2px solid #aaa; border-left:2px solid #aaa; margin:0 3px;}
+.b3 {height:1px; font-size:1px; overflow:hidden; display:block; background:#fff; border-right:1px solid #aaa; border-left:1px solid #aaa; margin:0 2px;}
+.b4 {height:2px; font-size:1px; overflow:hidden; display:block; background:#fff; border-right:1px solid #aaa; border-left:1px solid #aaa; margin:0 1px;}
+.content {border-right:1px solid #aaa; border-left:1px solid #aaa;}
+
+h1, h2, h3, h4, p {margin-left:5px; margin-right:5px;}
+p {margin-bottom:0; padding-bottom:1em;}
+.rule {width:400px; background:#c00; color:#fff; margin:1em 0;}
+</style>
+</head>
+
+<body>
+<h1 style="position:relative; z-index:100;"><b class="css">CSS</b><span class="play">play</span></h1>
+<h2>experiments with Cascading Style Sheets</h2>
+
+<h3>by Stu Nicholls</h3>
+<h1>standards compliant min-width</h1>
+<div class="width">
+<div class="minwidth">
+<div class="container">
+<b class="b1"></b><b class="b2"></b><b class="b3"></b><b class="b4"></b>
+<div class="content">
+<h2>{width:90%; min-width:400px;} includes IE5+ and IE6</h2>
+<h3>this is the standards compliant way that I have found to emulate true min-width in IE which just requires an extra outer container.</h3>
+<h4>this div has a min-width of 400px and a width of 90%. You can set the width as any percentage and the min-width as a px or em value.</h4>
+<p>discovered 19th May 2005 by Stu Nicholls</p>
+
+</div>
+<b class="b4"></b><b class="b3"></b><b class="b2"></b><b class="b1"></b>
+</div>
+</div>
+</div>
+
+<div class="rule"><p>this div is 400px wide and can be used as a guide for min-width.</p></div>
+
+<p>compliant <a href="http://validator.w3.org/check/referer" title="Valid XHTML 1.1!">xhtml 1.1</a></p>
+<p><a href="http://www.cssplay.co.uk/comments/comments.php?comment_id=IE min width" title="please leave your comments here ">leave your comments here</a></p>
+<p><a href="../index.html" title="home">home</a></p>
+
+</body>
+</html>

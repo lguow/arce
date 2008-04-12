@@ -1,0 +1,37 @@
+<html>
+<head>
+	<title>Microsoft IE List Item Bug</title>
+	<style type="text/css">
+	li {
+		width:660px;
+	}
+	</style>
+</head>
+<body>
+  <form method="post">
+	<ol>
+		<li><input type="radio" name="Frank" value="1"> One</li>
+		<li><input type="radio" name="Frank" value="2"> Two</li>
+		<li><input type="radio" name="Frank" value="3"> Three</li>
+		<li><input type="radio" name="Frank" value="4"> Four</li>
+	</ol>
+
+	<ol type="a">
+		<li><input type="radio" name="Frank" value="1"> One</li>
+		<li><input type="radio" name="Frank" value="2"> Two</li>
+		<li><input type="radio" name="Frank" value="3"> Three</li>
+		<li><input type="radio" name="Frank" value="4"> Four</li>
+	</ol>
+
+
+	<ol type="i">
+		<li> One</li>
+		<li> Two</li>
+		<li> Three</li>
+		<li> Four</li>
+	</ol>
+
+  </form>
+
+</body>
+</html>

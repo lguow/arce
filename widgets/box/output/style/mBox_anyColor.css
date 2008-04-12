@@ -1,0 +1,11 @@
+
+/*<![CDATA[*/
+@import "mBox.css";
+
+.mBox, .mBox .mBox-head, .mBox .mBox-body, .mBox .mBox-head h2 {
+	background-color: red;
+	background-image: url("mBox_anyColor/mBox_anyColor.png");
+	_background-image: url("mBox_anyColor/mBox_anyColor_gif.gif");
+}
+
+/*]]>*/

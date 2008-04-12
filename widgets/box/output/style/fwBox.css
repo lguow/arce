@@ -1,0 +1,21 @@
+
+/*<![CDATA[*/
+/* ------------------------------------------------------------------
+ *	fwBox:
+ *		fixed width box
+ *
+ */
+
+.fwBox {
+	width: 22.00000em;
+	background: URL("fwBox/fwBox.png") no-repeat left bottom;
+	margin: 1.25000em auto;	/* just for center */
+	padding-bottom: 0.08333em;
+}
+.fwBox-inner {
+	background: URL("fwBox/fwBox.png") no-repeat left top;
+	padding: 1.25000em 1.66667em 0;
+	margin-bottom: 0.75000em;
+}
+
+/*]]>*/

@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+<title>Centering (horizontally and vertically) an image in a box</title>
+<style type="text/css">
+body {
+	color: #000;
+	background-color: #fff;
+	font-family: Georgia, serif;
+	line-height: 1.3;
+	margin: 1em;
+	padding: 0;
+}
+.wraptocenter {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	background: #ffa url(g1001cc2.gif) 50% 50%;
+}
+.wraptocenter * {
+    vertical-align: middle;
+}
+/* IE/Mac \*//*/
+.wraptocenter {
+	display: block;
+	line-height: 0.6;
+}
+.wraptocenter span {
+	display: inline-block;
+	height: 100%;
+	width: 1px;
+}
+/**/
+.uno .wraptocenter {
+	width: 219px;
+	height: 219px;
+}
+.due .wraptocenter {
+	width: 16em;
+	height: 16em;
+}
+/* Op7+ */
+.example {
+	border-collapse: collapse;
+}
+code, pre {
+	font-size: 1em;
+	background-color: #eee;
+	font-family: andale mono, monospace;
+}
+p {
+	margin: 1em 0;
+}
+.example {
+	margin: 1em 0 0 0;
+	padding: 0;
+}
+.example li {
+	float: left;
+	padding: 0;
+	margin: 0 1em 1em 0;
+	list-style-type: none;
+}
+.clear {
+	clear: both;
+	padding-top: 1em;
+	margin-top: 0;
+}
+/* ul per override clear \*//*/ 
+ul.example {
+	display: inline-block;
+	width: 100%;
+	clear: none;
+}
+/**/
+</style>
+<!--[if IE]><style>
+.wraptocenter span {
+	display: inline-block;
+	height: 100%;
+}
+.uno .wraptocenter {
+	font-size: 14px; /* extra 1px v-correction */
+}
+
+.example {
+	height: 0;
+	he\ight: auto;
+	zoom: 1;
+}
+</style><![endif]-->
+</head>
+<body>
+
+<h1>Centering (horizontally and vertically) an image in a box</h1>
+<h2>The problem</h2>
+<p>We want to center an image inside a container, bigger than the image and with assigned dimensions. The image is not a background one, it’s a true <code>&lt;img&gt;</code> element.</p>
+<p>Any image has well defined dimensions, so the easiest and most reliable way to solve the problem is:</p>
+<ul>
+<li>make the image <code>display:block</code></li>
+<li>assign to the image the needed left and top <code>margins</code> to get it centered in the container. Each of this margin value is obviously half the difference between a dimension of the container and that of the image.</li>
+</ul>
+<p>For example if you have images of two different sizes, like in a photo gallery with “landscape” and “portrait” images, to be centered in fixed size containers, then assigning to each &lt;img&gt; one of two classes (with different margins) will solve the problem.</p>
+<p>But there are cases when one does not want to use the previous method. For example when many images, all with different dimensions are involved and it is not practical to assign different margins to each of them, or when the dimensions of the container and those of the image are not expressed in the same units (<code>px</code>, <code>em</code>, <code>%</code>, …) hence the difference cannot be computed. It’s useful to have a different solution, independent on the image’s size.</p>
+
+<h2>A solution</h2>
+<p>The horizontal centering is not a problem. If the image is left with its default <code>inline</code> display, then <code>text-align: center</code> is the obvious solution, working well in all browsers.<!-- And if the image is given <code>display: block</code>, then the usual method for horizontal centering of blocks can be applied, consisting in <code>margin-left:auto; margin-right:auto</code> (plus <code>text-align: center</code> on the container for IE5.x/Win.) --></p>
+<p>For the vertical centering the best solution, working in modern browsers, is to assign <code>display: table-cell; vertical-align: middle</code> to the container. This works in Gecko based browsers, Opera 6+, Safari. It leaves IE (both Windows and Mac) out.</p>
+<p>For IE the idea is to create a sort of line-box having as height the height of the container, and the using again <code>vertical-align: middle</code>. The <code>line-height</code> property cannot be used to achieve this, since it <a href="http://www.brunildo.org/test/IElineheight.html" title="line-height problem with images in IE/Win">doesn’t work</a> correctly in IE/Win in presence of images. Also the use of a big <code>font-size</code> (without specifying line-height) is problematic, because the height of the generated box is slightly bigger than the font-size.  And IE5/Mac (differently from IE/Win) is able to resize (according to user choice) line-height and font-size expressed in pixels, so it would have problems with this approach, unless the height of the container is expressed in em. Note: this same argument precludes the general use of such vertical centering method, based on line-height, in Gecko based and Safari browsers.</p>
+<p>Fortunately IE has (partial) support for <code>display: inline-block</code>. If an empty inline-block element (for example a <code>span</code>) is added inside the container and it is assigned <code>height: 100%; vertical-align: middle</code> then it allows to precisely get what we want: a line box with the desired height. In other words, the inline-block element respects an assigned height (equal to the container’s one) and props the line open, so that <code>vertical-align: middle</code> (both on the extra element and the image) gives the desired vertical centering.</p>
+<p>Some details:</p>
+<ul>
+<li>The extra, empty inline-block element can have no width in IE/Win, but it must have at least <code>width: 1px</code> in IE/Mac, otherwise it has no effect (this sometimes offsets the horizontal centering by 1px. It could be counteracted with a -1px margin, but that’s not a big problem.)</li>
+<li>In IE/Mac the vertical centering is some pixels off. The use of a small font-size or line-height on the container seems beneficial, not clear why (IE5/Mac is a bit incoherent here, especially when playing with its font size settings.)</li>
+</ul>
+<p>A combined solution, using <code>display: table-cell</code> and the extra <code>span</code> with <code>display: inline-block</code>, works in Gecko based browsers, Opera 6+. Safari, IE5+/Win, IE5/Mac.</p>
+<p>A variation of this technique can be used to <a href="http://www.brunildo.org/test/vertmiddle.html">vertically center</a> a block element (even with unknown height) inside another one (with known height) which is a more interesting problem.</p>
+
+
+<h2>The code</h2>
+<p>Putting all together, and naming “wraptocenter” the class of the container, that’s the relevant CSS. Code for IE/Mac is wrapped in a suitable filter. Code for IE/Win is shown in conditional comments.</p>
+<pre>&lt;style type="text/css"&gt;
+.wraptocenter {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    width: ...;
+    height: ...;
+}
+.wraptocenter * {
+    vertical-align: middle;
+}
+/*\*//*/
+.wraptocenter {
+    display: block;
+}
+.wraptocenter span {
+    display: inline-block;
+    height: 100%;
+    width: 1px;
+}
+/**/
+&lt;/style&gt;
+&lt;!--[if IE]&gt;&lt;style&gt;
+.wraptocenter span {
+    display: inline-block;
+    height: 100%;
+}
+&lt;/style&gt;&lt;![endif]--&gt;
+</pre>
+
+<p>And that’s the relevant HTML</p>
+<pre>&lt;div class="wraptocenter"&gt;&lt;span&gt;&lt;/span&gt;&lt;img src="..." alt="..."&gt;&lt;/div&gt;
+</pre>
+
+<h2>Some examples</h2>
+<p>To demonstrate the solution, it is applied to two different sized images, and to two different sizes for the containers. The first containers have dimensions expressed in pixels, the second ones in ems. The containers are given a grid background to better check the centering.</p>
+
+<ul class="example uno">
+	<li><div class="wraptocenter"><span></span><img src="tmiri2_o.jpg" alt="miao1" height="127" width="169"></div></li>
+	<li><div class="wraptocenter"><span></span><img src="tmicio_mo5_o.jpg" alt="miao3" height="169" width="135"></div></li>
+</ul>
+<ul class="example due clear">
+	<li><div class="wraptocenter"><span></span><img src="tmiri2_o.jpg" alt="miao1" height="127" width="169"></div></li>
+	<li><div class="wraptocenter"><span></span><img src="tmicio_mo5_o.jpg" alt="miao3" height="169" width="135"></div></li>
+</ul>
+
+<p class="clear">Some other examples where the images contain a (red) grid, which should align with the light grey grid of the container background.</p>
+<ul class="example uno">
+	<li><div class="wraptocenter"><span></span><img src="g101.gif" alt="" height="101" width="101"></div></li>
+	<li><div class="wraptocenter"><span></span><img src="g161.gif" alt="" height="161" width="161"></div></li>
+</ul>
+<ul class="example due clear">
+	<li><div class="wraptocenter due"><span></span><img src="g101.gif" alt="" height="101" width="101"></div></li>
+	<li><div class="wraptocenter due"><span></span><img src="g161.gif" alt="" height="161" width="161"></div></li>
+</ul>
+
+
+<p class="clear">Other, slightly more complex, examples: <a href="http://www.brunildo.org/test/img_center2.html">images in floated containers</a>, <a href="http://www.brunildo.org/test/ImgThumbIBL2b.html">an image gallery with captions</a>.</p><p>
+</p><p>An <a href="http://mrclay.org/web_design/centered_image/">article</a> on this problem by Steve Clay.</p>
+<p>Many thanks to <a href="http://www.satzansatz.de/css.html">Ingo Chao</a>, for his help and comments.</p>
+
+<p><a href="http://www.brunildo.org/test/">CSS tests home</a></p>
+
+</body>
+</html>

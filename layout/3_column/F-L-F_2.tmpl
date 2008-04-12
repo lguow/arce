@@ -1,0 +1,66 @@
+<!--
+	$Date: 2008-04-05 18:45:56 +0800 (Sat, 05 Apr 2008) $
+	$Rev: 111 $
+-->
+<style type="text/css">
+/*<![CDATA[*/
+
+#header, #container, #footer {
+	width: 90%;
+}
+
+#extra {
+	float: right;
+	width: 200px;
+}
+
+
+#content {
+	float:left;
+	width:100%;
+	margin-right:-200px;
+}
+
+#content_inner{
+	margin-right:200px;
+}
+
+
+#aside {
+	float: left;
+	width: 230px;
+}
+
+#article {
+	float:right;
+	width:100%;
+	margin:0 0 0 -230px;
+}
+
+#article_inner {
+	margin: 0 0 0 230px;
+}
+/*]]>*/
+</style>
+
+
+<div id="container">
+
+	<div id="content">
+		<div id="content_inner">
+			<div id="article">
+				<div id="article_inner">
+					_$content$_
+				</div>
+			</div>
+			<div id="aside"> 
+				_$aside$_
+			</div>			
+		</div>
+	</div>
+
+	<div id="extra"> 
+		_$extra$_
+	</div>
+	
+</div>

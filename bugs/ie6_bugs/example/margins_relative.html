@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>IE/Win: negative margins, position:relative, hasLayout</title>
+<style type="text/css">
+body {
+	background: #fff url(g100vc2.gif) 21px 0;
+	color: #000;
+	font-family: trebuchet ms, arial, sans-serif;
+	margin: 20px;
+	padding: 0;
+}
+.wrap {
+	margin: 20px 0 20px 190px;
+	width: 300px;
+	background-color: #f99;
+	border: 10px solid #933;
+}
+.wrap div {
+	background-color: #ffc;
+	border: 20px solid #996;
+}
+.mln {
+	margin-left: -100px;
+	text-align: right;
+}
+.rel {
+	position: relative;
+}
+.w100 {
+	width: 100%;
+}
+.pln {
+	left: -100px;
+}
+.mrn {
+	margin-right: -100px;
+	text-align: left;
+}
+.mn {
+	margin: 0 -100px;
+	text-align: center;
+}
+
+p {
+	margin-bottom: 0;
+}
+ol {
+	margin-top: 0;
+}
+</style>
+<!--[if IE]><style>
+.hzero {
+	height: 0;
+}
+.holly {
+	height: 1%;
+}
+</style><![endif]-->
+<!--[if IE 7]><style>
+.hzero {
+	height: auto;
+	zoom: 1;
+}
+</style><![endif]-->
+</head>
+
+<body>
+<h1>IE/Win: negative margins, position:relative, hasLayout</h1>
+
+<div class="wrap"><div class="mln">1. m-l:-100px</div></div>
+<div class="wrap"><div class="mln hzero">2. m-l:-100px, h:0</div></div>
+<div class="wrap"><div class="mln holly">3. m-l:-100px, h:1%</div></div>
+
+<div class="wrap"><div class="mln rel">4. m-l:-100px, r</div></div>
+<div class="wrap"><div class="mln rel hzero">5. m-l:-100px, r, h:0</div></div>
+<div class="wrap"><div class="mln rel holly">6. m-l:-100px, r, h:1%</div></div>
+
+<p>In all the above six test cases there is a red box (with assigned width) containing a yellow box with margin-left: -100px. In IE/Win:</p>
+<ol>
+<li>The part of the yellow box protruding out of the container is not displayed in IE6-.</li>
+<li>The yellow box has hasLayout obtained with height:0 (zoom:1 for IE7); outside part still missing in IE6-.</li>
+<li>The yellow box has hasLayout obtained with height:1%; outside part still missing in IE6-. Moreover the box is 100px shorter (also in IE7.)</li>
+<li>The yellow box has position:relative; outside part missing (also in IE7.)</li>
+<li>The yellow box has position:relative and hasLayout obtained with height:0 (zoom:1 for IE7), it is displayed correctly.</li>
+<li>The yellow box has position:relative and hasLayout obtained with height:1%, outside part is displayed, but the box is 100px shorter (also in IE7.) In on other words: it doesn't fill the parent on the right, since it doesn't have the correct width. The result is the same as if the box had left:-100px, instead of margin-left:-100px</li>
+</ol>
+
+<hr />
+
+<div class="wrap"><div class="rel mln w100">m-l:-100px, r, w:100%</div></div>
+<div class="wrap"><div class="rel pln">r, l:-100px</div></div>
+<div class="wrap"><div class="rel pln hzero">r, l:-100px, h:0</div></div>
+<div class="wrap"><div class="rel pln holly">r, l:-100px, h:1%</div></div>
+<p>The above four test cases are all correctly displayed in IE/Win.</p>
+
+<hr />
+
+<div class="wrap"><div class="mrn">1. m-r: -100px</div></div>
+<div class="wrap"><div class="mrn hzero">2. m-r:-100px, h:0</div></div>
+<div class="wrap"><div class="mrn holly">3. m-r:-100px, h:1%</div></div>
+
+<div class="wrap"><div class="mrn rel">4. m-r:-100px, r</div></div>
+<div class="wrap"><div class="mrn rel hzero">5. m-r:-100px, r, h:0</div></div>
+<div class="wrap"><div class="mrn rel holly">6. m-r:-100px, r, h:1%</div></div>
+
+<p>The above six test cases are like the first six, but using the right margin instead of the left one. Similar problems.</p>
+
+<hr />
+
+<div class="wrap"><div class="mn">1. m:0 -100px</div></div>
+<div class="wrap"><div class="mn hzero">2. m:0 -100px, h:0</div></div>
+<div class="wrap"><div class="mn holly">3. m:0 -100px, h:1%</div></div>
+
+<div class="wrap"><div class="mn rel">4. m:0 -100px, r</div></div>
+<div class="wrap"><div class="mn rel hzero">5. m:0 -100px, r, h:0</div></div>
+<div class="wrap"><div class="mn rel holly">6. m:0 -100px, r, h:1%</div></div>
+
+<p>The above six test cases are like the first six, but with both left and right margins negative. Similar problems.</p>
+
+<p><a href="./">CSS tests home</a></p>
+</body>
+</html>

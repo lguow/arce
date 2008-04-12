@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- STATUS OK -->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../../arce.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../../widgets/base-extra/output/style/base-extra.css" />
+	<style type="text/css">
+
+		#header {
+			background:#EB456F;		/* Red */
+		}
+
+		#content {
+			background:#87BEF1;		/* Blue */
+		}
+
+		#aside {
+			background:#BFEE66;		/* Green */
+		}
+
+		#extra {
+			background:#A366EE;		/* Purple */
+		}
+
+		#footer {
+			background:#F7EB15;		/* Yellow */
+		}
+
+		body {
+			text-align:center;
+		}
+
+		#header, #container, #footer {
+			text-align:left;
+			margin:0 auto;
+		}
+	</style>
+	
+
+	
+</head>
+<body>
+	<div id="header">
+		Content <span class="amp">&amp;</span> Presentation  
+		<!-- <a href="javascript:function%20fnStartDesign(sUrl)%20{var%20nScript%20=%20document.createElement('script');nScript.setAttribute('language','JavaScript');nScript.setAttribute('src',sUrl);document.body.appendChild(nScript);}fnStartDesign('http://www.sprymedia.co.uk/design/design/media/js/design-loader.js');"><img src="../../../tools/design/design.jpg" alt="design" /></a> -->
+	</div>
+	<!--[if IE 7]>
+	<div id="ie7">
+	<![endif]-->
+	<!--[if IE 6]>
+	<div id="ie6">
+	<![endif]-->

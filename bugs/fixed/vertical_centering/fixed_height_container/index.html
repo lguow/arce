@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+<title>Vertical center</title>
+<style type="text/css">
+body {
+	color: #000;
+	background-color: #fff;
+	font-size: 100%;
+	font-family: georgia, times new roman, serif;
+	line-height: 1.4;
+}
+.wrap0 {
+	height: 401px;
+	background: #f4f4f4 url(g100oc2.gif) 0 1px;
+}
+.wrap1 {
+	background: url(checkb_ff0.gif);
+}
+/*\*/
+.wrap0 {
+	display: table-cell;
+	vertical-align: middle;
+	width: 100%;
+}
+/*/
+.openm, .wrap1 {
+	display: inline-block;
+	vertical-align: middle;
+}
+.wrap1 {
+	width: 100%;
+}
+.openm {
+	height: 100%;
+	width: 1px;
+	margin-left: -1px;
+}
+/**/
+
+.wrap1 {
+	color: #555;
+}
+.wrap1 p, .wrap1 ol {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.wrap1 p {
+	padding: 0 0.2em;
+}
+.fr {
+	float: right;
+	width: 6em;
+	border: 4px solid #fc6;
+}
+code {
+	font-family: courier new, monospace;
+}
+* {
+	border-collapse: collapse;  /* Op8- */
+}
+.small {
+	font-size: 0.8em;
+}
+
+
+.main {
+	display: table;
+	width: 100%;
+	background-color: #f3f5e1;
+/*	background: #f3f5e1 url(g100occ2.gif) 0 50%; */
+	border: solid #ddd;
+	border-width: 1px 0;
+	margin-bottom: 1em;
+}
+.row {
+	display: table-row; /* Gecko */
+}
+.col1, .col2 {
+	display: table-cell;
+	vertical-align: middle;
+}
+.col1 {
+	width: 19%;
+	border-right: 1px solid #893;
+}
+.col2 {
+	width: 80%;
+}
+.col2 p {
+	margin: 0.5em 0.5em 0 0.5em;
+	line-height: 1.5;
+	font-family: Trebuchet MS, sans-serif;
+}
+.col2 p.moral {
+	margin: 0 0.5em 0.5em 0.5em;
+	font-style: italic;
+	font-weight: bold;
+	font-family: georgia, times new roman, serif;
+	font-size: 1.1em;
+	color: #893;
+}
+.col1 h2 {
+	font-size: 2em;
+	line-height: 1.0;
+	margin: 0.25em;
+	font-weight: normal;
+	color: #893;
+	text-align: right;
+	border: solid #d3dd97;
+	border-width: 1px 0;
+}
+/*\*//*/
+.main, .row {
+	display: block;
+}
+.col1, .col2 {
+	display: inline-block;
+}
+.col2 {
+	border-left: 1px solid #893;
+	margin-left: -1px;
+}
+/**/
+</style>
+<!--[if IE]><style>
+.openm, .wrap1 {
+	display: inline;
+	zoom: 1;
+	vertical-align: middle;
+}
+.wrap1 {
+	width: 100%;
+}
+.openm {
+	height: 401px;
+}
+/* IE7? (layout comunque da width) */
+.wrap0 {
+	height: auto;
+}
+
+.main {
+	display: block;
+}
+.col1, .col2 { 
+	display: inline;
+	zoom: 1;
+}
+.col2 {
+	border-left: 1px solid #893;
+	margin-left: -1px;
+}
+</style><![endif]-->
+</head>
+<body>
+
+<h1>CSS Vertical Centering</h1>
+<p>A fixed height container (the one with gray grid background) has some content inside (including block elements) of ‘unknown’ height (being dependent on text size, window width,&nbsp;…)</p>
+<p>The content is vertically centered using <code>display:table-cell; vertical-align:middle</code> plus some <code>display:inline-block</code> hacks for IE (Win &amp; Mac.)</p>
+<p>Seems to work in IE5+ (Win &amp; Mac), Op6+, Moz, Saf.</p>
+
+<div class="wrap0"><div class="wrap1">
+	<div class="fr">a small right float, just to test</div>
+	<p>Sempre caro mi fu quest’ermo colle, e questa siepe, che da tanta parte de l’ultimo orizzonte il guardo esclude. Ma sedendo e mirando, interminato spazio di là da quella, e sovrumani silenzi, e profondissima quiete</p>
+	<ol>
+	<li>io nel pensier mi fingo, ove per poco</li>
+	<li>il cor non si spaura. E come il vento</li>
+	<li>odo stormir tra queste piante, io quello</li>
+	</ol>
+	<p>infinito silenzio a questa voce vo comparando: e mi sovvien l’eterno, e le morte stagioni, e la presente e viva, e ’l suon di lei. Così tra questa infinità s’annega il pensier mio: e ’l naufragar m’è dolce in questo mare.</p>
+</div><div class="openm"></div></div>
+
+<p>The same method can be used to get vertical centering in a ‘column’ whose height is determined by another column:</p>
+
+
+<div class="main"><div class="row">
+	<div class="col1">
+		<h2>The Fox and the Grapes </h2> <!-- blank finale IE/Mac -->
+	</div><div class="col2">
+		<p>
+		One hot summer’s day a Fox was strolling through an orchard till he came to a bunch of Grapes just ripening on a vine which had been trained over a lofty branch. “Just the thing to quench my thirst,” quoth he. Drawing back a few paces, he took a run and a jump, and just missed the bunch. Turning round again with a One, Two, Three, he jumped up, but with no greater success. Again and again he tried after the tempting morsel, but at last had to give it up, and walked away with his nose in the air, saying: “I am sure they are sour.”
+		</p>
+		<p class="moral">It is easy to despise what you cannot get.</p>
+	</div>
+</div></div>
+
+<div class="main"><div class="row">
+	<div class="col1">
+		<h2>The Fox and the Cat </h2>
+	</div><div class="col2">
+		<p>
+		A Fox was boasting to a Cat of its clever devices for escaping its enemies. “I have a whole bag of tricks,” he said, “which contains a hundred ways of escaping my enemies.”
+		“I have only one,” said the Cat; “but I can generally manage with that.” Just at that moment they heard the cry of a pack of hounds coming towards them, and the Cat immediately scampered up a tree and hid herself in the boughs. “This is my plan,” said the Cat. “What are you going to do?” The Fox thought first of one way, then of another, and while he was debating the hounds came nearer and nearer, and at last the Fox in his confusion was caught up by the hounds and soon killed by the huntsmen. Miss Puss, who
+		had been looking on, said:
+		</p>
+		<p class="moral">Better one safe way than a hundred on which you cannot reckon.</p>
+	</div>
+</div></div>
+
+<div class="main"><div class="row">
+	<div class="col1">
+		<h2>The Town Mouse and the Country Mouse </h2>
+	</div><div class="col2">
+		<p>
+		Now you must know that a Town Mouse once upon a time went on a visit to his cousin in the country. He was rough and ready, this cousin, but he loved his town friend and made him heartily welcome. Beans and bacon, cheese and bread, were all he had to offer, but he offered them freely. The Town Mouse rather turned up his long nose at this country fare, and said: “I cannot understand, Cousin, how you can put up with such poor food as this, but of course you cannot expect anything better in the country; come you with me and I will show you how to live. When you have been in town a week you will wonder how you could ever have stood a country life.” No sooner said than done: the two mice set off for the town and arrived at the Town Mouse’s residence late at night. “You will want some refreshment after our long journey,” said the polite Town Mouse, and took his friend into the grand dining-room. There they found the remains of a fine feast, and soon the two mice were eating up jellies and cakes and all that was nice. Suddenly they heard growling and barking. “What is that?” said the Country Mouse. “It is only the dogs of the house,” answered the other. “Only!” said the Country Mouse. “I do not like that music at my dinner.” Just at that moment the door flew open, in came two huge mastiffs, and the two mice had to scamper down and run off. “Good-bye, Cousin,” said the Country Mouse, “What! going so soon?” said the other. “Yes,” he replied:
+		</p>
+		<p class="moral">Better beans and bacon in peace than cakes and ale in fear.</p>
+	</div>
+</div></div>
+
+
+<p class="small">Other <a href="http://www.brunildo.org/test/vertmiddle0.html">vertical center tests</a></p>
+<p><a href="http://www.brunildo.org/test/">CSS tests home</a></p>
+
+</body>
+</html>

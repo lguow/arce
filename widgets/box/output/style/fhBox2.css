@@ -1,0 +1,27 @@
+
+/*<![CDATA[*/
+/* ------------------------------------------------------------------
+ *	fhBox:
+ *		fixed height box
+ *
+ */
+
+html {
+	background: url("pattern_021.png");
+}
+
+.fhBox {
+	width: 90%;
+	height: 4.66667em;
+	background: URL("fhBox2/fhBox2.png") no-repeat left top;
+	padding-left: 1.66667em;
+	margin: 1.25000em auto;
+	text-align:center;
+}
+.fhBox-inner {
+	height: 4.66667em;
+	line-height: 4.66667em;
+	color:#fff;
+	background: URL("fhBox2/fhBox2.png") no-repeat right bottom;
+}
+/*]]>*/

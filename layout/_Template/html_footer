@@ -1,0 +1,32 @@
+
+<!--[if IE]>
+</div>
+<![endif]-->
+
+<div id="footer">
+	All text is available under the terms of the GNU Free Documentation License.
+</div>
+
+<style type="text/css">
+
+/*
+ * Warning:
+ *		for equal height, but it could cause sever problems
+ *
+ * Reference:
+ *		http://www.positioniseverything.net/articles/onetruelayout/appendix/equalheightproblems
+ *
+ */
+
+#container {
+	overflow: hidden;
+}
+
+#main, #aside, #extra, #content {
+	margin-bottom: -32767px;
+	padding-bottom: 32767px;
+}
+
+</style>
+</body>
+</html>

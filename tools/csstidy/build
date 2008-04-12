@@ -1,0 +1,2 @@
+mv base.css base_UC.css
+./osx/csstidy base_UC.css --compress_colors=true --timestamp=true --optimise_shorthands=2 --sort_properties=true  base.css

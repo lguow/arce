@@ -1,0 +1,2 @@
+mv base.css base_UC.css
+./osx/csstidy base_UC.css --template=high base.css

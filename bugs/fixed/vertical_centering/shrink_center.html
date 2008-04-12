@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>shrink_to_fit and center</title>
+<style type="text/css">
+body {
+	color: #000;
+	font-size: 100%;
+	font-family: georgia, "times new roman", serif;
+	line-height: 1.4;
+	background: #fff url(g100cc2.gif) 50% 50%;
+}
+html, body {
+	margin: 0;
+	padding: 0;
+}
+/*\*/
+html, body, .swc0, .swc1 {
+	height: 100%;
+}
+.swc0 {
+	margin: 0 auto;
+	display: table;
+}
+.swc1 {
+	display: table-cell;
+	vertical-align: middle;
+}
+/**/
+.swc1 {
+	white-space: nowrap;
+}
+.swc2 {
+	background-color: #eee;
+	border: 1px solid #333;
+	padding: .3em .5em;
+}
+/* in IEM solo shrink-wrap, no vert.center \*//*/
+.swc1 {
+	text-align: center;
+}
+.swc2 {
+	display: inline-block;
+	text-align: left;
+	width: 1px;
+}
+/**/
+
+h1 {
+	margin: 0 0 0.3em 0;
+	font-size: 1.8em;
+	line-height: 1;
+	background-color: #ddd;
+}
+p {
+	margin: 0.3em 0 0 0;
+}
+h1 {
+	text-align: center;
+}
+ul, ol {
+	margin-top: 0;
+	margin-bottom: 0.3em;
+}
+</style>
+<!--[if IE]><style>
+.swc1 {
+	text-align: center;
+}
+.swc2, .swc3 {
+	vertical-align: middle;
+}
+.swc2 {
+	display: inline;
+	height: 0;
+	he\ight: auto;
+	zoom: 1;
+	text-align: left;
+}
+.swc3 {
+	height: 100%;
+	zoom: 1;
+}
+</style><![endif]-->
+</head>
+
+<body>
+
+<div class="swc0"><div class="swc1"><div class="swc2">
+	<h1>Shrink-wrap<br/>and Center</h1>
+
+	<p>
+	The content of this page is shrink-wrapped<br/>
+	inside a horizontally and vertically<br/>
+	centered box. Works in:<br/>
+	</p>
+	<ul>
+		<li>IE5+/Win</li>
+
+		<li>Moz</li>
+		<li>Saf</li>
+		<li>Op6+</li>
+	</ul>
+	<p>References:</p>
+	<ol>
+		<li><a href="vertmiddle.html">Vertical centering</a></li>
+
+		<li><a href="h100sN.shtml">height 100% of viewport</a></li>
+		<li><a href="shrink-to-fit.html">Shrink wrapping boxes</a></li>
+	</ol>
+	<a href="shrink_center_5.html">another example</a>, <a href="./">CSS tests home</a>
+</div><span class="swc3"></span></div></div>
+
+</body>
+</html>
+

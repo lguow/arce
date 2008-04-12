@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="nl" lang="nl">
+	<head>
+		<title>Guillotine mission 2: absolute positioned divs</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<style type="text/css">
+			/* Copyright (c) 2004-2005 Mark Janssen */
+			
+			body
+			{
+				font-family: Verdana, Helvetica, Arial, Lucida, sans-serif;
+				font-size: 0.8em;
+			}
+			
+			#main
+			{
+				position: relative;
+				/* prevents margin leakage in IE */
+				border-top: 1px dotted white;
+			}
+			
+			#main-content
+			{
+				margin-left: 17em;
+				background: #F5F5F5;
+			}
+			
+			#sidebar
+			{
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: #F0FFF0;
+				width: 16em;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="main">
+			<div id="main-content">
+				<h1>There is less content than in the sidebar here.</h1>
+				<h2>The bug</h2>
+				<p>Internet Explorer will not show all the content of the left div, because it does not create a scrollbar.</p>
+				<h2>The fix</h2>
+				<p>Put a form element at the bottom of the sidebar. You may hide it using <pre>height: 0px; width: 0px; visibility: hidden;</pre>An example which does not do anything in non-IE browsers and will not break validation:<pre>&lt;!--[if IE]>&lt;input style="height: 0px; width: 0px; visibility: hidden;" />&lt;![endif]--></pre></p>
+				<h2>The boring stuff</h2>
+				<p>Copyright &copy; 2005 Mark Janssen, <a href="http://www.spreadthefox.net">spreadthefox.net</a></p>
+			</div>		
+			<div id="sidebar">
+				<h1>The sidebar: longer than 'one window'.</h1>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porta hendrerit est. Proin lorem leo, suscipit id, aliquet eu, eleifend in, ante. Donec laoreet. Quisque vestibulum, libero ac nonummy consequat, nulla enim feugiat felis, nec bibendum purus purus non quam. Integer justo magna, tempor sed, mattis eleifend, condimentum id, dolor. Pellentesque et ante ut dolor ultricies sollicitudin. Donec mattis. Donec scelerisque. Vivamus laoreet faucibus mauris. Duis mollis dolor vel est.</p>
+				<p>Aliquam erat volutpat. Vestibulum justo ante, malesuada a, placerat eget, bibendum non, nisl. Sed risus nulla, pretium vitae, gravida ut, mollis sed, urna. Proin et felis ut dolor facilisis interdum. Donec elementum eros a risus. Suspendisse facilisis, ante id ornare malesuada, turpis pede tincidunt wisi, non fringilla eros felis vel magna. Phasellus commodo venenatis odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec lacus. Aenean luctus. Etiam pulvinar ullamcorper metus. Nulla sed velit sed risus volutpat pharetra.</p>
+				<p>Sed lacus nulla, ornare et, interdum vitae, imperdiet sit amet, sapien. Vivamus augue tellus, ullamcorper vel, porttitor bibendum, malesuada sit amet, urna. Morbi cursus consectetuer erat. Maecenas lobortis accumsan est. Aliquam feugiat scelerisque justo. Morbi laoreet congue purus. Nam eros. Ut cursus lacus ut purus. Praesent eget orci. Nulla facilisi. Praesent scelerisque felis a dui dictum ultrices. Ut posuere dui in lacus. Fusce molestie justo a wisi. Ut dictum odio non risus. Duis aliquet turpis at nisl. Nulla nisl. Vivamus ac nunc. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porta hendrerit est. Proin lorem leo, suscipit id, aliquet eu, eleifend in, ante. Donec laoreet. Quisque vestibulum, libero ac nonummy consequat, nulla enim feugiat felis, nec bibendum purus purus non quam. Integer justo magna, tempor sed, mattis eleifend, condimentum id, dolor. Pellentesque et ante ut dolor ultricies sollicitudin. Donec mattis. Donec scelerisque. Vivamus laoreet faucibus mauris. Duis mollis dolor vel est.</p>
+				<p>Aliquam erat volutpat. Vestibulum justo ante, malesuada a, placerat eget, bibendum non, nisl. Sed risus nulla, pretium vitae, gravida ut, mollis sed, urna. Proin et felis ut dolor facilisis interdum. Donec elementum eros a risus. Suspendisse facilisis, ante id ornare malesuada, turpis pede tincidunt wisi, non fringilla eros felis vel magna. Phasellus commodo venenatis odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec lacus. Aenean luctus. Etiam pulvinar ullamcorper metus. Nulla sed velit sed risus volutpat pharetra.</p>
+				<p>Sed lacus nulla, ornare et, interdum vitae, imperdiet sit amet, sapien. Vivamus augue tellus, ullamcorper vel, porttitor bibendum, malesuada sit amet, urna. Morbi cursus consectetuer erat. Maecenas lobortis accumsan est. Aliquam feugiat scelerisque justo. Morbi laoreet congue purus. Nam eros. Ut cursus lacus ut purus. Praesent eget orci. Nulla facilisi. Praesent scelerisque felis a dui dictum ultrices. Ut posuere dui in lacus. Fusce molestie justo a wisi. Ut dictum odio non risus. Duis aliquet turpis at nisl. Nulla nisl. Vivamus ac nunc. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+			</div>	
+		</div>
+	</body>
+</html>

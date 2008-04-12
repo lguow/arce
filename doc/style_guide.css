@@ -1,0 +1,40 @@
+/* ==============================================================
+ * Base: typegraphy.css
+ *     set 
+ * 
+ * Author:
+ *     nwind@live.com
+ * 
+ * License:
+ *     MIT license
+ *
+ * Version:
+ *     0.1, 2007-11-27 (%Build%)
+ *
+ * Reference:
+ *     http://www.alistapart.com/articles/settingtypeontheweb
+ *     http://www.apaddedcell.com/web-fonts
+ *	
+ *
+================================================================== */
+
+
+/* ------------------------------------------------------------------
+ * ## Text ##:
+ *     font-size for normal text
+ */
+
+/* 
+ * Note:
+ *     Remove possible quote marks (") from <q>, <blockquote>. 
+ */
+
+/* 
+ * BugFix (IE):
+ *     Fixes wrong line-height on sup/sub in IE. 
+ */
+
+/* 
+ * Todo:
+ *     fix the bug in IE6
+ */

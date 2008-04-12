@@ -1,0 +1,83 @@
+<!--
+	$Date: 2008-03-31 17:01:57 +0800 (Mon, 31 Mar 2008) $
+	$Rev: 106 $
+-->
+<!--
+	Reference:
+		http://www.severnsolutions.co.uk/twblog/archive/2004/07/01/cssnegativemarginsalgebra
+	-->
+	
+<style type="text/css">
+/*<![CDATA[*/
+
+/*
+
+	α = column 1 width (#middle)
+	β = column 2 width (#left)
+	γ = column 3 width (#right)
+
+	Δ = predefined balancing unit
+
+	#middle {
+	  float:left;
+	  width:α;
+	  margin:0 [-(α+(β-Δ))] 0 β;
+	}
+
+	#left {
+	  float:left;
+	  width:β;
+	  margin:0 0 0 -Δ;
+	}
+
+	#right {
+	  float:right;
+	  width:γ;
+	}
+
+ */
+
+#header, #container, #footer {
+	width: 960px;
+}
+
+#content {
+  float: left;
+  width: 530px;
+  margin:0 -760px 0 230px;
+  /*
+	BugFix (IE6):
+		IE Doubled Float-Margin Bug
+  */
+  display:inline;	
+}
+
+#aside {
+  float:left;
+  width:230px;
+}
+
+#extra {
+  float:right;
+  width:200px;
+}
+
+/*]]>*/
+</style>
+
+
+<div id="container">
+
+	<div id="content">
+		_$content$_
+	</div>
+
+	<div id="aside"> 
+		_$aside$_
+	</div>
+
+	<div id="extra"> 
+		_$extra$_
+	</div>
+	
+</div>

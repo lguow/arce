@@ -1,0 +1,52 @@
+
+
+/*<![CDATA[*/
+
+/* ------------------------------------------------------------------
+ *	dBox_areo:
+ *		inspiration by MS Vista
+ *
+ */
+
+@import "dBox.css";
+
+html {
+	background: transparent url("../photo/dew.jpg");
+}
+
+
+
+.dBox .dBox-content,
+.dBox .dBox-top,
+.dBox .dBox-bottom,
+.dBox .dBox-bottom div {
+	 background:transparent url("dBox_aero/dBox_aero.png") no-repeat right top;
+}
+
+
+.dBox .dBox-top {
+	 width: 2.50000em; /* top slice width */
+	 margin-left: -2.50000em;
+	 background-position:left top;
+}
+
+
+.dBox .dBox-bottom,
+.dBox .dBox-bottom div {
+	 height: 2.50000em; /* height of bottom cap/shade */
+}
+
+.dBox .dBox-bottom {
+	background-position:right bottom;
+}
+
+.dBox .dBox-bottom div {
+	 width: 2.50000em; /* bottom corner width */
+	 margin-left: -2.50000em;
+	 background-position: left bottom;
+}
+
+/*]]>*/
+
+
+/*]]>*/

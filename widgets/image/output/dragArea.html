@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- STATUS OK -->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../../../arce.css" />
+	<style type="text/css" media="screen">
+		html {
+			border:none;
+		}
+		#container {
+			margin:15px auto;
+		}
+	</style>
+</head>
+
+<body>
+<!--[if IE 7]>
+<div id="ie7">
+<![endif]-->
+<!--[if IE 6]>
+<div id="ie6">
+<![endif]-->
+<div id="container" class="content">
+	<link rel="stylesheet" type="text/css" media="screen, projection"  href="style/dragArea.css" /><!--
+	$Date: 2008-03-31 23:03:38 +0800 (Mon, 31 Mar 2008) $
+	$Rev: 108 $
+-->
+<script src="script/drag.js" type="text/javascript"></script>
+<script language="javascript">
+//<![CDATA[
+function findPos(obj) {
+	var curleft = curtop = 0;
+	if (obj.offsetParent) {
+		curleft = obj.offsetLeft
+		curtop = obj.offsetTop
+		while (obj = obj.offsetParent) {
+			curleft += obj.offsetLeft
+			curtop += obj.offsetTop
+		}
+	}
+	return [curleft,curtop];
+}
+
+var browser = {
+    ie: navigator.appName == 'Microsoft Internet Explorer',
+    java: navigator.javaEnabled(),
+    ns: navigator.appName == 'Netscape',
+    webKit: navigator.userAgent.indexOf('AppleWebKit/') > -1,
+    ua: navigator.userAgent.toLowerCase(),
+    version: parseFloat(navigator.appVersion.substr(21)) ||
+    parseFloat(navigator.appVersion),
+    win: navigator.platform == 'Win32',
+    XPath: !!document.evaluate
+}
+browser.mac = browser.ua.indexOf('mac') >= 0;
+if (browser.ua.indexOf('opera') >= 0) {
+    browser.ie = browser.ns = false;
+    browser.opera = true;
+}
+if (browser.ua.indexOf('gecko') >= 0) {
+    browser.ie = browser.ns = false;
+    browser.gecko = true;
+}
+
+var Element = {
+	body: function () {
+		var ST,SL;
+		var w=window, d=document, dd=d.documentElement;
+
+		if(w.pageYOffset) ST=w.pageYOffset;
+		else if(dd&&dd.scrollTop) ST=dd.scrollTop;
+		else if(d.body) ST=d.body.scrollTop;
+
+		if(w.pageXOffset) SL=w.pageXOffset;
+		else if(dd&&dd.scrollLeft) SL=dd.scrollLeft;
+		else if(d.body) SL=d.body.scrollLeft;
+
+		return {'scrollTop':ST, 'scrollLeft':SL};
+	},
+	setOpacity: function(elm, opacity){
+		if (opacity == 0){
+			if (elm.style.visibility != "hidden") elm.style.visibility = "hidden";
+		} else {
+			if (elm.style.visibility != "visible") elm.style.visibility = "visible";
+		}
+		elm.style.zoom = 1;
+		if (browser.ie) elm.style.filter = (opacity == 1) ? '' : "alpha(opacity=" + opacity * 100 + ")";
+		elm.style.opacity = opacity;
+		return elm;
+	}
+}
+
+var dragArea = {
+	startX: 0,
+	startY: 0,
+	dragRectangle: 'none',
+	draging: false,
+	selectItemsDim: [],
+	startDrag: function (e) {
+		var e = window.event || e;
+		var me = this;
+		dragArea.draging = true;
+		var sid = dragArea.selectItemsDim
+
+		dragArea.startX = e.clientX + Element.body().scrollLeft;
+		dragArea.startY = e.clientY + Element.body().scrollTop;
+
+
+		dragArea.dragRectangle = document.getElementById('dragRectangle');
+		dragArea.dragRectangle.style.top = dragArea.startY + 'px';
+		dragArea.dragRectangle.style.left = dragArea.startX + 'px';
+		dragArea.dragRectangle.style.width = 0;
+		dragArea.dragRectangle.style.height = 0;
+		dragArea.dragRectangle.style.display = 'block';
+		
+
+
+		var selectItems = document.getElementById('selectItems').getElementsByTagName('div');
+
+		for (var i=0, l = selectItems.length; i<l; i++) {
+			var elm = selectItems[i];
+			var pos = findPos(elm);
+
+			var si = {};
+			var height = elm.offsetHeight;
+			var width = elm.offsetWidth;
+			var si = {
+				'min' : {x: pos[0], y: pos[1]},						//left top
+				'max' : {x: pos[0] + width, y: pos[1] + height},	//right bottom
+				'elm' : selectItems[i]
+			}
+			
+			sid.push(si);
+		}
+
+		
+		for (var i=0; i<sid.length; i++) {
+			sid[i].elm.style.background = 'url("style/dragArea/Asleep.png")';
+		}
+
+		document.onmousemove = function (e) {
+			me.dragMouse(e);
+		}
+
+		document.onmouseup = function (e) {
+			me.endDrag(e);
+		}	
+	},
+	
+	dragMouse: function (e) {
+		var e = window.event || e;
+		var sX = dragArea.startX;
+		var sY = dragArea.startY;
+		var leftX,rightX,topY,bottomY;
+		var sid = dragArea.selectItemsDim;
+
+		var x =  e.clientX + Element.body().scrollLeft;
+		var y =  e.clientY + Element.body().scrollTop;
+
+		var top = function (t) {
+			dragArea.dragRectangle.style.top = t + 'px';			
+		}
+		var left = function (l) {
+			dragArea.dragRectangle.style.left = l + 'px';			
+		}
+		var width = function (w) {
+			dragArea.dragRectangle.style.width = w + 'px';
+		}
+		var height = function (h) {
+			dragArea.dragRectangle.style.height = h + 'px';
+		}
+		
+		var isInArea = function (elm) {
+			var minX, minY, maxX, maxY;
+			minX = Math.max(elm.min.x, leftX);   
+			minY = Math.max(elm.min.y, topY);
+
+			maxX = Math.min(elm.max.x, rightX);   
+			maxY = Math.min(elm.max.y, bottomY);   
+	    
+			if (minX > maxX || minY > maxY) {
+				return false;
+			} else {
+				return true;
+			}
+		}
+		if (x>=sX && y>=sY) {
+			height(y - sY);
+			width(x - sX);
+
+			leftX = sX;
+			rightX = x;
+			topY = sY;
+			bottomY = y;
+		} else if(x<=sX && y>=sY){
+			left(x);
+			height(y - sY);
+			width(sX - x);
+
+			leftX = x;
+			rightX = sX;
+			topY = sY;
+			bottomY = y;
+		} else if(x>=sX && y<=sY){
+			top(y);
+			height(sY - y);
+			width(x - sX);
+
+			leftX = sX;
+			rightX = x;
+			topY = y;
+			bottomY = sY;
+		} else if(x<=sX && y<=sY){
+			top(y);
+			left(x);
+			height(sY - y);
+			width(sX - x);
+
+			leftX = x;
+			rightX = sX;
+			topY = y;
+			bottomY = sY;
+		}
+		
+	
+		for (var i=0; i<sid.length; i++) {
+			
+			sid[i].elm.style.background = 'url("style/dragArea/Asleep.png")';
+
+			if (isInArea(sid[i])) {
+				sid[i].elm.style.background = 'url("style/dragArea/Awake.png")';
+				continue;
+			}
+		}
+
+	},
+	endDrag: function (e) {
+		
+		dragArea.draging = false;
+		dragArea.dragRectangle.style.display = 'none';
+		document.onmousemove = '';
+		dragArea.selectItemsDim = [];
+	}
+}
+
+if (!dragArea.draging) {
+	document.onmousedown = function (e) {
+		dragArea.startDrag(e);
+	}
+}
+
+
+
+//]]>
+</script>
+
+<div id="dragRectangle"></div>
+
+<div id="selectItems">
+	<div style="top:150px; left:300px"></div>
+	<div style="top:150px; left:500px"></div>
+	<div style="top:350px; left:340px"></div>
+	<div style="top:350px; left:540px"></div>
+	<div style="top:346px; left:766px"></div>
+	<div style="top:144px; left:748px"></div>
+</div>
+
+
+
+<script language="javascript">
+//<![CDATA[
+
+var selectItems = document.getElementById('selectItems').getElementsByTagName('div');
+for (var i=0, l = selectItems.length; i<l; i++) {
+	dragDrop.initElement(selectItems[i]);
+}
+
+
+//]]>
+</script>
+</div>
+
+<!--[if IE]>
+</div>
+<![endif]-->
+</body>
+</html>

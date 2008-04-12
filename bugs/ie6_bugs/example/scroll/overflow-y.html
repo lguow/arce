@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+   
+<html>
+	<head>
+		<title>overflow-y test page</title>
+		<style type="text/css">
+			td.widecell {
+				width: 200px;
+				height: 200px;
+				background-color: #cccccc;
+				text-align: center;
+			}
+			iframe.if, iframe.if2 {
+				overflow-x: hidden;
+				background-color: #ffffff;
+				width: 150px;
+			}
+			iframe.if2 {
+				overflow-y: scroll;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>This table shows the bug</h1>
+		<table>
+			<tr>
+				<td class="widecell">
+					<iframe class="if2" src="test.html"></iframe>
+				</td>
+			</tr>
+		</table>
+
+		<h1>Whereas this one doesn't</h1>		
+		<table>
+			<tr>
+				<td class="widecell">
+					<iframe class="if" src="test.html"></iframe>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

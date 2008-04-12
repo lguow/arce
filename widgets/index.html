@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- STATUS OK -->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+	<title>Arce - widgets</title>
+	
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../arce.css" />
+	<link rel="stylesheet" type="text/css" media="screen, projection" href="../tools/Ext/resources/css/ext-all.css" />
+	<script src="../tools/Ext/ext-base.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../tools/Ext/ext-all.js" type="text/javascript" charset="utf-8"></script>
+	<script src="treeData.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<script type="text/javascript" charset="utf-8">
+Ext.BLANK_IMAGE_URL = '../tools/Ext/resources/images/default/s.gif';
+
+Ext.onReady(function(){
+   
+	var tree=new Ext.tree.TreePanel({
+		autoScroll:true,
+		containerScroll: true,
+		border:false,
+		rootVisible:false,
+		loader: new Ext.tree.TreeLoader({
+			preloadChildren:true,
+			clearOnLoad:false
+		}),
+		root: new Ext.tree.AsyncTreeNode({
+			text:'Layouts',
+			children:[treeData]
+		})
+	});
+	var tabPanel = new Ext.TabPanel({
+        region:'center',
+        deferredRender:false,
+        activeTab:0,
+        margins:'0 5 5 0',
+        resizeTabs: true,
+        minTabWidth: 140,
+        tabWidth: 140,
+        enableTabScroll: true,
+        items:[{
+            contentEl:'center',
+            title: 'Start',
+            closable:true,
+            autoScroll:true
+        }]
+		
+    });
+
+	var viewport = new Ext.Viewport({
+	     layout:'border',
+	     items:[{
+				region:'west',
+				id:'west-panel',
+				title:'Widgets',
+				split:true,
+				width: 200,
+				minSize: 175,
+				autoScroll:true,
+				collapsible: true,
+				margins:'0 0 0 5',
+				items:[tree]
+	         },
+	         tabPanel
+	      ]
+	 });
+
+	tree.on('click', function(node,e){
+		if(node.isLeaf()) {
+			e.stopEvent();
+			addTab(node.parentNode.attributes.text, node.attributes.text, node.id)
+		}
+	})
+	
+	function addTab(parent, child, id) {
+		var tabId = 'tabs-' + id;
+		var tab = tabPanel.getComponent(tabId);
+		if (tab) {
+			tabPanel.setActiveTab(tab);
+		} else {
+			tabPanel.add({
+				title: child,
+				id: tabId,
+				html: '<iframe src="'+parent+'/output/'+ child +'.html" width="100%" height="100%"></iframe>',
+				closable:true
+			}).show();			
+		}
+
+	}
+	
+	tree.expandAll();
+});
+
+
+</script>
+
+<div id="west">
+</div>
+<div id="north">
+</div>
+<div id="center">
+      Click left
+</div>
+
+
+
+</body>
+</html>

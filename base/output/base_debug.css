@@ -1,0 +1,233 @@
+/* ============================================================= 
+ * Base: reset.css
+ *     Resets default browser CSS styles
+ * 
+ * Author:
+ *     nwind@live.com
+ * 
+ * License:
+ *     MIT license
+ *
+ * Version:
+ *     $Date: 2008-04-01 11:30:47 +0800 (Tue, 01 Apr 2008) $
+ *     $Rev: 109 $
+================================================================ */
+
+
+body, p, dl, dd, blockquote, h1, h2, h3, h4, h5, h6, pre, table, td, th, ul, ol, li, hr, 
+legend, fieldset, input, textarea, 
+img, form {
+	margin:0;
+	padding:0;
+}
+/*
+html, body {
+	max-height:100%;  TODO:
+	height:100%;
+}
+ */
+img, iframe {
+	border:none;
+}
+
+/*big, img, input, label, small, span, em, strong { vertical-align:middle; }*/
+
+/*
+ul {
+	list-style: none;
+}
+*/
+
+
+/* 
+ * Note:
+ *     Remove possible quote marks (") from <q>, <blockquote>. 
+ */
+blockquote, q {
+	quotes: none;
+}
+
+/* 
+ * BugFix(ie):
+ *     Fixes wrong line-height on sup/sub in IE.
+ *	TODO: 
+ */
+sup { vertical-align: text-top; }
+sub { vertical-align: text-bottom; }/* ==============================================================
+ * Arce: typegraphy.css
+ *      set thead type on page, some code come form Blueprint
+ * 
+ * Author:
+ *     nwind@live.com
+ * 
+ * License:
+ *     MIT license
+ *
+ * Version:
+ *     $Date: 2008-04-02 00:33:24 +0800 (Wed, 02 Apr 2008) $
+ *     $Rev: 110 $
+ *
+ * Reference:
+ *     http://www.alistapart.com/articles/settingtypeontheweb
+ *     http://www.apaddedcell.com/web-fonts
+ *     http://code.google.com/p/blueprintcss/
+ *	
+ *
+================================================================== */
+
+
+/* ------------------------------------------------------------------
+ * ## Text ##:
+ *     font-size for normal text
+ */
+body {
+	font: 75%/1.5 Verdana, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* 
+ * BugFix (All):
+ *     font properties are not inhert from <body> into <table> \
+ *     in quicksMode （except font-family）
+ */
+table {
+	font-size: 1em;
+}
+
+/* 
+ * BugFix (All):
+ *     <input> doesn't inherit 
+ */
+input {
+	font-size:1em;
+}
+
+/* 
+ * BugFix (IE):
+ *     <legend> doesn't inherit in IE 
+ */
+legend{
+	font-size: 1em;
+	color: #000;
+}
+
+/*
+ * Note:
+ *     Don't set the margin to all <p>
+ */
+div.content p {
+	margin:0 0 1.5em;
+}
+
+/* ------------------------------------------------------------------
+ * ## HeadLine ##:
+ *     font-size for headline
+ */
+h1, h2, h3, h4, h5{
+	font-family: "Palatino Linotype", Palatino, Georgia, serif;
+	font-weight: bold;
+	color: #111;
+}
+
+h1 { font-size: 3em; line-height: 1; margin-bottom: 0.5em; }
+h2 { font-size: 2em; margin-bottom: 0.75em; }
+h3 { font-size: 1.5em; line-height: 1; margin-bottom: 1em; }
+h4 { font-size: 1.2em; line-height: 1.25; margin-bottom: 1.25em; height: 1.25em; }
+h5 { font-size: 1em; font-weight: bold; margin-bottom: 1.5em; }
+h6 { font-size: 1em; font-weight: bold; }
+
+/* ------------------------------------------------------------------
+ * ## Others ##:
+ *     
+ */
+
+big {
+	font-size:1.3em;
+}
+
+small {
+	font-size:.85em;
+}
+
+code, pre, samp {
+	font-family: Consolas, Monaco, "Courier New", Courier, monospace;
+	overflow: auto;
+
+	white-space: pre-wrap; /* css-3 */
+	white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+	white-space: -pre-wrap; /* Opera 4-6 */
+	white-space: -o-pre-wrap; /* Opera 7 */
+	word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+acronym, abbr {
+	border-bottom:1px dotted #000; 
+	cursor: help;
+}
+
+acronym {
+	text-transform: uppercase;
+	letter-spacing:0.1em;
+}
+/* ==================================================================
+ * Base: color.css
+ * 		
+ * 
+ * Author:
+ *     nwind@live.com
+ * 
+ * License:
+ *     MIT license
+ *
+ * Version:
+ *     $Date: 2008-04-01 11:30:47 +0800 (Tue, 01 Apr 2008) $
+ *     $Rev: 109 $
+================================================================== */
+
+
+/* ------------------------------------------------------------------
+ *	## Base ##:
+ *		color for normal text
+ *  
+ */
+
+html {
+	color:#000;
+	background:#fff;
+}
+
+/* 
+   BugFix:
+       <legend> doesn't inherit in IE 
+ */
+legend {
+	color: #000;
+}
+
+
+/* ------------------------------------------------------------------
+ *	## Link ##:
+ *		color for link
+ *
+ *	Reference:
+ *		http://dbaron.org/css/1999/09/links
+ */
+
+:link:focus, :visited:focus { color: #CC6633; }
+
+:link { color: #356aa0; }
+
+:visited { color: #6B97A9; }
+
+:link:hover, :visited:hover { color: #AD7328; }
+
+:link:active, :visited:active { color: #356a00; }
+
+
+/* ------------------------------------------------------------------
+ *	## HeadLine ##:
+ *		color for headline
+ */
+
+h1, h2, h3, h4, h5 {
+	color:#111; 
+}

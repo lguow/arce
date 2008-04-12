@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en">
+<head>
+<!-- http://c82.net/article.php?ID=25 -->
+	<!-- Title -->
+	<title>Scrollable checklists</title>
+	
+	<!-- Info -->
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta name="author" content="Nicholas Rougeux" />
+	<meta name="Copyright" content="Copyright (c) 2005 Nicholas Rougeux" />
+	
+	<!-- Styles -->
+
+	<style type="text/css">
+		/* Decorative stuff */
+		/*body { font: 76%/1.4 Verdana, Arial, sans-serif; }
+		code { font: 1.2em Consolas, "Courier New," Courier, monospace; color: #149514; }*/
+		
+		/* CSS for checklists */
+		.checklist {
+			border: 1px solid #ccc;
+			list-style: none;
+			height: 10em;
+			overflow: auto;
+			width: 16em;
+		}
+		.checklist, .checklist li { margin-left: 0; padding: 0; }
+		.checklist label { display: block; padding-left: 25px; text-indent: -25px; }
+		.checklist label:hover, .checklist label.hover { background: #777; color: #fff; }
+		* html .checklist label { height: 1%; }
+		
+		/* Checklist 1 */
+		.cl1 { font-size: 0.9em; width: 100%; height: 15em; }
+		.cl1 .alt { background: #f5f5f5; }
+		.cl1 input { vertical-align: middle; }
+		.cl1 label:hover, .cl1 label.hover { background: #ddd; color: #000; }
+		
+		/* Checklist 2 */
+		.cl2 {
+			background: #67893d;
+			color: #D1DCC5;
+			font-family: Tahoma, Geneva, Arial, sans-serif;
+			width: 50%;
+		}
+		.cl2 input { vertical-align: middle; }
+		.cl2 label { border-bottom: 1px solid #769550; padding: 0.2em 0.2em 0.2em 25px; }
+		.cl2 label:hover, .cl2 label.hover { background: #306B34; color: #fff; }
+		
+		/* Checklist 3 */
+		.cl3 {
+			border: 1px dotted #a17c04;
+			color: #a05a04;
+			font-family: "Trebuchet MS", Tahoma, Geneva, Arial, sans-serif;
+			font-size: 0.9em;
+			height: 19em;
+		}
+		.cl3 .alt { background: #f8f6ed; }
+		.cl3 label { padding: 0.2em 0.2em 0.2em 25px; }
+		.cl3 label:hover, .cl3 label.hover { background: #EFE9D4; color: #a05a04; }
+	</style>
+	
+	<!-- JavaScript -->
+
+</head>
+<body>
+
+<div id="page">
+	<h1>Checklists</h1>
+
+	<p>An alternative to the <code>select</code> element with enabled <code>multiple</code> attribute.</p>
+
+	<p>This example is described in the <a href="../article.php?ID=25">Check it, don't select it</a> article on <a href="../">C82</a>. <a href="checklist-basic.html">See a bare-bones example</a>.</p>
+
+	
+	<h2>Compatibility:</h2>
+		
+	<ul>
+		<li><strong>Win:</strong> IE 5.0+, Firefox 0.8+</li>
+		<li><strong>Mac:</strong> Safari 1.2+, IE 5.2, Camino 8.2+, Netscape 7+, OmniWeb 4.1+, iCab 3.0+</li>
+	</ul>
+
+	<form action="#" method="get">
+	    <ul class="checklist cl1">
+	        <li class="alt"><label for="a1"><input id="a1" name="a1" type="checkbox" /> Aenean malesuada ante eget tellus</label></li>
+	        <li><label for="a2"><input id="a2" name="a2" type="checkbox" /> In posuere augue id velit</label></li>
+	        <li class="alt"><label for="a3"><input id="a3" name="a3" type="checkbox" /> Nullam a dui ac augue adipiscing sodales</label></li>
+
+	        <li><label for="a4"><input id="a4" name="a4" type="checkbox" /> Vivamus consectetuer ante eget urna</label></li>
+	        <li class="alt"><label for="a5"><input id="a5" name="a5" type="checkbox" /> Aliquam id felis cursus purus tristique condimentum</label></li>
+	        <li><label for="a6"><input id="a6" name="a6" type="checkbox" /> Suspendisse posuere lectus vitae velit consequat volutpat</label></li>
+	        <li class="alt"><label for="a7"><input id="a7" name="a7" type="checkbox" /> Fusce condimentum nulla et tortor.</label></li>
+	        <li><label for="a8"><input id="a8" name="a8" type="checkbox" /> Proin consequat faucibus mi</label></li>
+
+	        <li class="alt"><label for="a9"><input id="a9" name="a9" type="checkbox" /> Etiam a lectus quis massa viverra laoreet</label></li>
+	        <li><label for="a10"><input id="a10" name="a10" type="checkbox" /> Pellentesque gravida lorem vel odio</label></li>
+	    </ul>
+	    
+	    <ul class="checklist cl2">
+	        <li><label for="b1"><input id="b1" name="b1" type="checkbox" /> Aenean malesuada ante eget tellus</label></li>
+	        <li><label for="b2"><input id="b2" name="b2" type="checkbox" /> In posuere augue id velit</label></li>
+
+	        <li><label for="b3"><input id="b3" name="b3" type="checkbox" /> Nullam a dui ac augue adipiscing sodales</label></li>
+	        <li><label for="b4"><input id="b4" name="b4" type="checkbox" /> Vivamus consectetuer ante eget urna</label></li>
+	        <li><label for="b5"><input id="b5" name="b5" type="checkbox" /> Aliquam id felis cursus purus tristique condimentum</label></li>
+	        <li><label for="b6"><input id="b6" name="b6" type="checkbox" /> Suspendisse posuere lectus vitae velit consequat volutpat</label></li>
+	        <li><label for="b7"><input id="b7" name="b7" type="checkbox" /> Fusce condimentum nulla et tortor.</label></li>
+
+	        <li><label for="b8"><input id="b8" name="b8" type="checkbox" /> Proin consequat faucibus mi</label></li>
+	        <li><label for="b9"><input id="b9" name="b9" type="checkbox" /> Etiam a lectus quis massa viverra laoreet</label></li>
+	        <li><label for="b10"><input id="b10" name="b10" type="checkbox" /> Pellentesque gravida lorem vel odio</label></li>
+	    </ul>
+	    
+	    <ul class="checklist cl3">
+	        <li class="alt"><label for="c1"><input id="c1" name="c1" type="checkbox" /> Aenean malesuada ante eget tellus</label></li>
+
+	        <li><label for="c2"><input id="c2" name="c2" type="checkbox" /> In posuere augue id velit</label></li>
+	        <li class="alt"><label for="c3"><input id="c3" name="c3" type="checkbox" /> Nullam a dui ac augue adipiscing sodales</label></li>
+	        <li><label for="c4"><input id="c4" name="c4" type="checkbox" /> Vivamus consectetuer ante eget urna</label></li>
+	        <li class="alt"><label for="c5"><input id="c5" name="c5" type="checkbox" /> Aliquam id felis cursus purus tristique condimentum</label></li>
+	        <li><label for="c6"><input id="c6" name="c6" type="checkbox" /> Suspendisse posuere lectus vitae velit consequat volutpat</label></li>
+
+	        <li class="alt"><label for="c7"><input id="c7" name="c7" type="checkbox" /> Fusce condimentum nulla et tortor.</label></li>
+	        <li><label for="c8"><input id="c8" name="c8" type="checkbox" /> Proin consequat faucibus mi</label></li>
+	        <li class="alt"><label for="c9"><input id="c9" name="c9" type="checkbox" /> Etiam a lectus quis massa viverra laoreet</label></li>
+	        <li><label for="c10"><input id="c10" name="c10" type="checkbox" /> Pellentesque gravida lorem vel odio</label></li>
+	    </ul>
+
+	</form>
+	
+	<p>Feel free to use the example on this page in your own works. If you choose to do so, <a href="../contact.php">drop me a line</a>. I'd like to hear how you used it.</p>
+</div>
+
+</body>
+</html>

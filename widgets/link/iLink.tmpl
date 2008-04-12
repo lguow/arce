@@ -1,0 +1,45 @@
+<!--
+	$Date: 2008-03-28 19:40:55 +0800 (Fri, 28 Mar 2008) $
+	$Rev: 100 $
+-->
+<style type="text/css" media="screen">
+
+	/* Make sure the icons are not cut */
+	a[href^="http:"], a[href^="mailto:"], a[href^="http:"]:visited, 
+	a[href$=".pdf"], a[href$=".doc"], a[href$=".xls"], a[href$=".rss"], 
+	a[href$=".rdf"], a[href^="aim:"] {
+	  padding:1px 25px 0 0;
+	  margin:-2px 0;
+	  background: url("iLink/iLink.png") no-repeat right center;
+	}
+
+	/* External links */
+	a[href^="http:"]          { background-position: right -238px; } 
+	a[href^="mailto:"]        { background-position: right -199px; }
+	a[href^="http:"]:visited  { background-position: right -123px; }
+
+	/* Files */
+	a[href$=".pdf"]   { background-position: right -42px; }  
+	a[href$=".doc"]   { background-position: right -82px; }  
+	a[href$=".xls"]   { background-position: right -161px; }  
+
+	/* Misc */
+	a[href$=".rss"], 
+	a[href$=".rdf"]   { background-position: right -279px; }
+	a[href^="aim:"]   { background-position: right -4px; }
+	
+</style>
+
+<ul>
+	<li><a href="http://" >external</a></li>
+	<li><a href="mailto:" >mail</a></li>
+	<li><a href="http://" >external visited</a></li>
+
+	<li><a href=".pdf" >pdf</a></li>
+	<li><a href=".doc" >doc</a></li>
+	<li><a href=".xls" >xls</a></li>
+
+	<li><a href=".rss" >rss</a></li>
+	<li><a href=".rdf" >rdf</a></li>
+	<li><a href="aim:" >im</a></li>
+</ul>

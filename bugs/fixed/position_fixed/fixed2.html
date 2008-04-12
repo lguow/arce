@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title> emulating position fixed for Internet Explorer </title>
+<style type="text/css">
+
+#menu {
+	width:130px;
+	border:1px solid #888;
+}
+
+.fixed { 
+	position: fixed; 
+	top: 90px; /* or any value ! */ 
+	left:170px;
+} 
+
+</style>
+<!--[if lte IE 6]>
+<style type="text/css">
+/*<![CDATA[*/ 
+	.fixed {
+		_position: absolute; 
+		_top: expression(eval(document.documentElement.scrollTop) + 90 + "px");  
+	}
+/*]]>*/
+</style>
+<![endif]-->
+</head>
+
+<body>
+
+<div id="menu" class="fixed">
+DUMMY MENU
+</div>
+
+<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf<br />sdfsdf
+</body>
+</html>

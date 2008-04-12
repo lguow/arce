@@ -1,0 +1,39 @@
+
+/*<![CDATA[*/
+
+#header, #container, #footer {
+	width: 90%;
+}
+
+#extra {
+	float: right;
+	width: 16.66667em;
+}
+
+
+#content {
+	float:left;
+	width:100%;
+	margin-right: -16.66667em;
+}
+
+#content_inner{
+	margin-right: 16.66667em;
+}
+
+
+#aside {
+	float: left;
+	width: 19.16667em;
+}
+
+#article {
+	float:right;
+	width:100%;
+	margin:0 0 0 -19.16667em;
+}
+
+#article_inner {
+	margin: 0 0 0 19.16667em;
+}
+/*]]>*/

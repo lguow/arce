@@ -1,0 +1,53 @@
+
+/*<![CDATA[*/
+/*CSS Yahoo new version style pagination*/
+	div.pagination {
+		padding: 0.25000em;
+		margin: 0.25000em;
+		text-align:center;
+		font-family:Tahoma,Helvetica,sans-serif;
+		font-size:.85em;
+	}
+	
+	div.pagination a {
+		border: 0.08333em solid #ccdbe4;
+		margin-right: 0.25000em;
+		padding: 0.16667em 0.66667em;
+
+		background-position:bottom;
+		text-decoration: none;
+
+		color: #0061de;		
+	}
+	div.pagination a:hover, div.pagination a:active {
+		border: 0.08333em solid #2b55af;
+		background-image:none;
+		background-color:#3666d4;
+		color: #fff;
+	}
+	div.pagination span.current {
+		margin-right: 0.25000em;
+		padding: 0.16667em 0.50000em;
+		
+		font-weight: bold;
+		color: #000;
+	}
+	div.pagination span.disabled {
+		display:none;
+	}
+	div.pagination a.next{
+		border: 0.16667em solid #ccdbe4;
+		margin:0 0 0 0.83333em;
+	}
+	div.pagination a.next:hover{
+		border: 0.16667em solid #2b55af;
+	}
+	div.pagination a.prev{
+		border: 0.16667em solid #ccdbe4;
+		margin:0 0.83333em 0 0;
+	}
+	div.pagination a.prev:hover{
+		border: 0.16667em solid #2b55af;
+	}
+
+/*]]>*/

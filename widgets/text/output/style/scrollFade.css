@@ -1,0 +1,25 @@
+
+/*<![CDATA[*/
+.scrollFade { 
+	border-top: 0.08333em solid rgb(153, 153, 153);
+	border-bottom: 0.08333em solid rgb(153, 153, 153); 
+	padding: 0pt 0.41667em 0.41667em 0pt;
+	overflow: auto;
+	width: 18.33333em;
+	height: 19.66667em;
+	line-height: 130%;
+}
+
+.scrollFade-fade { 
+	background:transparent url("scrollFade/fade.png") repeat left top;
+	position: relative;
+	height: 3.33333em;
+	width: 17.08333em;
+	top: -3.41667em; 
+}
+
+#ie6 .scrollFade-fade {
+	background:none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='scrollFade/fade.png', sizingMethod='scale');
+}
+/*]]>*/

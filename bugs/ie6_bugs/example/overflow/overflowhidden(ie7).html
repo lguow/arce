@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>overflow</title>
+	<style type="text/css">
+/* <![CDATA[ */
+
+#detail_photo_mask {
+	width:285px;
+	height:214px;
+	overflow:hidden;
+	border:2px solid red;
+}
+
+#detail_photo_mask div {
+	position:relative;
+}
+
+#detail_photo_mask img {
+	display:block;
+	width:393px;
+}
+
+/* ]]> */
+</style>
+</head>
+<body>
+
+<p>
+Here we have a div with a fixed width and height and overflow:hidden.
+Within this div is another div set to position:relative and within that is an image.
+In IE 6 and 7-Beta2 the  contents of the innermost div become visable when that div is position:relative even though it's parent says overflow:hidden.
+</p>
+<p>Safari and Firefox do not have this problem.</p>
+
+<div id="detail_photo_mask">
+	<div>
+		<img id="bigphoto" src="Alien_Egghead_2k5_by_thinsoldier.jpg" alt="this should be cropped" width="400" />
+	</div>
+</div>
+
+
+</body>
+</html>

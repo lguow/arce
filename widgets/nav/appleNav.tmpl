@@ -1,0 +1,68 @@
+<!--
+	$Date: 2008-03-28 19:40:55 +0800 (Fri, 28 Mar 2008) $
+	$Rev: 100 $
+-->
+<style type="text/css" media="screen">
+	/* GLOBALHEADER */
+	#globalheader { width: 982px; height: 38px; margin: 18px auto; position: relative; z-index: 9998; }
+	#globalheader #globalnav { margin: 0; padding: 0; }
+	#globalheader #globalnav li { display: inline; }
+	#globalheader #globalnav li a { float: left; width: 117px; height: 0; padding-top: 38px; overflow: hidden; }
+	#globalheader #globalnav li a,
+	#globalheader #globalsearch { background-image: url("apple.com/globalnavbg.png"); _background-image: url("apple.com/globalnavbg.gif"); background-repeat: no-repeat; }
+
+	/* BUTTONS */
+	#globalheader #globalnav li#gn-store a { background-position: 0 0; }
+	#globalheader #globalnav li#gn-store a { background-position: -117px 0; }
+	#globalheader #globalnav li#gn-mac a { background-position: -234px 0; }
+	#globalheader #globalnav li#gn-ipoditunes a { background-position: -351px 0; }
+	#globalheader #globalnav li#gn-iphone a { background-position: -468px 0; }
+	#globalheader #globalnav li#gn-downloads a { background-position: -585px 0; }
+	#globalheader #globalnav li#gn-support a { background-position: -702px 0; }
+
+	/* OVER STATES */
+	#globalheader #globalnav li#gn-apple a:hover { background-position: 0 -38px; }
+	#globalheader #globalnav li#gn-store a:hover { background-position: -117px -38px; }
+	#globalheader #globalnav li#gn-mac a:hover { background-position: -234px -38px; }
+	#globalheader #globalnav li#gn-ipoditunes a:hover { background-position: -351px -38px; }
+	#globalheader #globalnav li#gn-iphone a:hover { background-position: -468px -38px; }
+	#globalheader #globalnav li#gn-downloads a:hover { background-position: -585px -38px; }
+	#globalheader #globalnav li#gn-support a:hover { background-position: -702px -38px; }
+
+	/* PRESSED STATES */
+	#globalheader #globalnav li#gn-apple a:active { background-position: 0 -76px; }
+	#globalheader #globalnav li#gn-store a:active { background-position: -117px -76px; }
+	#globalheader #globalnav li#gn-mac a:active { background-position: -234px -76px; }
+	#globalheader #globalnav li#gn-ipoditunes a:active { background-position: -351px -76px; }
+	#globalheader #globalnav li#gn-iphone a:active { background-position: -468px -76px; }
+	#globalheader #globalnav li#gn-downloads a:active { background-position: -585px -76px; }
+	#globalheader #globalnav li#gn-support a:active { background-position: -702px -76px; }
+
+	/* ON STATES */
+	#globalheader.home #globalnav li#gn-apple a:hover { background-position: 0 0; cursor: default; }
+	#globalheader.store #globalnav li#gn-store a { background-position: -117px -114px; }
+	#globalheader.mac #globalnav li#gn-mac a { background-position: -234px -114px; }
+	#globalheader.ipoditunes #globalnav li#gn-ipoditunes a { background-position: -351px -114px; }
+	#globalheader.iphone #globalnav li#gn-iphone a { background-position: -468px -114px; }
+	#globalheader.downloads #globalnav li#gn-downloads a { background-position: -585px -114px; }
+	#globalheader.support #globalnav li#gn-support a { background-position: -702px -114px; }
+
+	/* GLOBAL SEARCH */
+	#globalsearch { width: 163px; height: 38px; position: absolute; top: 0; right: 0; background-position: 100% 0; background-repeat: no-repeat; }
+	
+</style>
+
+<div class="home" id="globalheader">
+	<ul id="globalnav">
+		<li id="gn-apple"><a href="#">Apple</a></li>
+		<li id="gn-store"><a href="#">Store</a></li>
+		<li id="gn-mac"><a href="#">Mac</a></li>
+		<li id="gn-ipoditunes"><a href="#">iPod + iTunes</a></li>
+		<li id="gn-iphone"><a href="#">iPhone</a></li>
+		<li id="gn-downloads"><a href="#">Downloads</a></li>
+		<li id="gn-support"><a href="#">Support</a></li>
+	</ul>
+	<div id="globalsearch" class="">
+
+	</div>
+</div>

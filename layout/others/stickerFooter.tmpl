@@ -1,0 +1,56 @@
+<!--
+	$Date: 2008-03-28 19:40:55 +0800 (Fri, 28 Mar 2008) $
+	$Rev: 100 $
+-->
+<!--
+	Reference:
+		http://ryanfait.com/sticky-footer/
+	-->
+	
+<style type="text/css">
+/*<![CDATA[*/
+
+html, body {
+	height: 100%;
+}
+
+#container {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -4em; /* the bottom margin is the negative value of the footer's height */
+}
+
+#footer {
+	height: 4em;
+}
+
+
+
+#header {
+	display:none;
+}
+
+/*
+ *	Notes:
+ *		anit "equal height"
+ */
+
+#container {
+	overflow: visible !important;
+}
+
+#main, #aside, #extra, #content {
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+}
+/*]]>*/
+</style>
+
+<div id="container">
+
+	<div id="content">
+		_$content$_
+	</div>
+	
+</div>

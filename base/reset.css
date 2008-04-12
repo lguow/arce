@@ -1,0 +1,56 @@
+/* ============================================================= 
+ * Base: reset.css
+ *     Resets default browser CSS styles
+ * 
+ * Author:
+ *     nwind@live.com
+ * 
+ * License:
+ *     MIT license
+ *
+ * Version:
+ *     $Date: 2008-04-01 11:30:47 +0800 (Tue, 01 Apr 2008) $
+ *     $Rev: 109 $
+================================================================ */
+
+
+body, p, dl, dd, blockquote, h1, h2, h3, h4, h5, h6, pre, table, td, th, ul, ol, li, hr, 
+legend, fieldset, input, textarea, 
+img, form {
+	margin:0;
+	padding:0;
+}
+/*
+html, body {
+	max-height:100%;  TODO:
+	height:100%;
+}
+ */
+img, iframe {
+	border:none;
+}
+
+/*big, img, input, label, small, span, em, strong { vertical-align:middle; }*/
+
+/*
+ul {
+	list-style: none;
+}
+*/
+
+
+/* 
+ * Note:
+ *     Remove possible quote marks (") from <q>, <blockquote>. 
+ */
+blockquote, q {
+	quotes: none;
+}
+
+/* 
+ * BugFix(ie):
+ *     Fixes wrong line-height on sup/sub in IE.
+ *	TODO: 
+ */
+sup { vertical-align: text-top; }
+sub { vertical-align: text-bottom; }
