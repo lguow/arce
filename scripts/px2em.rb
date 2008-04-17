@@ -18,7 +18,7 @@ def px2em(file)
   end
   
   styles = IO.read(file).gsub(/\s*-?\d*px/) do |px|
-     sprintf(" %.5fem", px[0..-3].to_f / 12) 
+     sprintf(" %.1fem", px[0..-3].to_f / 10) 
   end
   
   outPutFile = File.open(file, 'r+')

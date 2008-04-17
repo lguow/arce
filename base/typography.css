@@ -24,9 +24,10 @@
 /* ------------------------------------------------------------------
  * ## Text ##:
  *     font-size for normal text
+ *		so the default font-size will be 10px
  */
 body {
-	font: 75%/1.5 Verdana, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font: 62.5%/1.5 Verdana, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 /* 
@@ -35,7 +36,7 @@ body {
  *     in quicksMode （except font-family）
  */
 table {
-	font-size: 1em;
+	font-size: 1.2em;
 }
 
 /* 
@@ -43,7 +44,7 @@ table {
  *     <input> doesn't inherit 
  */
 input {
-	font-size:1em;
+	font-size: 1.2em;
 }
 
 /* 
@@ -51,7 +52,7 @@ input {
  *     <legend> doesn't inherit in IE 
  */
 legend{
-	font-size: 1em;
+	font-size: 1.2em;
 	color: #000;
 }
 
@@ -73,12 +74,12 @@ h1, h2, h3, h4, h5{
 	color: #111;
 }
 
-h1 { font-size: 3em; line-height: 1; margin-bottom: 0.5em; }
-h2 { font-size: 2em; margin-bottom: 0.75em; }
-h3 { font-size: 1.5em; line-height: 1; margin-bottom: 1em; }
-h4 { font-size: 1.2em; line-height: 1.25; margin-bottom: 1.25em; height: 1.25em; }
-h5 { font-size: 1em; font-weight: bold; margin-bottom: 1.5em; }
-h6 { font-size: 1em; font-weight: bold; }
+h1 { font-size: 3.4em; line-height: 1.2; margin-bottom: 0.6em; }
+h2 { font-size: 2.4em; margin-bottom: 0.9em; }
+h3 { font-size: 1.5em; line-height: 1.2; margin-bottom: 1.2em; }
+h4 { font-size: 1.8em; line-height: 1.25; margin-bottom: 1.5em; height: 1.5em; }
+h5 { font-size: 1.2em; font-weight: bold; margin-bottom: 1.8em; }
+h6 { font-size: 1.2em; font-weight: bold; }
 
 /* ------------------------------------------------------------------
  * ## Others ##:
@@ -86,11 +87,11 @@ h6 { font-size: 1em; font-weight: bold; }
  */
 
 big {
-	font-size:1.3em;
+	font-size:1.4em;
 }
 
 small {
-	font-size:.85em;
+	font-size:1em;
 }
 
 code, pre, samp {
@@ -105,7 +106,7 @@ code, pre, samp {
 }
 
 acronym, abbr {
-	border-bottom:1px dotted #000; 
+	border-bottom:0.1em dotted #000; 
 	cursor: help;
 }
 

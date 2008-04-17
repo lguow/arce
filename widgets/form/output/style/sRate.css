@@ -1,19 +1,19 @@
 
 
 /*STARS */
-.sRate { list-style:none; margin: -0.08333em 0 0 -0.08333em; padding:0; width: 5.83333em; height: 1.00000em; position:relative; background:url(sRate/sRate.gif) 0 0 repeat-x; overflow:hidden;}
+.sRate { list-style:none; margin: -0.1em 0 0 -0.1em; padding:0; width: 7.0em; height: 1.2em; position:relative; background:url(sRate/sRate.gif) 0 0 repeat-x; overflow:hidden;}
 	.sRate li { padding:0; margin:0; float:left;}
-	.sRate li a { display:block; width: 1.16667em; height: 1.00000em; text-decoration:none; text-indent: -750.00000em; z-index:20; position:absolute; padding:0; margin:0;}
-	.sRate li a:hover{ background:url(sRate/sRate.gif) 0 1.00000em; z-index:2; left:0;}
+	.sRate li a { display:block; width: 1.4em; height: 1.2em; text-decoration:none; text-indent: -900.0em; z-index:20; position:absolute; padding:0; margin:0;}
+	.sRate li a:hover{ background:url(sRate/sRate.gif) 0 1.2em; z-index:2; left:0;}
 		.sRate a.one_star{ left:0;}
-		.sRate a.one_star:hover{ width: 1.16667em;}
-		.sRate a.two_stars{ left: 1.16667em;}
-		.sRate a.two_stars:hover{ width: 2.33333em;}
-		.sRate a.three_stars{ left: 2.33333em;}
-		.sRate a.three_stars:hover{ width: 3.50000em;}
-		.sRate a.four_stars{ left: 3.50000em;}	
-		.sRate a.four_stars:hover{ width: 4.66667em;}
-		.sRate a.five_stars{ left: 4.66667em;}
-		.sRate a.five_stars:hover{ width: 5.83333em;}
-	.sRate li.current_rating{ background:url(sRate/sRate.gif) 0 2.00000em; position:absolute; height: 1.00000em; display:block; text-indent: -750.00000em; z-index:1; left:0;}
+		.sRate a.one_star:hover{ width: 1.4em;}
+		.sRate a.two_stars{ left: 1.4em;}
+		.sRate a.two_stars:hover{ width: 2.8em;}
+		.sRate a.three_stars{ left: 2.8em;}
+		.sRate a.three_stars:hover{ width: 4.2em;}
+		.sRate a.four_stars{ left: 4.2em;}	
+		.sRate a.four_stars:hover{ width: 5.6em;}
+		.sRate a.five_stars{ left: 5.6em;}
+		.sRate a.five_stars:hover{ width: 7.0em;}
+	.sRate li.current_rating{ background:url(sRate/sRate.gif) 0 2.4em; position:absolute; height: 1.2em; display:block; text-indent: -900.0em; z-index:1; left:0;}
 	

@@ -5,8 +5,8 @@
 }
 
 .gallery li {
-	margin: 0.83333em;
-	border: 0.08333em solid #eee;
+	margin: 1.0em;
+	border: 0.1em solid #eee;
 	display: -moz-inline-box;	/* fix firefox2*/
 	display: inline-block;
 	vertical-align:bottom;
@@ -14,7 +14,7 @@
 }
 
 .gallery li:hover {
-	border: 0.08333em solid #6AA5DC;
+	border: 0.1em solid #6AA5DC;
 	background: #E6F1FA;
 }
 
@@ -23,8 +23,8 @@
 }
 
 .gallery .figure {
-	width: 15.00000em;
-	padding: 1.66667em 0;
+	width: 18.0em;
+	padding: 2.0em 0;
 }
 
 

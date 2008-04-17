@@ -6,9 +6,9 @@ inspired by coda(http://www.panic.com/coda)
 
 #nav {
 	background: url("jNav/jNav.png") no-repeat left bottom;	
-	width: 66.66667em;
-	height: 8.33333em;
-	margin: 1.66667em auto;
+	width: 80.0em;
+	height: 10.0em;
+	margin: 2.0em auto;
 }
 
 #nav li{
@@ -20,9 +20,9 @@ inspired by coda(http://www.panic.com/coda)
 #nav li a {
 	float:left;
 	background: url("jNav/jNav.png") no-repeat;	
-	width: 16.66667em;
-	height: 0.00000em;
-	padding-top: 8.33333em;
+	width: 20.0em;
+	height: 0.0em;
+	padding-top: 10.0em;
 	overflow: hidden;
 }
 
@@ -31,15 +31,15 @@ inspired by coda(http://www.panic.com/coda)
 }
 
 #nav li#nav-blog a {
-	background-position: -16.66667em 0;
+	background-position: -20.0em 0;
 }
 
 #nav li#nav-work a {
-	background-position: -33.33333em 0;
+	background-position: -40.0em 0;
 }
 
 #nav li#nav-about a {
-	background-position: -50.00000em 0;
+	background-position: -60.0em 0;
 }
 
 

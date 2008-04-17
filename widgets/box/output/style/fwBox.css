@@ -7,15 +7,15 @@
  */
 
 .fwBox {
-	width: 22.00000em;
+	width: 26.4em;
 	background: URL("fwBox/fwBox.png") no-repeat left bottom;
-	margin: 1.25000em auto;	/* just for center */
-	padding-bottom: 0.08333em;
+	margin: 1.5em auto;	/* just for center */
+	padding-bottom: 0.1em;
 }
 .fwBox-inner {
 	background: URL("fwBox/fwBox.png") no-repeat left top;
-	padding: 1.25000em 1.66667em 0;
-	margin-bottom: 0.75000em;
+	padding: 1.5em 2.0em 0;
+	margin-bottom: 0.9em;
 }
 
 /*]]>*/

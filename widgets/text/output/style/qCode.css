@@ -7,7 +7,7 @@ html,body {
 }
 
 body {
-	margin-left: 19.41667em;
+	margin-left: 23.3em;
 	color: #242424;
 	width: 35em;
 }
@@ -18,12 +18,12 @@ pre {
 	background-color: #eef0eb;
 	margin: 2em 0;
 	padding: 1em 0;
-	border: 0.08333em dotted #b7c4d3;
-	border-width: 0.08333em 0;
+	border: 0.1em dotted #b7c4d3;
+	border-width: 0.1em 0;
 	font-size: 120%;
 	line-height: 130%;
-	margin-left: -19.41667em;
-	padding-left: 19.41667em;
+	margin-left: -23.3em;
+	padding-left: 23.3em;
 	/*for IE*/
 	zoom: 1;
 }

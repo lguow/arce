@@ -12,23 +12,23 @@
 #nav li a {
 	float:left;
 	background-position: left top;
-	padding-left: 0.83333em;
-	margin-left: 0.41667em;
+	padding-left: 1.0em;
+	margin-left: 0.5em;
 }
 #nav li a span {
 	background-position: right top;
-	padding-right: 0.83333em;
+	padding-right: 1.0em;
 	text-align:center;
 	display:block;
-	line-height: 2.08333em;
+	line-height: 2.5em;
 }	
 #nav li a:hover, #nav li.nav-current a {
-	background-position: left -7.66667em;
+	background-position: left -9.2em;
 	color:#356aa0;
 }
 #nav li a:hover span, #nav li.nav-current a span{
-	background-position: right -7.66667em;
-	text-shadow: 0.08333em 0.08333em 0.16667em #aaa;
+	background-position: right -9.2em;
+	text-shadow: 0.1em 0.1em 0.2em #aaa;
 }
 
 

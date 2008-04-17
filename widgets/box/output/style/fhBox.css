@@ -8,15 +8,15 @@
 
 .fhBox {
 	width: 90%;
-	height: 18.83333em;
+	height: 22.6em;
 	background: URL("fhBox/fhBox.png") no-repeat left top;
-	padding-left: 1.66667em;
+	padding-left: 2.0em;
 }
 .fhBox-inner {
-	height: 18.83333em;
+	height: 22.6em;
 	background: URL("fhBox/fhBox.png") no-repeat right top;
-	padding-top: 1.66667em;
-	margin-left: 0.83333em;
+	padding-top: 2.0em;
+	margin-left: 1.0em;
 	display: table;
 	zoom: 1;
 }

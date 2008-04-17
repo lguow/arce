@@ -25,15 +25,15 @@ html {
 
 
 .dBox .dBox-top {
-	 width: 2.50000em; /* top slice width */
-	 margin-left: -2.50000em;
+	 width: 3.0em; /* top slice width */
+	 margin-left: -3.0em;
 	 background-position:left top;
 }
 
 
 .dBox .dBox-bottom,
 .dBox .dBox-bottom div {
-	 height: 2.50000em; /* height of bottom cap/shade */
+	 height: 3.0em; /* height of bottom cap/shade */
 }
 
 .dBox .dBox-bottom {
@@ -41,8 +41,8 @@ html {
 }
 
 .dBox .dBox-bottom div {
-	 width: 2.50000em; /* bottom corner width */
-	 margin-left: -2.50000em;
+	 width: 3.0em; /* bottom corner width */
+	 margin-left: -3.0em;
 	 background-position: left bottom;
 }
 

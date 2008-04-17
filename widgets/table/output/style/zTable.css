@@ -7,7 +7,7 @@
 }
 
 table.zTable {
-	border-left: 0.08333em solid #96C8F5;
+	border-left: 0.1em solid #96C8F5;
 	width:100%;
 	text-indent:1em;
 	line-height:2.5em;
@@ -16,7 +16,7 @@ table.zTable {
 
 table.zTable thead th, table.zTable tfoot th{
 	background:url(zTable/zTable.png) no-repeat left top;
-	border: 0.08333em solid #96C8F5;
+	border: 0.1em solid #96C8F5;
 	border-left:none;
 	color:#1867AF;
 	font-weight:bold;
@@ -30,8 +30,8 @@ table.zTable tfoot th {
 }
 
 table.zTable tbody th, table.zTable tbody td, table.zTable tfoot th {
-	border-bottom: 0.08333em solid #96C8F5;
-	border-right: 0.08333em solid #96C8F5;
+	border-bottom: 0.1em solid #96C8F5;
+	border-right: 0.1em solid #96C8F5;
 	vertical-align:top;
 }
 

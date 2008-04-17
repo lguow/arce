@@ -3,36 +3,34 @@
 
 dl.dMenu {
 	position:relative;
-	
-	margin-left: 8.33333em;
+
+	margin-left: 10.0em;
 }
 dl.dMenu dt {
-	border: 0.08333em solid #666;
-	width: 5.83333em;
-	height: 1.91667em;
-	line-height: 1.91667em;
+	border: 0.1em solid #666;
+	width: 7.0em;
+	height: 2.3em;
+	line-height: 2.3em;
 }
 dl.dMenu dd {
 	display:none;
-	width: 16.66667em;
-	height: 25.00000em;
+	width: 20.0em;
+	height: 30.0em;
 	position:absolute;
-	top: 2.00000em;
+	top: 2.4em;
 	background:#fff;	/* fix hover bug in ie7*/
-	border: 0.08333em solid #666;
+	border: 0.1em solid #666;
 }
 dl.dMenu dd .dMenu-cover {
 	background:#fff;
-	width: 5.83333em;
+	width: 7.0em;
 	position:absolute;
-	top: -0.08333em;
-	height: 0.08333em;
+	top: -0.1em;
+	height: 0.1em;
 }
-
 dl.dMenu:hover dt {
 	border-bottom-color:#fff;
 }
-
 dl.dMenu:hover dd {
 	display:block;
 }

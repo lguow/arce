@@ -7,17 +7,17 @@
 
 #aside {
 	float: left;
-	width: 19.16667em;
+	width: 23.0em;
 }
 
 #content {
 	float:right;
 	width:100%;
-	margin:0 0 0 -19.16667em;
+	margin:0 0 0 -23.0em;
 }
 
 #content_inner {
-	margin: 0 0 0 19.16667em;
+	margin: 0 0 0 23.0em;
 }
 
 /*]]>*/

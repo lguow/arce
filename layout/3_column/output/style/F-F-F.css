@@ -2,18 +2,18 @@
 /*<![CDATA[*/
 
 #header, #container, #footer {
-	width: 80.00000em;
+	width: 96.0em;
 }
 
 #aside {
 	float: left;
-	width: 19.16667em;
+	width: 23.0em;
 }
 
 #extra {
 	float: left;
-	width: 16.66667em;
-	margin-left: -16.66667em;
+	width: 20.0em;
+	margin-left: -20.0em;
 }
 
 #content {
@@ -22,7 +22,7 @@
 }
 
 #content_inner {
-	margin: 0 16.66667em 0 19.16667em;
+	margin: 0 20.0em 0 23.0em;
 }
 
 /*]]>*/

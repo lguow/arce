@@ -29,13 +29,13 @@
  */
 
 #header, #container, #footer {
-	width: 80.00000em;
+	width: 96.0em;
 }
 
 #content {
   float: left;
-  width: 44.16667em;
-  margin:0 -63.33333em 0 19.16667em;
+  width: 53.0em;
+  margin:0 -76.0em 0 23.0em;
   /*
 	BugFix (IE6):
 		IE Doubled Float-Margin Bug
@@ -45,12 +45,12 @@
 
 #aside {
   float:left;
-  width: 19.16667em;
+  width: 23.0em;
 }
 
 #extra {
   float:right;
-  width: 16.66667em;
+  width: 20.0em;
 }
 
 /*]]>*/

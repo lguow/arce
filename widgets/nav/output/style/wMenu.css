@@ -5,8 +5,8 @@
 		http://www.webdesignerwall.com/tutorials/advanced-css-menu/
 */
 #menu {
-	width: 64.50000em;
-	height: 17.50000em;
+	width: 77.4em;
+	height: 21.0em;
 	background: url(wMenu/menu-bg.jpg) no-repeat;
 	position: relative;
 }
@@ -27,45 +27,45 @@
 	display: block;
 }
 #menu .home {
-	width: 12.00000em;
-	height: 4.83333em;
+	width: 14.4em;
+	height: 5.8em;
 	background: url(wMenu/home.gif) no-repeat;
-	left: 8.00000em;
-	top: 6.08333em;
+	left: 9.6em;
+	top: 7.3em;
 }
 #menu .home span {
-	width: 7.16667em;
-	height: 1.16667em;
+	width: 8.6em;
+	height: 1.4em;
 	background: url(wMenu/home-over.gif) no-repeat;
-	left: 2.33333em;
-	top: -1.66667em;
+	left: 2.8em;
+	top: -2.0em;
 }
 #menu .about {
-	width: 10.91667em;
-	height: 4.25000em;
+	width: 13.1em;
+	height: 5.1em;
 	background: url(wMenu/about.gif) no-repeat;
-	left: 28.16667em;
-	top: 8.08333em;
+	left: 33.8em;
+	top: 9.7em;
 }
 #menu .about span {
-	width: 3.33333em;
-	height: 1.00000em;
+	width: 4.0em;
+	height: 1.2em;
 	background: url(wMenu/about-over.gif) no-repeat;
-	left: 3.66667em;
-	top: 4.50000em;
+	left: 4.4em;
+	top: 5.4em;
 }
 #menu .rss {
-	width: 9.33333em;
-	height: 3.91667em;
+	width: 11.2em;
+	height: 4.7em;
 	background: url(wMenu/rss.gif) no-repeat;
-	left: 49.00000em;
-	top: 7.83333em;
+	left: 58.8em;
+	top: 9.4em;
 }
 #menu .rss span {
-	width: 7.66667em;
-	height: 1.66667em;
+	width: 9.2em;
+	height: 2.0em;
 	background: url(wMenu/rss-over.gif) no-repeat;
-	left: 2.16667em;
-	top: -1.66667em;
+	left: 2.6em;
+	top: -2.0em;
 }
 /*]]>*/

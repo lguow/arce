@@ -7,22 +7,22 @@
 
 #aside {
 	float: left;
-	width: 19.16667em;
+	width: 23.0em;
 }
 
 #extra {
 	float: left;
-	width: 16.66667em;
+	width: 20.0em;
 }
 
 #main {
 	float:left;
 	width:100%;
-	margin:0 0 0 -35.83333em;
+	margin:0 0 0 -43.0em;
 }
 
 #content {
-	margin: 0 0 0 35.83333em;
+	margin: 0 0 0 43.0em;
 }
 
 /*]]>*/

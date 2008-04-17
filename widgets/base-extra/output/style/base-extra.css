@@ -32,16 +32,18 @@ html {
  */
 table { border-collapse: separate; border-spacing: 0; }
 
-
+ul, ol{
+	margin-left: 2em;
+}
 
 
 /* -------------- hide Element ----------------- */
 .hide {
 	position:absolute;
-	left: 0.00000em;
-	top: -41.66667em;
-	width: 0.08333em;
-	height: 0.08333em;
+	left: 0.0em;
+	top: -50.0em;
+	width: 0.1em;
+	height: 0.1em;
 	overflow:hidden;
 }
 
@@ -90,11 +92,10 @@ span.amp {
  * Reference:
  *     http://www.markboulton.co.uk/journal/comments/-five_simple_steps_to_better_typography_part_2/ 
  */
-/*
 ul {
 	list-style-position: outside;
 }
-*/
+
 
 /* ------------------------------------------------------------------
  *	## Others ##:
@@ -103,20 +104,20 @@ ul {
 
 del {
 	background-color:#fdcccc;
-	border: 0.08333em solid #c99;
+	border: 0.1em solid #c99;
 	text-decoration:line-through;
 }
 
 ins {
 	background-color:#CFC;
-	border: 0.08333em solid #9c9;
+	border: 0.1em solid #9c9;
 }
 
 hr {
 	border:0;
-	height: 0.08333em;
+	height: 0.1em;
 	background-color:transparent;
-	border-top: 0.25000em solid #f2f2f2;
+	border-top: 0.3em solid #f2f2f2;
 	clear:both;
 	margin:.7em 0;
 }
