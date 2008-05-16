@@ -1,21 +1,21 @@
 
 /*<![CDATA[*/
 .scrollFade { 
-	border-top: 0.1em solid rgb(153, 153, 153);
-	border-bottom: 0.1em solid rgb(153, 153, 153); 
-	padding: 0pt 0.5em 0.5em 0pt;
+	border-top: 1px solid rgb(153, 153, 153);
+	border-bottom: 1px solid rgb(153, 153, 153); 
+	padding: 0pt 5px 5px 0pt;
 	overflow: auto;
-	width: 22.0em;
-	height: 23.6em;
+	width: 220px;
+	height: 236px;
 	line-height: 130%;
 }
 
 .scrollFade-fade { 
 	background:transparent url("scrollFade/fade.png") repeat left top;
 	position: relative;
-	height: 4.0em;
-	width: 20.5em;
-	top: -4.1em; 
+	height: 40px;
+	width: 205px;
+	top: -41px; 
 }
 
 #ie6 .scrollFade-fade {

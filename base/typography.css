@@ -27,7 +27,7 @@
  *		so the default font-size will be 10px
  */
 body {
-	font: 62.5%/1.5 Verdana, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font: 75%/1.5 Verdana, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 /* 
@@ -36,7 +36,7 @@ body {
  *     in quicksMode （except font-family）
  */
 table {
-	font-size: 1.2em;
+	font-size: 1em;
 }
 
 /* 
@@ -44,7 +44,7 @@ table {
  *     <input> doesn't inherit 
  */
 input {
-	font-size: 1.2em;
+	font-size: 1em;
 }
 
 /* 
@@ -52,7 +52,7 @@ input {
  *     <legend> doesn't inherit in IE 
  */
 legend{
-	font-size: 1.2em;
+	font-size: 1em;
 	color: #000;
 }
 
@@ -87,11 +87,11 @@ h6 { font-size: 1.2em; font-weight: bold; }
  */
 
 big {
-	font-size:1.4em;
+	font-size:1.2em;
 }
 
 small {
-	font-size:1em;
+	font-size:0.8em;
 }
 
 code, pre, samp {

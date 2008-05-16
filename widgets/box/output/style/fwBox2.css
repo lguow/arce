@@ -11,14 +11,14 @@ html {
 }
 
 .fwBox {
-	width: 23.8em;
+	width: 238px;
 	background: url("fwBox2/fwBox2.png") no-repeat left bottom;
-	margin: 1.5em auto;	/* just for center */
-	padding-bottom: 1.0em;
+	margin: 15px auto;	/* just for center */
+	padding-bottom: 10px;
 }
 .fwBox-inner {
 	background: url("fwBox2/fwBox2.png") no-repeat left top;
-	padding: 1.5em 2.0em 0.1em;
+	padding: 15px 20px 1px;
 }
 
 /*]]>*/

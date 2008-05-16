@@ -1940,6 +1940,8 @@ sub xhtmlMetaData {
 			$result.= qq!\t\t<meta name="$export_key" content="$g_metadata{$key}"$g_empty_element_suffix\n!;
 		}
 	}
+	
+	$result.= "\t\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />"
 	$result.= "\t</head>\n";
 	
 	return $result;

@@ -9,17 +9,16 @@
 .fhBox {
 	width: 90%;
 	background: #3C74BA URL("fhBox/fhBox_footer.png") no-repeat left top;
-	margin: 1.0em auto;
+	margin: 10px auto;
 	
 }
 .fhBox-inner {
-	height: 5.0em;
-	line-height: 5.0em;
+	height: 50px;
 	background: #3C74BA URL("fhBox/fhBox_footer.png") no-repeat right top;
 	text-align: center;
-	line-height: 4.5em;
-	margin-left: 1.5em;
+	line-height: 45px;
+	margin-left: 15px;
 	color: #fff;
-	text-shadow: 0.1em 0.1em 0.2em #000;
+	text-shadow: 1px 1px 2px #000;
 }
 /*]]>*/

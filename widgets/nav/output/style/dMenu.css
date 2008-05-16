@@ -4,29 +4,29 @@
 dl.dMenu {
 	position:relative;
 
-	margin-left: 10.0em;
+	margin-left:100px;
 }
 dl.dMenu dt {
-	border: 0.1em solid #666;
-	width: 7.0em;
-	height: 2.3em;
-	line-height: 2.3em;
+	border:1px solid #666;
+	width:70px;
+	height:23px;
+	line-height:23px;
 }
 dl.dMenu dd {
 	display:none;
-	width: 20.0em;
-	height: 30.0em;
+	width:200px;
+	height:300px;
 	position:absolute;
-	top: 2.4em;
+	top:24px;
 	background:#fff;	/* fix hover bug in ie7*/
-	border: 0.1em solid #666;
+	border:1px solid #666;
 }
 dl.dMenu dd .dMenu-cover {
 	background:#fff;
-	width: 7.0em;
+	width:70px;
 	position:absolute;
-	top: -0.1em;
-	height: 0.1em;
+	top:-1px;
+	height:1px;
 }
 dl.dMenu:hover dt {
 	border-bottom-color:#fff;

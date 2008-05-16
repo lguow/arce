@@ -4,23 +4,23 @@
 	a[href^="http:"], a[href^="mailto:"], a[href^="http:"]:visited, 
 	a[href$=".pdf"], a[href$=".doc"], a[href$=".xls"], a[href$=".rss"], 
 	a[href$=".rdf"], a[href^="aim:"] {
-	  padding: 0.1em 2.5em 0 0;
-	  margin: -0.2em 0;
+	  padding:1px 25px 0 0;
+	  margin:-2px 0;
 	  background: url("iLink/iLink.png") no-repeat right center;
 	}
 
 	/* External links */
-	a[href^="http:"]          { background-position: right -23.8em; } 
-	a[href^="mailto:"]        { background-position: right -19.9em; }
-	a[href^="http:"]:visited  { background-position: right -12.3em; }
+	a[href^="http:"]          { background-position: right -238px; } 
+	a[href^="mailto:"]        { background-position: right -199px; }
+	a[href^="http:"]:visited  { background-position: right -123px; }
 
 	/* Files */
-	a[href$=".pdf"]   { background-position: right -4.2em; }  
-	a[href$=".doc"]   { background-position: right -8.2em; }  
-	a[href$=".xls"]   { background-position: right -16.1em; }  
+	a[href$=".pdf"]   { background-position: right -42px; }  
+	a[href$=".doc"]   { background-position: right -82px; }  
+	a[href$=".xls"]   { background-position: right -161px; }  
 
 	/* Misc */
 	a[href$=".rss"], 
-	a[href$=".rdf"]   { background-position: right -27.9em; }
-	a[href^="aim:"]   { background-position: right -0.4em; }
+	a[href$=".rdf"]   { background-position: right -279px; }
+	a[href^="aim:"]   { background-position: right -4px; }
 	

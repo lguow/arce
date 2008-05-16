@@ -2,17 +2,17 @@
 /*<![CDATA[*/
 /*CSS Yahoo new version style pagination*/
 	div.pagination {
-		padding: 0.3em;
-		margin: 0.3em;
+		padding: 3px;
+		margin: 3px;
 		text-align:center;
 		font-family:Tahoma,Helvetica,sans-serif;
 		font-size:.85em;
 	}
 	
 	div.pagination a {
-		border: 0.1em solid #ccdbe4;
-		margin-right: 0.3em;
-		padding: 0.2em 0.8em;
+		border: 1px solid #ccdbe4;
+		margin-right:3px;
+		padding:2px 8px;
 
 		background-position:bottom;
 		text-decoration: none;
@@ -20,14 +20,14 @@
 		color: #0061de;		
 	}
 	div.pagination a:hover, div.pagination a:active {
-		border: 0.1em solid #2b55af;
+		border: 1px solid #2b55af;
 		background-image:none;
 		background-color:#3666d4;
 		color: #fff;
 	}
 	div.pagination span.current {
-		margin-right: 0.3em;
-		padding: 0.2em 0.6em;
+		margin-right:3px;
+		padding:2px 6px;
 		
 		font-weight: bold;
 		color: #000;
@@ -36,18 +36,18 @@
 		display:none;
 	}
 	div.pagination a.next{
-		border: 0.2em solid #ccdbe4;
-		margin:0 0 0 1.0em;
+		border:2px solid #ccdbe4;
+		margin:0 0 0 10px;
 	}
 	div.pagination a.next:hover{
-		border: 0.2em solid #2b55af;
+		border:2px solid #2b55af;
 	}
 	div.pagination a.prev{
-		border: 0.2em solid #ccdbe4;
-		margin:0 1.0em 0 0;
+		border:2px solid #ccdbe4;
+		margin:0 10px 0 0;
 	}
 	div.pagination a.prev:hover{
-		border: 0.2em solid #2b55af;
+		border:2px solid #2b55af;
 	}
 
 /*]]>*/

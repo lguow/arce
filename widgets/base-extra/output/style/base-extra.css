@@ -40,10 +40,10 @@ ul, ol{
 /* -------------- hide Element ----------------- */
 .hide {
 	position:absolute;
-	left: 0.0em;
-	top: -50.0em;
-	width: 0.1em;
-	height: 0.1em;
+	left:0px;
+	top:-500px;
+	width:1px;
+	height:1px;
 	overflow:hidden;
 }
 
@@ -104,20 +104,20 @@ ul {
 
 del {
 	background-color:#fdcccc;
-	border: 0.1em solid #c99;
+	border:1px solid #c99;
 	text-decoration:line-through;
 }
 
 ins {
 	background-color:#CFC;
-	border: 0.1em solid #9c9;
+	border:1px solid #9c9;
 }
 
 hr {
 	border:0;
-	height: 0.1em;
+	height:1px;
 	background-color:transparent;
-	border-top: 0.3em solid #f2f2f2;
+	border-top:3px solid #f2f2f2;
 	clear:both;
 	margin:.7em 0;
 }

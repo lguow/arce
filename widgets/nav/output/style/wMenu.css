@@ -5,8 +5,8 @@
 		http://www.webdesignerwall.com/tutorials/advanced-css-menu/
 */
 #menu {
-	width: 77.4em;
-	height: 21.0em;
+	width: 774px;
+	height: 210px;
 	background: url(wMenu/menu-bg.jpg) no-repeat;
 	position: relative;
 }
@@ -27,45 +27,45 @@
 	display: block;
 }
 #menu .home {
-	width: 14.4em;
-	height: 5.8em;
+	width: 144px;
+	height: 58px;
 	background: url(wMenu/home.gif) no-repeat;
-	left: 9.6em;
-	top: 7.3em;
+	left: 96px;
+	top: 73px;
 }
 #menu .home span {
-	width: 8.6em;
-	height: 1.4em;
+	width: 86px;
+	height: 14px;
 	background: url(wMenu/home-over.gif) no-repeat;
-	left: 2.8em;
-	top: -2.0em;
+	left: 28px;
+	top: -20px;
 }
 #menu .about {
-	width: 13.1em;
-	height: 5.1em;
+	width: 131px;
+	height: 51px;
 	background: url(wMenu/about.gif) no-repeat;
-	left: 33.8em;
-	top: 9.7em;
+	left: 338px;
+	top: 97px;
 }
 #menu .about span {
-	width: 4.0em;
-	height: 1.2em;
+	width: 40px;
+	height: 12px;
 	background: url(wMenu/about-over.gif) no-repeat;
-	left: 4.4em;
-	top: 5.4em;
+	left: 44px;
+	top: 54px;
 }
 #menu .rss {
-	width: 11.2em;
-	height: 4.7em;
+	width: 112px;
+	height: 47px;
 	background: url(wMenu/rss.gif) no-repeat;
-	left: 58.8em;
-	top: 9.4em;
+	left: 588px;
+	top: 94px;
 }
 #menu .rss span {
-	width: 9.2em;
-	height: 2.0em;
+	width: 92px;
+	height: 20px;
 	background: url(wMenu/rss-over.gif) no-repeat;
-	left: 2.6em;
-	top: -2.0em;
+	left: 26px;
+	top: -20px;
 }
 /*]]>*/

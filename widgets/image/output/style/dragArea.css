@@ -2,7 +2,7 @@
 /*<![CDATA[*/
 #dragRectangle {
 	position: absolute;
-	border: 0.1em solid #78A5D1;
+	border: 1px solid #78A5D1;
 	background: #F9FBFD;
 	display:none;
 	opacity:0.5;
@@ -14,8 +14,8 @@
 #selectItems div{
 	position:absolute;
 	background: url('dragArea/Asleep.png');
-	width: 12.8em; 
-	height: 12.8em;
+	width:128px; 
+	height:128px;
 }
 
 .dragged {

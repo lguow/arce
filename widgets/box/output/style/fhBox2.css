@@ -12,15 +12,15 @@ html {
 
 .fhBox {
 	width: 90%;
-	height: 5.6em;
+	height: 56px;
 	background: URL("fhBox2/fhBox2.png") no-repeat left top;
-	padding-left: 2.0em;
-	margin: 1.5em auto;
+	padding-left: 20px;
+	margin: 15px auto;
 	text-align:center;
 }
 .fhBox-inner {
-	height: 5.6em;
-	line-height: 5.6em;
+	height: 56px;
+	line-height: 56px;
 	color:#fff;
 	background: URL("fhBox2/fhBox2.png") no-repeat right bottom;
 }

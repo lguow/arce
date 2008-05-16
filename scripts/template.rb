@@ -115,7 +115,7 @@ def template(design)
         outPutStyle = File.open("output/style/#{fileName}.css", 'w')
         outPutStyle.puts styles
         outPutStyle.close
-        px2em("output/style/#{fileName}.css")
+        #px2em("output/style/#{fileName}.css")
       end
 
           

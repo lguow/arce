@@ -17,27 +17,27 @@
 
 .mBox {
 	float:left;
-    padding-right: 1.0em;       /* the gap on the right edge of the image (not content padding) */
+    padding-right: 10px;       /* the gap on the right edge of the image (not content padding) */
 }
 
 /* set the top-right image */
 .mBox .mBox-head {
     background-position: right top;
-    margin-right: -1.0em;       /* pull the right image over on top of border */
-    padding-right: 1.0em;       /* right-image-gap + right-inside padding */
+    margin-right: -10px;       /* pull the right image over on top of border */
+    padding-right: 10px;       /* right-image-gap + right-inside padding */
 }
 
 /* set the top-left image */
 .mBox .mBox-head h2 {
     background-position: left top;
-    padding-top: 1.5em;
+    padding-top: 10px;
 }
 
 /* set the lower-left corner image */
 .mBox .mBox-body {
     background-position: left bottom;
-    margin-right: 1.0em;        /* interior-padding right */
-    padding: 0 0 2.0em 1.5em; 
+    margin-right: 10px;        /* interior-padding right */
+    padding: 0 0 20px 15px; 
 }
 
 .mBox .mBox-body img{

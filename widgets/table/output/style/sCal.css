@@ -6,8 +6,8 @@
 */
 
 .sCal {
-	width: 14.1em;
-	border-left: 0.1em solid #A2ADBC;
+	width: 141px;
+	border-left: 1px solid #A2ADBC;
 	color: #616B76;
 	text-align: center;
 	background-color: #fff;
@@ -20,19 +20,19 @@
 }	
 
 .sCal caption {
-	width: 14.1em;
+	width: 141px;
 	background: #A2ADBC;
 	color: #fff;
 	text-align: center;
 }
 
 .sCal th {
-	font: bold 1.1em/ 2.0em "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	font: bold 11px/20px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
 	color: #616B76;
 	background: #D9E2E1;
-	border-right: 0.1em solid #A2ADBC;
-	border-bottom: 0.1em solid #A2ADBC;
-	border-top: 0.1em solid #A2ADBC;
+	border-right: 1px solid #A2ADBC;
+	border-bottom: 1px solid #A2ADBC;
+	border-top: 1px solid #A2ADBC;
 }
 
 .sCal .sCal-today, .sCal td.sCal-today a, .sCal td.sCal-today a:link, .sCal td.sCal-today a:visited {
@@ -42,10 +42,10 @@
 }
 
 .sCal td {
-	border-right: 0.1em solid #A2ADBC;
-	border-bottom: 0.1em solid #A2ADBC;
-	width: 2.0em;
-	height: 2.0em;
+	border-right: 1px solid #A2ADBC;
+	border-bottom: 1px solid #A2ADBC;
+	width: 20px;
+	height: 20px;
 	text-align: center;
 	background: url(sCal/bg_calendar.gif) no-repeat right bottom;
 }

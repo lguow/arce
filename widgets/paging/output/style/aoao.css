@@ -3,7 +3,7 @@
 body {
 	color:#ECDCF3;
 	font-family:Tahoma,Verdana,Arial,Helvetica,sans-serif;
-	font-size: 1.2em;
+	font-size:12px;
 }
 
 .pager {
@@ -11,7 +11,7 @@ body {
 		display:inline;
 		list-style-type:none;
 		margin:-.4em 0 0;
-		padding:0 1.0em 1.2em;
+		padding:0 10px 12px;
 }
 
 .pager li {
@@ -23,7 +23,7 @@ body {
 
 .pager li a,.pager li span,.pager li .ing {
 		background-color:#f8f8f8;
-		border: 0.1em solid #9a92aa;
+		border:1px solid #9a92aa;
 		color:#555!important;
 		display:block;
 		font-family:Tahoma,Arial,sans-serif;
@@ -45,13 +45,13 @@ body {
 
 .pager li .ing {
 		background-color:#551881;
-		border: 0.1em solid #b475c8;
+		border:1px solid #b475c8;
 		color:#FFF!important;
 		opacity:.9;
 }
 
 .pager li a:hover,.pager li a:focus,.pager li a:active {
-		border: 0.1em solid #26143e;
+		border:1px solid #26143e;
 		color:#26143e!important;
 		font-size:2em;
 		height:1.6em;

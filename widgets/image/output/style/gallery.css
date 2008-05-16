@@ -4,16 +4,16 @@
 }
 
 .gallery li {
-	margin: 1.0em;
-	border: 0.1em solid #eee;
-	width: 18.0em;
-	height: 20.0em;
+	margin: 10px;
+	border: 1px solid #eee;
+	width: 180px;
+	height: 200px;
 	float: left;
 	text-align:center;
 }
 
 .gallery li:hover {
-	border: 0.1em solid #6AA5DC;
+	border: 1px solid #6AA5DC;
 	background: #E6F1FA;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .gallery .figure {
-	height: 16.0em;
+	height: 160px;
 	position: relative;
 }
 

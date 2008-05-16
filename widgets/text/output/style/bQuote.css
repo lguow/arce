@@ -3,11 +3,11 @@
 blockquote {
 	background: transparent url(bQuote/quote.png) left top no-repeat;
 	font-family: "Palatino Linotype", Palatino, Georgia, serif;
-	margin: 2.0em;
+	margin:20px;
 }
 blockquote p{
-	padding-left: 2.9em;
-	padding-top: 1.3em;
+	padding-left:29px;
+	padding-top:13px;
 }
 blockquote div{
 	text-align:right;

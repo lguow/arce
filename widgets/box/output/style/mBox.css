@@ -16,28 +16,28 @@
 
 .mBox {
     background-position: right bottom;
-    width: 30.0em;
-    padding-right: 1.5em; 
-    margin: 2.0em auto; 
+    width: 300px;
+    padding-right: 15px; 
+    margin: 20px auto; 
 }
 
 
 .mBox .mBox-head {
     background-position: right top;
-	padding-right: 1.5em;
-	margin-right: -1.5em;
+	padding-right: 15px;
+	margin-right: -15px;
 }
 
 
 .mBox .mBox-head h2 {
     background-position: left top;
 	margin:0;
-	padding: 1.0em 0 0 1.0em;
+	padding: 10px 0 0 10px;
 }
 
 .mBox .mBox-body {
     background-position: left bottom;
-	padding: 0 0 1.0em 1.0em;
+	padding: 0 0 10px 10px;
 }
 
 
