@@ -1,4 +1,81 @@
 var TimeOut = false;
+var resultControl;
+var STORE;
+
+if (isOnLine()) {
+	window.onload = function() {
+		STORE = new Persist.Store('spotLightMemory', {
+			swf_path : 'js/persist/persist.swf'
+		});
+
+		STORE.get('selectMemory', function(ok, val) {
+	    	if (ok) {
+				if (val) {
+					if (val.value) {
+						selectMemory.loadCache(JSON.parse(val.value));
+					} else {
+						selectMemory.loadCache(JSON.parse(val));
+					}
+				}
+			}
+	    });
+	};
+}
+
+
+
+function isOnLine() {
+	if(/^http.*/.test(document.URL)) {
+		return true;
+	} else {
+		return false;
+	}
+};
+
+
+var selectMemory = function() {
+	var cache = {};
+	
+	function getCache (kw, type) {
+		type = (type == '') ? '___ALL___' : type;
+		
+		if (cache[kw]) {
+			if (cache[kw][type]) {
+				return cache[kw][type];
+			}
+		} else {
+			return false;
+		}
+	}
+	
+	function setCache (kw, type, idx) {
+		type = (type == '') ? '___ALL___' : type;
+		
+		if (Al.isUndefined(cache[kw])) {
+			cache[kw] = {};
+		} 
+		
+		cache[kw][type] = idx;
+		
+		STORE.set('selectMemory', JSON.stringify(selectMemory.getCache()));
+		STORE.save();
+	}
+	
+	return {
+		get : function(kw, type) {
+			return getCache(kw, type);
+		},
+		set : function(kw, type, idx) {
+			return setCache(kw, type, idx);
+		},
+		getCache : function() {
+			return cache;
+		},
+		loadCache : function(data) {
+			cache = data;
+		}
+	};
+}();
 
 (function(){
 	spotLight.init(docData);
@@ -72,7 +149,12 @@ var TimeOut = false;
 		
 		Al.G('result').innerHTML = buildResult(spotLight.search(kw, type));
 
+		var table = Al.G('result').getElementsByTagName('table')[0];
 
+		if (table) {
+			sorttable.makeSortable(table);
+		}
+		
 		if(Al.isIE && Al.isIE < 7) {
 			var tbody = Al.G('result').getElementsByTagName('tbody')[0];
 			if (tbody) {
@@ -91,6 +173,12 @@ var TimeOut = false;
 		
 		resultControl.rebuild();
 		
+		var idx = selectMemory.get(kw, type);
+				
+		if (idx) {
+			resultControl.focusOne(idx);
+		}
+		
 		TimeOut = false;
 	};
 	
@@ -100,7 +188,7 @@ var TimeOut = false;
 			return '<div style="text-align:center">no result</div>';
 		}
 		
-		var tableTmp = ['<table cellspacing="0">', '<caption>Result</caption>', '<thead>'];
+		var tableTmp = ['<table cellspacing="0">', '<caption>'+ data.length +' Results</caption>', '<thead><tr>'];
 		
 		var keys = Al.A(keyWords).remove('summary');
 		
@@ -110,7 +198,7 @@ var TimeOut = false;
 			tableTmp.push('<th>'+ value + '</th>');
 		});
 		
-		tableTmp.push('</thead><tbody>');
+		tableTmp.push('</tr></thead><tbody>');
 		
 		Al.each(data, function(idx, value){
 			var dataTmp = [];
@@ -123,13 +211,15 @@ var TimeOut = false;
 			tableTmp.push('<tr>');
 			
 			Al.each(dataTmp, function(i, v) {
-				if (v == null) {
-					v = '';
+				if (v) {
+					if (i == urlIdx) {
+						v = '<a href="'+v+'" target="_blank">'+ v.split('/').last() +'</a>';
+					}
+				} else {
+					v = 'none';
 				}
-				if (i == urlIdx) {
-					v = '<a href="'+v+'" target="_blank">'+ v.split('/').last() +'</a>';
-				}
-				tableTmp.push('<td>' + v + '</td>');
+				
+				tableTmp.push('<td>' + v + ' </td>');
 			});
 			tableTmp.push('</tr>');
 		});
@@ -142,7 +232,7 @@ var TimeOut = false;
 
 	
 	
-	var resultControl = function() {
+	resultControl = function() {
 		
 		function getUrl() {
 			var keys = Al.A(keyWords).remove('summary');
@@ -209,10 +299,36 @@ var TimeOut = false;
 			}
 		}
 		
-		function enter () {
+		function enter() {
+			var kw = Al.G('search').value;
+			var type = Al.G('searchType').getElementsByTagName('select')[0].value;
+			selectMemory.set(kw, type, currIdx);
+			
 			window.open(getUrl().href);
 		}
+		
+		function resetIdx() {
+			var trs = getTrs();
 			
+			Al.each(trs, function(i, v) {
+				if (Al.Dom.hasClass(v, 'trFocus')) {
+					currIdx = i;
+					return;
+				}
+			});
+			
+			return 0;
+			
+		}
+		
+		function focusOne(idx){
+			if (idx >= 0 && idx <= trs.length - 1) {
+				setBlur(currIdx);
+				setFocus(idx);
+				currIdx = idx;
+			}
+		}
+		
 		return {
 			moveUp : function() {
 				return moveUp();
@@ -226,8 +342,15 @@ var TimeOut = false;
 			
 			rebuild : function() {
 				rebuild();
-			}
+			},
 			
+			resetIdx : function() {
+				resetIdx();
+			},
+			
+			focusOne : function(idx) {
+				focusOne(idx);
+			}
 		};
 	}();
 	

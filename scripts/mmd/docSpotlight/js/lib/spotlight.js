@@ -10,6 +10,8 @@ var spotLight = function() {
 		
 	var keyWords = false;
 	
+	var useShortCut = true;
+	
 	var getPinyYinCode = function(kw) {
 		var charCode = kw.charCodeAt();
 		return (charCode<1000||charCode>60000) ? kw : PinYin.lookUpWord(kw);	
@@ -72,31 +74,75 @@ var spotLight = function() {
 	function findData(kw, searchData) {
 		var kw = String.trim(kw);
 		
-		var kw = kw.split(" ");
+		var kw = kw.split(' ');
 		
 		var resultIndex = false;
 		
+		var firstRun = true;
+		
 		for (var i=0, l=kw.length; i < l; i++) {
-			
 			kw[i] = String.trim(kw[i]);
-			
 			var rgx;
 			
-			if (resultIndex) {
+			
+			if (!firstRun) {
+				
 				var resultIndexTmp = [];
 				Al.each(resultIndex, function(idx, value) {
-					if(searchData[value].indexOf(kw[i]) != -1) {
-						resultIndexTmp.push(value);
+					if (useShortCut) {
+						
+						if (/^["'].*["']$/.test(kw[i])) {
+							if (searchData[value].indexOf(kw[i].match(/^["'](.*)["']$/)[1]) != -1) {
+								resultIndexTmp.push(value);
+							}	
+						} else {
+							var tmpExpArray = [];
+							kw[i].split('').each(function(v){
+									tmpExpArray.push(v + '.*');
+							});
+							if (new RegExp(tmpExpArray.join('')).test(searchData[value])) {
+									resultIndexTmp.push(value);
+							}
+						}
+	
+					} else {
+						if (searchData[value].indexOf(kw[i]) != -1) {
+							resultIndexTmp.push(value);
+						}	
 					}
+					
 				});
 				resultIndex = resultIndexTmp;
 			} else {
 				var resultIndex = [];				
 				Al.each(searchData, function(key, value) {
-					if(value.indexOf(kw[0]) != -1) {
-						resultIndex.push(key);
+					if (useShortCut) {
+						
+						if (/^["'].*["']$/.test(kw[0])) {
+							
+							if (value.indexOf(kw[0].match(/^["'](.*)["']$/)[1]) != -1) {
+								resultIndex.push(key);
+							}	
+						} else {
+							var tmpExpArray = [];
+
+							kw[0].split('').each(function(v){
+								tmpExpArray.push(v + '.*');
+							});
+							
+							if (new RegExp(tmpExpArray.join('')).test(value)) {
+								resultIndex.push(key);
+							}
+						}
+						
+					} else {
+						
+						if(value.indexOf(kw[0]) != -1) {
+							resultIndex.push(key);
+						}
 					}
 				});
+				firstRun = false;
 			}
 		}
 		
@@ -109,7 +155,7 @@ var spotLight = function() {
 	
 	function _search (kw, type) {
 		
-		if (/^[a-z0-9 ]*$/i.test(kw)) {
+		if (/^[a-z0-9 "']*$/i.test(kw)) {
 			var searchData = buildSearchData(type, true);
 		} else {
 			var searchData = buildSearchData(type, false);

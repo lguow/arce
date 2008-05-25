@@ -1,4 +1,5 @@
 #header {
+	position: relative;
 	background: url(index/header.png) left top;
 }
 
@@ -7,6 +8,16 @@
 	height: 87px;
 	margin: 0 auto;
 	background: url(index/logo.png) left top;
+}
+
+#help {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	height:16px;
+	line-height:16px;
+	background: url(index/help.png) left top no-repeat;
+	padding-left: 18px;
 }
 
 #searchBar {
@@ -43,6 +54,7 @@
 	margin:0 auto;
 	text-indent:1em;
 	line-height:2.5em;
+	-webkit-box-shadow: 0px 3px 12px #aaa;
 }
 
 #result table thead th, #result table tfoot th{
@@ -52,6 +64,7 @@
 	color:#1867AF;
 	font-weight:bold;
 	line-height:3em;
+	cursor: pointer;
 }
 
 #result table tfoot th {
@@ -74,6 +87,11 @@
 	background:#ECF5FD;
 }
 
+#result table tr {
+	background:#fff;
+	-webkit-transition: background-color 0.1s linear;
+}
+
 #result table tbody tr:hover td, #result table tbody tr:hover th{
 	background:#EFF7FD;
 }
@@ -85,6 +103,7 @@
 
 #result table .trFocus {
 	background:#D6E9FA;
+	
 }
 
 #result table tbody .ie6Hover {
