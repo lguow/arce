@@ -2,7 +2,13 @@
 	
 	#nav {
 		width:200px;
+		margin-left: 100px;
+
 	}
+	#nav ul {
+	
+			list-style: none;
+}
 	#nav li {
 		margin:5px 0;
 	}

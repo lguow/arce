@@ -1,0 +1,479 @@
+﻿% title: markdown语法快速入门 
+% author: duoyi
+% date: 2008-07-07
+
+## 文档简介
+
+在文档的最前端加入文档的简介可以便于搜索及管理
+
+    % title: markdown语法快速入门 
+    % author: duoyi
+    % date: 2008-07-07
+
+## 标题
+
+只需要在一段文本前加*＃*号即可，
+
+	# 标题1
+
+	## 标题2
+
+	##### 标题5
+	
+等价于
+
+	<h1>标题1</h1>
+
+	<h2>标题2</h2>
+
+	</h5>标题5</h5>
+	
+## 段落
+
+一个空行即为一个段落
+
+    一个段落
+    换行不会导致新的段落
+    
+    第二个段落
+    空格才会产生新的段落
+
+等价于
+
+    <p>一个段落
+    换行不会导致新的段落</p>
+    
+    <p>第二个段落
+    空格才会产生新的段落</p>  
+
+
+## 链接
+
+### 基本语法
+
+其中Title是可选的
+
+	[example](http://url.com/ "Title")
+
+等价于
+    
+    <a href="http://url.com/" title="Title">example</a>
+
+### 引用链接
+
+用于简化页面中重复的链接
+
+首先声明一个链接（Title可选），建议放在文档开头
+    
+    [id]: http://example.com/  "Title"
+
+然后在页面中就能以如下的形式调用，从而不需要再写地址
+
+	[example][id]
+		  
+### 链接简写
+
+    <http://example.com/>
+
+等价于
+
+    <a href="http://example.com/">http://example.com/</a>
+
+如果地址为email时会对email地址进行编码，防止被垃圾邮件搜到，如
+
+    <wuduoyi@baidu.com>
+
+等价于
+
+    <a href="&#x6D;&#x61;&#x69;&#108;&#116;&#111;:&#119;&#x75;&#x64;&#x75;&#x6F;y&#105;&#64;&#x62;&#97;&#x69;&#x64;&#x75;&#46;&#99;&#x6F;&#109;">&#119;&#x75;&#x64;&#x75;&#x6F;y&#105;&#64;&#x62;&#97;&#x69;&#x64;&#x75;&#46;&#99;&#x6F;&#109;</a>
+    
+
+## 源码块
+
+使用tab键或四个空格将一段文本空开，它就成为一个源码块了，可以查看本文档的源码
+
+
+## 图片
+
+### 基本语法
+
+其中Title可选
+
+	![alt text](/path/img.jpg "Title")
+
+等价于
+
+    <img src="/path/img.jpg" alt="alt text" title="Title" />
+    
+### 引用图片
+
+和图片的做法类似，只需在一个地方声明就能在多处调用
+
+	[id]: /url/to/img.jpg "Title"
+	
+	![alt text][id]
+
+	
+## 强调
+
+	*italic*   **bold**
+	_italic_   __bold__
+
+等价于
+
+    <em>italic</em>   <strong>bold</strong>
+    <em>italic</em>   <strong>bold</strong>
+
+## Lists
+
+### 有序列表
+
+	1.  Foo
+	2.  Bar
+
+等价于
+
+    <ol>
+        <li>Foo</li>
+        <li>Bar</li>
+    </ol>
+    
+注意，这里有时候会出现意外，如下面的写法会无意间转成有序列表
+
+    1986. What a great season.
+
+解决办法时进行转义
+
+    1986\. What a great season.
+
+### 无序列表
+
+	*   A list item.
+	
+		With multiple paragraphs.
+
+	*   Bar
+
+等价于
+
+    <ul>
+        <li>
+            <p>A list item.</p>     
+            <p>With multiple paragraphs.</p>
+        </li>
+        <li>
+            <p>Bar</p>
+        </li>
+    </ul>
+
+
+### 嵌套形式
+
+	*   Abacus
+		* answer
+	*   Bubbles
+		1.  bunk
+		2.  bupkis
+			* BELITTLER
+		3. burper
+	*   Cunning
+
+等价于
+
+    <ul>
+        <li>Abacus
+            <ul>
+                <li>answer</li>
+            </ul>
+        </li>
+        <li>Bubbles
+            <ol>
+                <li>bunk</li>
+                <li>bupkis
+                    <ul>
+                        <li>BELITTLER</li>
+                    </ul>
+                </li>
+                <li>burper</li>
+            </ol>
+        </li>
+        <li>Cunning</li>
+    </ul>
+
+
+## 引用 ##
+
+	> Email-style angle brackets
+	> are used for blockquotes.
+	
+	> > And, they can be nested.
+
+	> #### Headers in blockquotes
+	> 
+	> * You can quote a list.
+	> * Etc.
+
+等价于
+
+    <blockquote>
+      <p>Email-style angle brackets
+      are used for blockquotes.</p>
+      
+      <blockquote>
+        <p>And, they can be nested.</p>
+      </blockquote>
+      
+      <h4>Headers in blockquotes</h4>
+      
+      <ul>
+      <li>You can quote a list.</li>
+      <li>Etc.</li>
+      </ul>
+    </blockquote>
+
+
+## 显示标签
+
+如果要在页面中显示标签，则需要进行编码
+
+	`<code>` spans are delimited
+	by backticks.
+
+	You can include literal backticks
+	like `` `this` ``.
+
+等价于
+
+    <p><code>&lt;code&gt;</code> spans are delimited
+    by backticks.</p>
+    
+    <p>You can include literal backticks
+    like <code>`this`</code>.</p>
+
+
+## 水平线
+
+三个以上破折号“－”或“星号”
+
+	---
+	
+	* * *
+
+等价于
+
+    <hr />
+    
+    <hr />
+    
+## 其它HTML标签
+
+对于不认识的HTML标签，markdown不会滤掉，如果以上的语法不能满足需求时，可以使用HTML标签，如
+
+    <table>
+        <tr><td>1</td></tr>
+    </table>
+
+## pandoc的扩展
+
+目前使用的markdown转换程序是pandoc，使用这些
+
+
+## 转义
+
+如果内容和基本语法有冲突，则需要进行转义，如
+
+    \*literal asterisks\*
+
+最终得到
+
+    *literal asterisks*
+    
+以下字符都可以进行转义
+
+    \   backslash
+    `   backtick
+    *   asterisk
+    _   underscore
+    {}  curly braces
+    []  square brackets
+    ()  parentheses
+    #   hash mark
+    +   plus sign
+    -   minus sign (hyphen)
+    .   dot
+    !   exclamation mark
+
+
+## pandoc增强的功能
+
+### 简易有序列表
+
+可以不需要写数字
+
+    #.  one
+    #.  two
+    #.  three
+
+相当于
+
+    <ol>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ol>
+    
+### 定义列表
+
+    Term 1
+    :   Definition 1
+    
+    Term 2
+    :   Definition 2
+    
+    :   Second paragraph of definition 2.
+
+相当于
+
+      <dl>
+        <dt>Term 1</dt>
+    
+        <dd>
+          <p>Definition 1</p>
+        </dd>
+    
+        <dt>Term 2</dt>
+    
+        <dd>
+          <p>Definition 2</p>
+    
+          <p>Second paragraph of definition 2.</p>
+        </dd>
+      </dl>
+
+如果没有空行则没有p标签，如
+
+    Term 1
+    :   Definition 1
+    Term 2
+    :   Definition 2
+    
+相当于
+
+    <dl>
+       <dt>Term 1</dt>
+       <dd>Definition 1</dd>
+    
+       <dt>Term 2</dt>
+       <dd>Definition 2</dd>
+    </dl>
+
+### 简易引用链接
+
+将
+    [example][id]
+    
+简化为
+
+    [id]
+
+### 脚注
+
+    Here is a footnote reference,[^1] and another.[^longnote]
+    
+    [^1]: Here is the footnote.
+    
+    [^longnote]: Here's one with multiple blocks.
+
+相当于
+
+      <p>Here is a footnote reference,<a href="#fn1" class=
+      "footnoteRef" id="fnref1" name="fnref1"><sup>1</sup></a> and
+      another.<a href="#fn2" class="footnoteRef" id="fnref2" name=
+      "fnref2"><sup>2</sup></a></p>
+    
+      <div class="footnotes">
+        <hr>
+    
+        <ol>
+          <li id="fn1">
+            <p>Here is the footnote. <a href="#fnref1" class=
+            "footnoteBackLink" title=
+            "Jump back to footnote 1">&#8617;</a></p>
+          </li>
+    
+          <li id="fn2">
+            <p>Here's one with multiple blocks. <a href="#fnref2"
+            class="footnoteBackLink" title=
+            "Jump back to footnote 2">&#8617;</a></p>
+          </li>
+        </ol>
+      </div>
+
+### 表格
+
+      Right     Left     Center     Default   
+    -------     ------ ----------   -------   
+         12     12        12            12    
+        123     123       123          123    
+          1     1          1             1    
+    
+    Table:  Demonstration of simple table syntax.
+
+转化为
+
+      <table>
+        <caption>
+          Demonstration of simple table syntax.
+        </caption>
+    
+        <tr>
+          <th align="right" style="width: 15%;">Right</th>
+    
+          <th align="left" style="width: 8%;">Left</th>
+    
+          <th align="center" style="width: 16%;">Center</th>
+    
+          <th align="left" style="width: 12%;">Default</th>
+        </tr>
+    
+        <tr>
+          <td align="right">12</td>
+    
+          <td align="left">12</td>
+    
+          <td align="center">12</td>
+    
+          <td align="left">12</td>
+        </tr>
+    
+        <tr>
+          <td align="right">123</td>
+    
+          <td align="left">123</td>
+    
+          <td align="center">123</td>
+    
+          <td align="left">123</td>
+        </tr>
+    
+        <tr>
+          <td align="right">1</td>
+    
+          <td align="left">1</td>
+    
+          <td align="center">1</td>
+    
+          <td align="left">1</td>
+        </tr>
+      </table>
+
+## 快速学习的途径
+
+[wmd](http://wmd-editor.com/examples/splitscreen)
+
+## 相关资料
+
+如果需要了解更多的内容，可以访问以下url
+
+* [Markdown Syntax](http://daringfireball.net/projects/markdown/syntax)
+* [Pandoc User’s Guide](http://johnmacfarlane.net/pandoc/README.html)

@@ -1,0 +1,49 @@
+﻿% CSS注释规范
+% wudouoyi@baidu.com
+% 2008-07-06
+
+
+## 文件注释
+    /* ==============================================================
+     * Base: typegraphy.css
+     *     set 
+     * 
+     * Author:
+     *     nwind@live.com
+     * 
+     * License:
+     *     MIT license
+     *
+     * Version:
+     *     0.1, 2007-11-27 (%Build%)
+     *
+     * Reference:
+     *     http://www.alistapart.com/articles/settingtypeontheweb
+     *     http://www.apaddedcell.com/web-fonts
+     *	
+     *
+    ================================================================== */
+
+## 区域级别注释
+
+    /* ------------------------------------------------------------------
+     * ## Text ##:
+     *     font-size for normal text
+     */
+
+## 其它注释
+
+    /* 
+     * Note:
+     *     Remove possible quote marks (") from <q>, <blockquote>. 
+     */
+    
+    /* 
+     * BugFix (IE):
+     *     Fixes wrong line-height on sup/sub in IE. 
+     */
+    
+    /* 
+     * Todo:
+     *     fix the bug in IE6
+ */
