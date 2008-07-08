@@ -1,17 +1,11 @@
 #!/usr/bin/env ruby
 #
 #  Created by  nwind on 2008-07-08.
-require 'find'
-require 'erb'
 
-
-module Find           
-  def match(*paths) 
-          matched = [] 
-          find(*paths) { |path| matched << path if yield path } 
-          return matched 
-  end 
-  module_function :match 
+class File
+  def self.find(dir, filename="*.*", subdirs=true)
+    Dir[ subdirs ? File.join(dir.split(/\\/), "**", filename) : File.join(dir.split(/\\/), filename) ]
+  end
 end
       
 def platform
@@ -72,12 +66,12 @@ end
 if ARGV.size == 1
   processFile(File.expand_path(ARGV[0]))
 else
-  Find.match("./") { |p| 
-    ext = p[-5...p.size]
-    if ext && ext.downcase == ".text" 
-      processFile(p)
-    end
-  }  
+  files = File.find("./", "*.text")
+  
+  files.each { |f| 
+    processFile(f)
+  }
+ 
 end
 
 
