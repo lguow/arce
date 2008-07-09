@@ -57,8 +57,11 @@ var selectMemory = function() {
 		
 		cache[kw][type] = idx;
 		
-		STORE.set('selectMemory', JSON.stringify(selectMemory.getCache()));
-		STORE.save();
+		if (isOnLine()) {
+			STORE.set('selectMemory', JSON.stringify(selectMemory.getCache()));
+			STORE.save();
+		}
+		
 	}
 	
 	return {
@@ -98,7 +101,7 @@ var selectMemory = function() {
 		search();
 	};
 	
-	Al.G('search').onkeydown = function(event) {
+	function inputHandle(event) {
 		var e = event || window.event;
 		
 		var code = e.charCode || e.keyCode;
@@ -140,9 +143,19 @@ var selectMemory = function() {
 			} else {
 				TimeOut = setTimeout(search, 300);
 			}
-		}
-	};
-	
+		}		
+	}
+
+	var searchInput = Al.G('search');
+
+	if (Al.isIE) {
+		searchInput.onpropertychange = inputHandle;
+	} else {
+		Al.Event.on(searchInput, 'input', inputHandle);
+	}
+
+	searchInput.onkeydown = inputHandle;
+
 	function search() {
 		var kw = Al.G('search').value;
 		var type = Al.G('searchType').getElementsByTagName('select')[0].value;
@@ -213,10 +226,11 @@ var selectMemory = function() {
 			Al.each(dataTmp, function(i, v) {
 				if (v) {
 					if (i == urlIdx) {
-						v = '<a href="'+v+'" target="_blank">'+ v.split('/').last() +'</a>';
+						var host = v.match(/^(https?|ftp):\/\/([^\/])*/);
+						v = '<a href="'+v+'" target="_blank">'+ host[0] +'</a>';
 					}
 				} else {
-					v = 'none';
+					v = '_';
 				}
 				
 				tableTmp.push('<td>' + v + ' </td>');

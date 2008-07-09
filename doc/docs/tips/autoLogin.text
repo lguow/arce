@@ -1,0 +1,34 @@
+% 使用clone session和expect脚本实现自动登录
+% 兰宇
+% 2008-7-9
+
+CRT中的自动登录使用的是expect模拟用户输入，现在由于有了token，每次使用自动登录的功能时就需要输入token密码，大大影响了效率。
+
+不过换一种思路，在一台Linux机器上部署expect，然后使用CRT时每次登陆这台机器，然后通过在这台机器上的expect脚本ssh到其他机器。这样的话这台机器就成了中转机，每次只需要输入一次token，然后不断clone session就可以了。
+
+小本同学已经在tstest01上安装了expect，每个人使用自己的帐号登录就可以了，然后在自己的文件夹下面新建以下脚本：
+
+	#!/usr/bin/expect
+
+	set un "username@host"
+	set pw "password"
+
+	spawn ssh $un
+	set timeout 3
+	while {1} {
+	    expect -re "yes/no" {
+		    send "yes\r"
+		} -re "assword:" {
+		    send "$pw\r"
+		    interact
+		} -re "Permission denied, please try again." {
+		    interact
+		} eof {
+		    interact
+		}
+	}
+
+
+最好再以熟悉的名字命名脚本，像是tpl@log02，要建立其他脚本时，先cp一个，再把脚本里飘红的部分改一下就可以了。
+
+简单两三步，个人中转机就搞定了。

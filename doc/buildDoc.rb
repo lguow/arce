@@ -3,7 +3,6 @@
 #  Created by  nwind on 2008-07-08.
 
 require 'cgi'
-require 'time'
 
 class File
   def self.find(dir, filename="*.*", subdirs=true)
@@ -25,19 +24,19 @@ def platform
 end
 
 
-def processFile(p)
+def processFile(file)
   title = author = date = key = value = ''
-  
   lineNum = 0
+  
+  File.open(file).collect do  |line|
 
-  File.readlines(p, '') { |line|
     line.chomp!
     lineNum = lineNum + 1
     
     if lineNum < 3 
       if match = /%\s*([^:]*)\s*:(.*)|%(\s*)(.*)\s*/.match(line)
           key = match[1]
-          
+	  
           if match[2]
             value = CGI::escapeHTML(match[2])
           else 
@@ -82,13 +81,13 @@ def processFile(p)
         break
       end
     end
-  }
+  end
   
     $header = <<END
     <!DOCTYPE html>
     <html>
     <head>
-    	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     	<title>#{title}  by  #{author}</title>
     	<meta name="author" content="#{author}" />
     	<meta name="date" content="#{date}" />
@@ -103,14 +102,18 @@ END
   headFile.puts $header
   headFile.close
   
-  outputDir = File.dirname(p) + '/output'
-  outputFileName = File.basename(p)[0..-6]
+  outputDir = File.dirname(file) + '/_output'
+  outputFileName = File.basename(file)[0..-6]
   
   unless FileTest.directory?(outputDir)
     Dir.mkdir(outputDir)
   end
   
-  system("#{$pandoc} -B #{$header_path} -A #{$footer_path} --toc #{p} > #{outputDir}/#{outputFileName}.html")  
+  return_value = system("#{$pandoc} -B #{$header_path} -A #{$footer_path} --toc #{file} > #{outputDir}/#{outputFileName}.html")
+
+  if return_value == false
+	puts 'please install pandoc(http://johnmacfarlane.net/pandoc/INSTALL.html)'
+  end
 end
 
 $rootDir = File.expand_path(File.dirname(__FILE__))
@@ -125,7 +128,7 @@ $footer_path = $rootDir + '/lib/footer'
 $pandoc = 'pandoc'
 
 if platform == 'win'
-  $pandoc = $rootDir + '/tools/win32/pandoc'
+  $pandoc = File.expand_path($rootDir + "/tools/win32/pandoc")
 end
 
 
