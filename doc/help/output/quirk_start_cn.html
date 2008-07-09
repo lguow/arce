@@ -1,0 +1,1095 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+    	<title>  by  </title>
+    	<meta name="author" content="" />
+    	<meta name="date" content="" />
+    	<style type="text/css">
+    	/* CSSTidy 1.3: Mon Apr  7 13:50:50 2008 */
+body,p,dl,dd,blockquote,h1,h2,h3,h4,h5,h6,pre,table,td,th,ul,ol,li,hr,legend,fieldset,input,textarea,img,form{margin:0;padding:0;}
+img,iframe{border:none;}
+blockquote,q{quotes:none;}
+sup{vertical-align:text-top;}
+sub{vertical-align:text-bottom;}
+body{font:87.5%/1.5 Verdana, 'Helvetica Neue', Helvetica, Arial, sans-serif;}
+legend{color:#000;font-size:1em;}
+p{margin:0 0 1.5em;}
+h1,h2,h3,h4,h5{color:#111;font-family:"Palatino Linotype", Palatino, Georgia, serif;font-weight:700;}
+h1{font-size:3em;line-height:1;margin-bottom:.5em;}
+h2{font-size:2em;margin-bottom:.75em;}
+h3{font-size:1.5em;line-height:1;margin-bottom:1em;}
+h4{font-size:1.2em;height:1.25em;line-height:1.25;margin-bottom:1.25em;}
+h5{font-size:1em;font-weight:700;margin-bottom:1.5em;}
+h6{font-size:1em;font-weight:700;}
+big{font-size:1.3em;}
+small{font-size:.85em;}
+code,pre,samp{font-family:Consolas, Monaco, "Courier New", Courier, monospace;overflow:auto;word-wrap:break-word;}
+acronym,abbr{border-bottom:1px dotted #000;cursor:help;}
+acronym{letter-spacing:.1em;text-transform:uppercase;}
+html{background:#fff;color:#000;}
+:link:focus,:visited:focus{color:#C63;}
+:link{color:#356aa0;}
+:visited{color:#6B97A9;}
+:link:hover,:visited:hover{color:#AD7328;}
+:link:active,:visited:active{color:#356a00;}
+table,input{font-size:1em;}
+/* ==============================================================
+ * widgets: base-extra
+ *     make HTML element more beauty
+ * 
+ * Author:
+ *     nwind@live.com
+ * 
+ * License:
+ *     MIT license
+ *
+ * Version:
+ *     0.2, 2008-01-23
+ *
+ * Reference:
+ *     inspired by Tripoli <http://www.monc.se/tripoli/>
+ *	
+ *
+================================================================== */
+#container {
+	width: 80%;
+}
+
+html {
+	border:none;
+}
+
+/* 
+ * Note:
+ *     Tables still need 'cellspacing="0"' in the markup. 
+ *     This code may break your <table> layout
+ */
+table { border-collapse: separate; border-spacing: 0; }
+
+ul ol {
+	margin-left: 1em;
+}
+
+
+/* -------------- hide Element ----------------- */
+.hide {
+	position:absolute;
+	left: 0.00000em;
+	top: -41.66667em;
+	width: 0.08333em;
+	height: 0.08333em;
+	overflow:hidden;
+}
+
+
+/* ---------------- clearfix ------------------- */
+.clearfix:after {
+	content:"."; 
+	display:block; 
+	height:0; 
+	clear:both; 
+	visibility:hidden; 
+}
+
+.clearfix {
+	display:inline-block; 
+	display:block;
+} 
+
+
+/* ----------------- hasLayout -----------------*/
+.gainlayout { zoom: 1; }
+
+
+/* ----------------- transparency -----------------*/
+.trans { -moz-opacity: 0.8; opacity: 0.8; filter: alpha(Opacity=80);}
+
+
+/*
+ * Note:
+ *     replace '&' with '<span class="amp">&amp;</span>'
+ *
+ * Reference:
+ *     http://www.simplebits.com
+ *
+ */
+span.amp {
+	font-family: Baskerville,"Goudy Old Style","Palatino","Book Antiqua",serif;
+	font-style: italic;
+	font-size: 1.1em;
+}
+
+
+/* ------------------------------------------------------------------
+ *	## Others ##:
+ *		
+ */
+
+del {
+	background-color:#fdcccc;
+	border: 0.08333em solid #c99;
+	text-decoration:line-through;
+}
+
+ins {
+	background-color:#CFC;
+	border: 0.08333em solid #9c9;
+}
+
+hr {
+	border:0;
+	height: 0.08333em;
+	background-color:transparent;
+	border-top: 0.25000em solid #f2f2f2;
+	clear:both;
+	margin:.7em 0;
+}
+/* ==============================================================
+ * Doc: markdown.css
+ *     inspired by http://www.quirksmode.org
+ * 
+ * Author:
+ *     nwind@live.com
+ * 
+ * License:
+ *     MIT license
+ *
+ * Version:
+ *     
+ *	
+ *
+================================================================== */
+
+@import "base.css" ;
+@import "base-extra.css" ;
+@import "zTable.css" ;
+@import "iLink.css" ;
+
+@import "../script/prettify/prettify.css" ;
+
+
+body {
+	font: 80%/1.5 Verdana, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	color:#222;
+	padding-left:15em;
+}
+
+p, li{
+	max-width:45em;
+}
+
+ul, ol {
+	margin: 0 0 1em 3em; 	
+}
+
+
+ul ul, ol ol {
+	margin-left:3em;
+}
+
+pre {
+	color: #070606;
+	background-color: #eef0eb;
+	margin: 2em 0;
+	padding: 1em 0;
+	border: 1px dotted #b7c4d3;
+	border-width: 1px 0;
+	line-height: 150%;
+	margin-left: -20em;
+	padding-left: 20em;
+	zoom: 1;
+}
+
+#toc {
+	position:fixed;
+	top:10px;
+	right:10px;
+	padding:1em;
+	background:#fff;
+	opacity:0.8;
+	border:1px solid gray;
+	-moz-border-radius: 1em; 
+	 /*webkit*/ 
+	 -webkit-border-radius: 1em; 
+	 /*future proofing*/
+	 border-radius: 1em;
+}
+
+#toc_inner {
+	max-height:40em;
+	max-width:30em;
+	overflow:auto;	
+}
+
+h2:target, h3:target { 
+	color: #4D80B3;
+	text-shadow:1px 1px 2px #ccc;
+}
+
+
+
+/*<![CDATA[*/
+
+table {
+	border-left: 1px solid #727578;
+	width:50em;
+	color: #222;
+	text-indent:1em;
+	line-height:2.5em;
+	margin: 0 0 1.5em;
+}
+
+
+table thead th, table tfoot th{
+	background:url("zTable/zTable.png") no-repeat left top;
+	border: 1px solid #727578;
+	border-left:none;
+	color:#000;
+	font-weight:bold;
+	line-height:3em;
+}
+
+table tfoot th {
+	background-position:left bottom;
+	border:none;
+	line-height:2.5em;
+}
+
+table tbody th, table tbody td, table tfoot th {
+	border-bottom: 1px solid #727578;
+	border-right: 1px solid #727578;
+	vertical-align:top;
+}
+
+table tbody th{
+	color:#1867AF;
+}
+
+table tr-alt {
+	background:#ECF5FD;
+}
+
+table tbody tr:hover td, table tbody tr:hover th{
+	background:#EEF0EB;
+}
+
+/*]]>*/
+
+	
+    	</style>
+    </head>
+    <body>
+<div id="toc"
+><ul
+  ><li
+    ><a href="#&#25991;&#26723;&#31616;&#20171;" id="TOC-&#25991;&#26723;&#31616;&#20171;"
+      >&#25991;&#26723;&#31616;&#20171;</a
+      ></li
+    ><li
+    ><a href="#&#26631;&#39064;" id="TOC-&#26631;&#39064;"
+      >&#26631;&#39064;</a
+      ></li
+    ><li
+    ><a href="#&#27573;&#33853;" id="TOC-&#27573;&#33853;"
+      >&#27573;&#33853;</a
+      ></li
+    ><li
+    ><a href="#&#38142;&#25509;" id="TOC-&#38142;&#25509;"
+      >&#38142;&#25509;</a
+      ><ul
+      ><li
+	><a href="#&#22522;&#26412;&#35821;&#27861;" id="TOC-&#22522;&#26412;&#35821;&#27861;"
+	  >&#22522;&#26412;&#35821;&#27861;</a
+	  ></li
+	><li
+	><a href="#&#24341;&#29992;&#38142;&#25509;" id="TOC-&#24341;&#29992;&#38142;&#25509;"
+	  >&#24341;&#29992;&#38142;&#25509;</a
+	  ></li
+	><li
+	><a href="#&#38142;&#25509;&#31616;&#20889;" id="TOC-&#38142;&#25509;&#31616;&#20889;"
+	  >&#38142;&#25509;&#31616;&#20889;</a
+	  ></li
+	></ul
+      ></li
+    ><li
+    ><a href="#&#28304;&#30721;&#22359;" id="TOC-&#28304;&#30721;&#22359;"
+      >&#28304;&#30721;&#22359;</a
+      ></li
+    ><li
+    ><a href="#&#22270;&#29255;" id="TOC-&#22270;&#29255;"
+      >&#22270;&#29255;</a
+      ><ul
+      ><li
+	><a href="#&#22522;&#26412;&#35821;&#27861;-1" id="TOC-&#22522;&#26412;&#35821;&#27861;-1"
+	  >&#22522;&#26412;&#35821;&#27861;</a
+	  ></li
+	><li
+	><a href="#&#24341;&#29992;&#22270;&#29255;" id="TOC-&#24341;&#29992;&#22270;&#29255;"
+	  >&#24341;&#29992;&#22270;&#29255;</a
+	  ></li
+	></ul
+      ></li
+    ><li
+    ><a href="#&#24378;&#35843;" id="TOC-&#24378;&#35843;"
+      >&#24378;&#35843;</a
+      ></li
+    ><li
+    ><a href="#lists" id="TOC-lists"
+      >Lists</a
+      ><ul
+      ><li
+	><a href="#&#26377;&#24207;&#21015;&#34920;" id="TOC-&#26377;&#24207;&#21015;&#34920;"
+	  >&#26377;&#24207;&#21015;&#34920;</a
+	  ></li
+	><li
+	><a href="#&#26080;&#24207;&#21015;&#34920;" id="TOC-&#26080;&#24207;&#21015;&#34920;"
+	  >&#26080;&#24207;&#21015;&#34920;</a
+	  ></li
+	><li
+	><a href="#&#23884;&#22871;&#24418;&#24335;" id="TOC-&#23884;&#22871;&#24418;&#24335;"
+	  >&#23884;&#22871;&#24418;&#24335;</a
+	  ></li
+	></ul
+      ></li
+    ><li
+    ><a href="#&#24341;&#29992;" id="TOC-&#24341;&#29992;"
+      >&#24341;&#29992;</a
+      ></li
+    ><li
+    ><a href="#&#26174;&#31034;&#26631;&#31614;" id="TOC-&#26174;&#31034;&#26631;&#31614;"
+      >&#26174;&#31034;&#26631;&#31614;</a
+      ></li
+    ><li
+    ><a href="#&#27700;&#24179;&#32447;" id="TOC-&#27700;&#24179;&#32447;"
+      >&#27700;&#24179;&#32447;</a
+      ></li
+    ><li
+    ><a href="#&#20854;&#23427;html&#26631;&#31614;" id="TOC-&#20854;&#23427;html&#26631;&#31614;"
+      >&#20854;&#23427;HTML&#26631;&#31614;</a
+      ></li
+    ><li
+    ><a href="#pandoc&#30340;&#25193;&#23637;" id="TOC-pandoc&#30340;&#25193;&#23637;"
+      >pandoc&#30340;&#25193;&#23637;</a
+      ></li
+    ><li
+    ><a href="#&#36716;&#20041;" id="TOC-&#36716;&#20041;"
+      >&#36716;&#20041;</a
+      ></li
+    ><li
+    ><a href="#pandoc&#22686;&#24378;&#30340;&#21151;&#33021;" id="TOC-pandoc&#22686;&#24378;&#30340;&#21151;&#33021;"
+      >pandoc&#22686;&#24378;&#30340;&#21151;&#33021;</a
+      ><ul
+      ><li
+	><a href="#&#31616;&#26131;&#26377;&#24207;&#21015;&#34920;" id="TOC-&#31616;&#26131;&#26377;&#24207;&#21015;&#34920;"
+	  >&#31616;&#26131;&#26377;&#24207;&#21015;&#34920;</a
+	  ></li
+	><li
+	><a href="#&#23450;&#20041;&#21015;&#34920;" id="TOC-&#23450;&#20041;&#21015;&#34920;"
+	  >&#23450;&#20041;&#21015;&#34920;</a
+	  ></li
+	><li
+	><a href="#&#31616;&#26131;&#24341;&#29992;&#38142;&#25509;" id="TOC-&#31616;&#26131;&#24341;&#29992;&#38142;&#25509;"
+	  >&#31616;&#26131;&#24341;&#29992;&#38142;&#25509;</a
+	  ></li
+	><li
+	><a href="#&#33050;&#27880;" id="TOC-&#33050;&#27880;"
+	  >&#33050;&#27880;</a
+	  ></li
+	><li
+	><a href="#&#34920;&#26684;" id="TOC-&#34920;&#26684;"
+	  >&#34920;&#26684;</a
+	  ></li
+	></ul
+      ></li
+    ><li
+    ><a href="#&#24555;&#36895;&#23398;&#20064;&#30340;&#36884;&#24452;" id="TOC-&#24555;&#36895;&#23398;&#20064;&#30340;&#36884;&#24452;"
+      >&#24555;&#36895;&#23398;&#20064;&#30340;&#36884;&#24452;</a
+      ></li
+    ><li
+    ><a href="#&#30456;&#20851;&#36164;&#26009;" id="TOC-&#30456;&#20851;&#36164;&#26009;"
+      >&#30456;&#20851;&#36164;&#26009;</a
+      ></li
+    ></ul
+  ></div
+><p
+>% tag: markdown quirk_start</p
+><h2 id="&#25991;&#26723;&#31616;&#20171;"
+><a href="#TOC-&#25991;&#26723;&#31616;&#20171;"
+  >&#25991;&#26723;&#31616;&#20171;</a
+  ></h2
+><p
+>&#22312;&#25991;&#26723;&#30340;&#26368;&#21069;&#31471;&#21152;&#20837;&#25991;&#26723;&#30340;&#31616;&#20171;&#21487;&#20197;&#20415;&#20110;&#25628;&#32034;&#21450;&#31649;&#29702;</p
+><pre
+><code
+  >% title: markdown&#35821;&#27861;&#24555;&#36895;&#20837;&#38376; 
+% author: duoyi
+% date: 2008-07-07
+</code
+  ></pre
+><h2 id="&#26631;&#39064;"
+><a href="#TOC-&#26631;&#39064;"
+  >&#26631;&#39064;</a
+  ></h2
+><p
+>&#21482;&#38656;&#35201;&#22312;&#19968;&#27573;&#25991;&#26412;&#21069;&#21152;<em
+  >&#65283;</em
+  >&#21495;&#21363;&#21487;&#65292;</p
+><pre
+><code
+  ># &#26631;&#39064;1
+
+## &#26631;&#39064;2
+
+##### &#26631;&#39064;5
+</code
+  ></pre
+><p
+>&#31561;&#20215;&#20110;</p
+><pre
+><code
+  >&lt;h1&gt;&#26631;&#39064;1&lt;/h1&gt;
+
+&lt;h2&gt;&#26631;&#39064;2&lt;/h2&gt;
+
+&lt;/h5&gt;&#26631;&#39064;5&lt;/h5&gt;
+</code
+  ></pre
+><h2 id="&#27573;&#33853;"
+><a href="#TOC-&#27573;&#33853;"
+  >&#27573;&#33853;</a
+  ></h2
+><p
+>&#19968;&#20010;&#31354;&#34892;&#21363;&#20026;&#19968;&#20010;&#27573;&#33853;</p
+><pre
+><code
+  >&#19968;&#20010;&#27573;&#33853;
+&#25442;&#34892;&#19981;&#20250;&#23548;&#33268;&#26032;&#30340;&#27573;&#33853;
+
+&#31532;&#20108;&#20010;&#27573;&#33853;
+&#31354;&#26684;&#25165;&#20250;&#20135;&#29983;&#26032;&#30340;&#27573;&#33853;
+</code
+  ></pre
+><p
+>&#31561;&#20215;&#20110;</p
+><pre
+><code
+  >&lt;p&gt;&#19968;&#20010;&#27573;&#33853;
+&#25442;&#34892;&#19981;&#20250;&#23548;&#33268;&#26032;&#30340;&#27573;&#33853;&lt;/p&gt;
+
+&lt;p&gt;&#31532;&#20108;&#20010;&#27573;&#33853;
+&#31354;&#26684;&#25165;&#20250;&#20135;&#29983;&#26032;&#30340;&#27573;&#33853;&lt;/p&gt;  
+</code
+  ></pre
+><h2 id="&#38142;&#25509;"
+><a href="#TOC-&#38142;&#25509;"
+  >&#38142;&#25509;</a
+  ></h2
+><h3 id="&#22522;&#26412;&#35821;&#27861;"
+><a href="#TOC-&#22522;&#26412;&#35821;&#27861;"
+  >&#22522;&#26412;&#35821;&#27861;</a
+  ></h3
+><p
+>&#20854;&#20013;Title&#26159;&#21487;&#36873;&#30340;</p
+><pre
+><code
+  >[example](http://url.com/ &quot;Title&quot;)
+</code
+  ></pre
+><p
+>&#31561;&#20215;&#20110;</p
+><pre
+><code
+  >&lt;a href=&quot;http://url.com/&quot; title=&quot;Title&quot;&gt;example&lt;/a&gt;
+</code
+  ></pre
+><h3 id="&#24341;&#29992;&#38142;&#25509;"
+><a href="#TOC-&#24341;&#29992;&#38142;&#25509;"
+  >&#24341;&#29992;&#38142;&#25509;</a
+  ></h3
+><p
+>&#29992;&#20110;&#31616;&#21270;&#39029;&#38754;&#20013;&#37325;&#22797;&#30340;&#38142;&#25509;</p
+><p
+>&#39318;&#20808;&#22768;&#26126;&#19968;&#20010;&#38142;&#25509;&#65288;Title&#21487;&#36873;&#65289;&#65292;&#24314;&#35758;&#25918;&#22312;&#25991;&#26723;&#24320;&#22836;</p
+><pre
+><code
+  >[id]: http://example.com/  &quot;Title&quot;
+</code
+  ></pre
+><p
+>&#28982;&#21518;&#22312;&#39029;&#38754;&#20013;&#23601;&#33021;&#20197;&#22914;&#19979;&#30340;&#24418;&#24335;&#35843;&#29992;&#65292;&#20174;&#32780;&#19981;&#38656;&#35201;&#20877;&#20889;&#22320;&#22336;</p
+><pre
+><code
+  >[example][id]
+</code
+  ></pre
+><h3 id="&#38142;&#25509;&#31616;&#20889;"
+><a href="#TOC-&#38142;&#25509;&#31616;&#20889;"
+  >&#38142;&#25509;&#31616;&#20889;</a
+  ></h3
+><pre
+><code
+  >&lt;http://example.com/&gt;
+</code
+  ></pre
+><p
+>&#31561;&#20215;&#20110;</p
+><pre
+><code
+  >&lt;a href=&quot;http://example.com/&quot;&gt;http://example.com/&lt;/a&gt;
+</code
+  ></pre
+><p
+>&#22914;&#26524;&#22320;&#22336;&#20026;email&#26102;&#20250;&#23545;email&#22320;&#22336;&#36827;&#34892;&#32534;&#30721;&#65292;&#38450;&#27490;&#34987;&#22403;&#22334;&#37038;&#20214;&#25628;&#21040;&#65292;&#22914;</p
+><pre
+><code
+  >&lt;wuduoyi@baidu.com&gt;
+</code
+  ></pre
+><p
+>&#31561;&#20215;&#20110;</p
+><pre
+><code
+  >&lt;a href=&quot;&amp;#x6D;&amp;#x61;&amp;#x69;&amp;#108;&amp;#116;&amp;#111;:&amp;#119;&amp;#x75;&amp;#x64;&amp;#x75;&amp;#x6F;y&amp;#105;&amp;#64;&amp;#x62;&amp;#97;&amp;#x69;&amp;#x64;&amp;#x75;&amp;#46;&amp;#99;&amp;#x6F;&amp;#109;&quot;&gt;&amp;#119;&amp;#x75;&amp;#x64;&amp;#x75;&amp;#x6F;y&amp;#105;&amp;#64;&amp;#x62;&amp;#97;&amp;#x69;&amp;#x64;&amp;#x75;&amp;#46;&amp;#99;&amp;#x6F;&amp;#109;&lt;/a&gt;
+</code
+  ></pre
+><h2 id="&#28304;&#30721;&#22359;"
+><a href="#TOC-&#28304;&#30721;&#22359;"
+  >&#28304;&#30721;&#22359;</a
+  ></h2
+><p
+>&#20351;&#29992;tab&#38190;&#25110;&#22235;&#20010;&#31354;&#26684;&#23558;&#19968;&#27573;&#25991;&#26412;&#31354;&#24320;&#65292;&#23427;&#23601;&#25104;&#20026;&#19968;&#20010;&#28304;&#30721;&#22359;&#20102;&#65292;&#21487;&#20197;&#26597;&#30475;&#26412;&#25991;&#26723;&#30340;&#28304;&#30721;</p
+><h2 id="&#22270;&#29255;"
+><a href="#TOC-&#22270;&#29255;"
+  >&#22270;&#29255;</a
+  ></h2
+><h3 id="&#22522;&#26412;&#35821;&#27861;-1"
+><a href="#TOC-&#22522;&#26412;&#35821;&#27861;-1"
+  >&#22522;&#26412;&#35821;&#27861;</a
+  ></h3
+><p
+>&#20854;&#20013;Title&#21487;&#36873;</p
+><pre
+><code
+  >![alt text](/path/img.jpg &quot;Title&quot;)
+</code
+  ></pre
+><p
+>&#31561;&#20215;&#20110;</p
+><pre
+><code
+  >&lt;img src=&quot;/path/img.jpg&quot; alt=&quot;alt text&quot; title=&quot;Title&quot; /&gt;
+</code
+  ></pre
+><h3 id="&#24341;&#29992;&#22270;&#29255;"
+><a href="#TOC-&#24341;&#29992;&#22270;&#29255;"
+  >&#24341;&#29992;&#22270;&#29255;</a
+  ></h3
+><p
+>&#21644;&#22270;&#29255;&#30340;&#20570;&#27861;&#31867;&#20284;&#65292;&#21482;&#38656;&#22312;&#19968;&#20010;&#22320;&#26041;&#22768;&#26126;&#23601;&#33021;&#22312;&#22810;&#22788;&#35843;&#29992;</p
+><pre
+><code
+  >[id]: /url/to/img.jpg &quot;Title&quot;
+
+![alt text][id]
+</code
+  ></pre
+><h2 id="&#24378;&#35843;"
+><a href="#TOC-&#24378;&#35843;"
+  >&#24378;&#35843;</a
+  ></h2
+><pre
+><code
+  >*italic*   **bold**
+_italic_   __bold__
+</code
+  ></pre
+><p
+>&#31561;&#20215;&#20110;</p
+><pre
+><code
+  >&lt;em&gt;italic&lt;/em&gt;   &lt;strong&gt;bold&lt;/strong&gt;
+&lt;em&gt;italic&lt;/em&gt;   &lt;strong&gt;bold&lt;/strong&gt;
+</code
+  ></pre
+><h2 id="lists"
+><a href="#TOC-lists"
+  >Lists</a
+  ></h2
+><h3 id="&#26377;&#24207;&#21015;&#34920;"
+><a href="#TOC-&#26377;&#24207;&#21015;&#34920;"
+  >&#26377;&#24207;&#21015;&#34920;</a
+  ></h3
+><pre
+><code
+  >1.  Foo
+2.  Bar
+</code
+  ></pre
+><p
+>&#31561;&#20215;&#20110;</p
+><pre
+><code
+  >&lt;ol&gt;
+    &lt;li&gt;Foo&lt;/li&gt;
+    &lt;li&gt;Bar&lt;/li&gt;
+&lt;/ol&gt;
+</code
+  ></pre
+><p
+>&#27880;&#24847;&#65292;&#36825;&#37324;&#26377;&#26102;&#20505;&#20250;&#20986;&#29616;&#24847;&#22806;&#65292;&#22914;&#19979;&#38754;&#30340;&#20889;&#27861;&#20250;&#26080;&#24847;&#38388;&#36716;&#25104;&#26377;&#24207;&#21015;&#34920;</p
+><pre
+><code
+  >1986. What a great season.
+</code
+  ></pre
+><p
+>&#35299;&#20915;&#21150;&#27861;&#26102;&#36827;&#34892;&#36716;&#20041;</p
+><pre
+><code
+  >1986\. What a great season.
+</code
+  ></pre
+><h3 id="&#26080;&#24207;&#21015;&#34920;"
+><a href="#TOC-&#26080;&#24207;&#21015;&#34920;"
+  >&#26080;&#24207;&#21015;&#34920;</a
+  ></h3
+><pre
+><code
+  >*   A list item.
+
+    With multiple paragraphs.
+
+*   Bar
+</code
+  ></pre
+><p
+>&#31561;&#20215;&#20110;</p
+><pre
+><code
+  >&lt;ul&gt;
+    &lt;li&gt;
+        &lt;p&gt;A list item.&lt;/p&gt;     
+        &lt;p&gt;With multiple paragraphs.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;Bar&lt;/p&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code
+  ></pre
+><h3 id="&#23884;&#22871;&#24418;&#24335;"
+><a href="#TOC-&#23884;&#22871;&#24418;&#24335;"
+  >&#23884;&#22871;&#24418;&#24335;</a
+  ></h3
+><pre
+><code
+  >*   Abacus
+    * answer
+*   Bubbles
+    1.  bunk
+    2.  bupkis
+        * BELITTLER
+    3. burper
+*   Cunning
+</code
+  ></pre
+><p
+>&#31561;&#20215;&#20110;</p
+><pre
+><code
+  >&lt;ul&gt;
+    &lt;li&gt;Abacus
+        &lt;ul&gt;
+            &lt;li&gt;answer&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Bubbles
+        &lt;ol&gt;
+            &lt;li&gt;bunk&lt;/li&gt;
+            &lt;li&gt;bupkis
+                &lt;ul&gt;
+                    &lt;li&gt;BELITTLER&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;burper&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Cunning&lt;/li&gt;
+&lt;/ul&gt;
+</code
+  ></pre
+><h2 id="&#24341;&#29992;"
+><a href="#TOC-&#24341;&#29992;"
+  >&#24341;&#29992;</a
+  ></h2
+><pre
+><code
+  >&gt; Email-style angle brackets
+&gt; are used for blockquotes.
+
+&gt; &gt; And, they can be nested.
+
+&gt; #### Headers in blockquotes
+&gt; 
+&gt; * You can quote a list.
+&gt; * Etc.
+</code
+  ></pre
+><p
+>&#31561;&#20215;&#20110;</p
+><pre
+><code
+  >&lt;blockquote&gt;
+  &lt;p&gt;Email-style angle brackets
+  are used for blockquotes.&lt;/p&gt;
+
+  &lt;blockquote&gt;
+    &lt;p&gt;And, they can be nested.&lt;/p&gt;
+  &lt;/blockquote&gt;
+
+  &lt;h4&gt;Headers in blockquotes&lt;/h4&gt;
+
+  &lt;ul&gt;
+  &lt;li&gt;You can quote a list.&lt;/li&gt;
+  &lt;li&gt;Etc.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+</code
+  ></pre
+><h2 id="&#26174;&#31034;&#26631;&#31614;"
+><a href="#TOC-&#26174;&#31034;&#26631;&#31614;"
+  >&#26174;&#31034;&#26631;&#31614;</a
+  ></h2
+><p
+>&#22914;&#26524;&#35201;&#22312;&#39029;&#38754;&#20013;&#26174;&#31034;&#26631;&#31614;&#65292;&#21017;&#38656;&#35201;&#36827;&#34892;&#32534;&#30721;</p
+><pre
+><code
+  >`&lt;code&gt;` spans are delimited
+by backticks.
+
+You can include literal backticks
+like `` `this` ``.
+</code
+  ></pre
+><p
+>&#31561;&#20215;&#20110;</p
+><pre
+><code
+  >&lt;p&gt;&lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; spans are delimited
+by backticks.&lt;/p&gt;
+
+&lt;p&gt;You can include literal backticks
+like &lt;code&gt;`this`&lt;/code&gt;.&lt;/p&gt;
+</code
+  ></pre
+><h2 id="&#27700;&#24179;&#32447;"
+><a href="#TOC-&#27700;&#24179;&#32447;"
+  >&#27700;&#24179;&#32447;</a
+  ></h2
+><p
+>&#19977;&#20010;&#20197;&#19978;&#30772;&#25240;&#21495;&#8220;&#65293;&#8221;&#25110;&#8220;&#26143;&#21495;&#8221;</p
+><pre
+><code
+  >---
+
+* * *
+</code
+  ></pre
+><p
+>&#31561;&#20215;&#20110;</p
+><pre
+><code
+  >&lt;hr /&gt;
+
+&lt;hr /&gt;
+</code
+  ></pre
+><h2 id="&#20854;&#23427;html&#26631;&#31614;"
+><a href="#TOC-&#20854;&#23427;html&#26631;&#31614;"
+  >&#20854;&#23427;HTML&#26631;&#31614;</a
+  ></h2
+><p
+>&#23545;&#20110;&#19981;&#35748;&#35782;&#30340;HTML&#26631;&#31614;&#65292;markdown&#19981;&#20250;&#28388;&#25481;&#65292;&#22914;&#26524;&#20197;&#19978;&#30340;&#35821;&#27861;&#19981;&#33021;&#28385;&#36275;&#38656;&#27714;&#26102;&#65292;&#21487;&#20197;&#20351;&#29992;HTML&#26631;&#31614;&#65292;&#22914;</p
+><pre
+><code
+  >&lt;table&gt;
+    &lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+</code
+  ></pre
+><h2 id="pandoc&#30340;&#25193;&#23637;"
+><a href="#TOC-pandoc&#30340;&#25193;&#23637;"
+  >pandoc&#30340;&#25193;&#23637;</a
+  ></h2
+><p
+>&#30446;&#21069;&#20351;&#29992;&#30340;markdown&#36716;&#25442;&#31243;&#24207;&#26159;pandoc&#65292;&#20351;&#29992;&#36825;&#20123;</p
+><h2 id="&#36716;&#20041;"
+><a href="#TOC-&#36716;&#20041;"
+  >&#36716;&#20041;</a
+  ></h2
+><p
+>&#22914;&#26524;&#20869;&#23481;&#21644;&#22522;&#26412;&#35821;&#27861;&#26377;&#20914;&#31361;&#65292;&#21017;&#38656;&#35201;&#36827;&#34892;&#36716;&#20041;&#65292;&#22914;</p
+><pre
+><code
+  >\*literal asterisks\*
+</code
+  ></pre
+><p
+>&#26368;&#32456;&#24471;&#21040;</p
+><pre
+><code
+  >*literal asterisks*
+</code
+  ></pre
+><p
+>&#20197;&#19979;&#23383;&#31526;&#37117;&#21487;&#20197;&#36827;&#34892;&#36716;&#20041;</p
+><pre
+><code
+  >\   backslash
+`   backtick
+*   asterisk
+_   underscore
+{}  curly braces
+[]  square brackets
+()  parentheses
+#   hash mark
++   plus sign
+-   minus sign (hyphen)
+.   dot
+!   exclamation mark
+</code
+  ></pre
+><h2 id="pandoc&#22686;&#24378;&#30340;&#21151;&#33021;"
+><a href="#TOC-pandoc&#22686;&#24378;&#30340;&#21151;&#33021;"
+  >pandoc&#22686;&#24378;&#30340;&#21151;&#33021;</a
+  ></h2
+><h3 id="&#31616;&#26131;&#26377;&#24207;&#21015;&#34920;"
+><a href="#TOC-&#31616;&#26131;&#26377;&#24207;&#21015;&#34920;"
+  >&#31616;&#26131;&#26377;&#24207;&#21015;&#34920;</a
+  ></h3
+><p
+>&#21487;&#20197;&#19981;&#38656;&#35201;&#20889;&#25968;&#23383;</p
+><pre
+><code
+  >#.  one
+#.  two
+#.  three
+</code
+  ></pre
+><p
+>&#30456;&#24403;&#20110;</p
+><pre
+><code
+  >&lt;ol&gt;
+    &lt;li&gt;one&lt;/li&gt;
+    &lt;li&gt;two&lt;/li&gt;
+    &lt;li&gt;three&lt;/li&gt;
+&lt;/ol&gt;
+</code
+  ></pre
+><h3 id="&#23450;&#20041;&#21015;&#34920;"
+><a href="#TOC-&#23450;&#20041;&#21015;&#34920;"
+  >&#23450;&#20041;&#21015;&#34920;</a
+  ></h3
+><pre
+><code
+  >Term 1
+:   Definition 1
+
+Term 2
+:   Definition 2
+
+:   Second paragraph of definition 2.
+</code
+  ></pre
+><p
+>&#30456;&#24403;&#20110;</p
+><pre
+><code
+  >  &lt;dl&gt;
+    &lt;dt&gt;Term 1&lt;/dt&gt;
+
+    &lt;dd&gt;
+      &lt;p&gt;Definition 1&lt;/p&gt;
+    &lt;/dd&gt;
+
+    &lt;dt&gt;Term 2&lt;/dt&gt;
+
+    &lt;dd&gt;
+      &lt;p&gt;Definition 2&lt;/p&gt;
+
+      &lt;p&gt;Second paragraph of definition 2.&lt;/p&gt;
+    &lt;/dd&gt;
+  &lt;/dl&gt;
+</code
+  ></pre
+><p
+>&#22914;&#26524;&#27809;&#26377;&#31354;&#34892;&#21017;&#27809;&#26377;p&#26631;&#31614;&#65292;&#22914;</p
+><pre
+><code
+  >Term 1
+:   Definition 1
+Term 2
+:   Definition 2
+</code
+  ></pre
+><p
+>&#30456;&#24403;&#20110;</p
+><pre
+><code
+  >&lt;dl&gt;
+   &lt;dt&gt;Term 1&lt;/dt&gt;
+   &lt;dd&gt;Definition 1&lt;/dd&gt;
+
+   &lt;dt&gt;Term 2&lt;/dt&gt;
+   &lt;dd&gt;Definition 2&lt;/dd&gt;
+&lt;/dl&gt;
+</code
+  ></pre
+><h3 id="&#31616;&#26131;&#24341;&#29992;&#38142;&#25509;"
+><a href="#TOC-&#31616;&#26131;&#24341;&#29992;&#38142;&#25509;"
+  >&#31616;&#26131;&#24341;&#29992;&#38142;&#25509;</a
+  ></h3
+><p
+>&#23558; [example][id]</p
+><p
+>&#31616;&#21270;&#20026;</p
+><pre
+><code
+  >[id]
+</code
+  ></pre
+><h3 id="&#33050;&#27880;"
+><a href="#TOC-&#33050;&#27880;"
+  >&#33050;&#27880;</a
+  ></h3
+><pre
+><code
+  >Here is a footnote reference,[^1] and another.[^longnote]
+
+[^1]: Here is the footnote.
+
+[^longnote]: Here's one with multiple blocks.
+</code
+  ></pre
+><p
+>&#30456;&#24403;&#20110;</p
+><pre
+><code
+  >  &lt;p&gt;Here is a footnote reference,&lt;a href=&quot;#fn1&quot; class=
+  &quot;footnoteRef&quot; id=&quot;fnref1&quot; name=&quot;fnref1&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; and
+  another.&lt;a href=&quot;#fn2&quot; class=&quot;footnoteRef&quot; id=&quot;fnref2&quot; name=
+  &quot;fnref2&quot;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+
+  &lt;div class=&quot;footnotes&quot;&gt;
+    &lt;hr&gt;
+
+    &lt;ol&gt;
+      &lt;li id=&quot;fn1&quot;&gt;
+        &lt;p&gt;Here is the footnote. &lt;a href=&quot;#fnref1&quot; class=
+        &quot;footnoteBackLink&quot; title=
+        &quot;Jump back to footnote 1&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;/li&gt;
+
+      &lt;li id=&quot;fn2&quot;&gt;
+        &lt;p&gt;Here's one with multiple blocks. &lt;a href=&quot;#fnref2&quot;
+        class=&quot;footnoteBackLink&quot; title=
+        &quot;Jump back to footnote 2&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/div&gt;
+</code
+  ></pre
+><h3 id="&#34920;&#26684;"
+><a href="#TOC-&#34920;&#26684;"
+  >&#34920;&#26684;</a
+  ></h3
+><pre
+><code
+  >  Right     Left     Center     Default   
+-------     ------ ----------   -------   
+     12     12        12            12    
+    123     123       123          123    
+      1     1          1             1    
+
+Table:  Demonstration of simple table syntax.
+</code
+  ></pre
+><p
+>&#36716;&#21270;&#20026;</p
+><pre
+><code
+  >  &lt;table&gt;
+    &lt;caption&gt;
+      Demonstration of simple table syntax.
+    &lt;/caption&gt;
+
+    &lt;tr&gt;
+      &lt;th align=&quot;right&quot; style=&quot;width: 15%;&quot;&gt;Right&lt;/th&gt;
+
+      &lt;th align=&quot;left&quot; style=&quot;width: 8%;&quot;&gt;Left&lt;/th&gt;
+
+      &lt;th align=&quot;center&quot; style=&quot;width: 16%;&quot;&gt;Center&lt;/th&gt;
+
+      &lt;th align=&quot;left&quot; style=&quot;width: 12%;&quot;&gt;Default&lt;/th&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+      &lt;td align=&quot;right&quot;&gt;12&lt;/td&gt;
+
+      &lt;td align=&quot;left&quot;&gt;12&lt;/td&gt;
+
+      &lt;td align=&quot;center&quot;&gt;12&lt;/td&gt;
+
+      &lt;td align=&quot;left&quot;&gt;12&lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+      &lt;td align=&quot;right&quot;&gt;123&lt;/td&gt;
+
+      &lt;td align=&quot;left&quot;&gt;123&lt;/td&gt;
+
+      &lt;td align=&quot;center&quot;&gt;123&lt;/td&gt;
+
+      &lt;td align=&quot;left&quot;&gt;123&lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+      &lt;td align=&quot;right&quot;&gt;1&lt;/td&gt;
+
+      &lt;td align=&quot;left&quot;&gt;1&lt;/td&gt;
+
+      &lt;td align=&quot;center&quot;&gt;1&lt;/td&gt;
+
+      &lt;td align=&quot;left&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+</code
+  ></pre
+><h2 id="&#24555;&#36895;&#23398;&#20064;&#30340;&#36884;&#24452;"
+><a href="#TOC-&#24555;&#36895;&#23398;&#20064;&#30340;&#36884;&#24452;"
+  >&#24555;&#36895;&#23398;&#20064;&#30340;&#36884;&#24452;</a
+  ></h2
+><p
+><a href="http://wmd-editor.com/examples/splitscreen"
+  >wmd</a
+  ></p
+><h2 id="&#30456;&#20851;&#36164;&#26009;"
+><a href="#TOC-&#30456;&#20851;&#36164;&#26009;"
+  >&#30456;&#20851;&#36164;&#26009;</a
+  ></h2
+><p
+>&#22914;&#26524;&#38656;&#35201;&#20102;&#35299;&#26356;&#22810;&#30340;&#20869;&#23481;&#65292;&#21487;&#20197;&#35775;&#38382;&#20197;&#19979;url</p
+><ul
+><li
+  ><a href="http://daringfireball.net/projects/markdown/syntax"
+    >Markdown Syntax</a
+    ></li
+  ><li
+  ><a href="http://johnmacfarlane.net/pandoc/README.html"
+    >Pandoc User&#8217;s Guide</a
+    ></li
+  ></ul
+></body>
+</html>
