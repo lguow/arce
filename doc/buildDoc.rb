@@ -2,6 +2,9 @@
 #
 #  Created by  nwind on 2008-07-08.
 
+require 'cgi'
+require 'time'
+
 class File
   def self.find(dir, filename="*.*", subdirs=true)
     Dir[ subdirs ? File.join(dir.split(/\\/), "**", filename) : File.join(dir.split(/\\/), filename) ]
@@ -22,35 +25,97 @@ def platform
 end
 
 
-def processFile(p) 
-  title = ''
+def processFile(p)
+  title = author = date = key = value = ''
+  
+  lineNum = 0
+
+  File.readlines(p, '') { |line|
+    line.chomp!
+    lineNum = lineNum + 1
+    
+    if lineNum < 3 
+      if match = /%\s*([^:]*)\s*:(.*)|%(\s*)(.*)\s*/.match(line)
+          key = match[1]
+          
+          if match[2]
+            value = CGI::escapeHTML(match[2])
+          else 
+            value = ''
+          end
+          
+          if lineNum == 1
+            title = value
+          end
+          if lineNum == 2
+            author = value
+          end          
+          if lineNum == 2
+            date = value
+          end         
+      else
+        break
+      end
+    else
+      if match = /%\s*([^:]*)\s*:(.*)\s*/.match(line)
+        key = match[1]
+        
+        if match[2]
+          value = CGI::escapeHTML(match[2])
+        else 
+          value = ''
+        end
+      
+        if key == 'title'
+          title = value
+        end
+        
+        if key == 'author'
+          author = value
+        end
+        
+        if key == 'date'
+          date = value
+        end
+                 
+      else
+        break
+      end
+    end
+  }
+  
+    $header = <<END
+    <!DOCTYPE html>
+    <html>
+    <head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+    	<title>#{title}  by  #{author}</title>
+    	<meta name="author" content="#{author}" />
+    	<meta name="date" content="#{date}" />
+    	<style type="text/css">
+    	#{$inlineCSS}	
+    	</style>
+    </head>
+    <body>
+END
   
   headFile = File.open($header_path, 'w')
   headFile.puts $header
   headFile.close
   
-  outputFile = p[0..-5] + 'html'
-  system("#{$pandoc} -B #{$header_path} -A #{$footer_path} --toc #{p} > #{outputFile}")  
+  outputDir = File.dirname(p) + '/output'
+  outputFileName = File.basename(p)[0..-6]
+  
+  unless FileTest.directory?(outputDir)
+    Dir.mkdir(outputDir)
+  end
+  
+  system("#{$pandoc} -B #{$header_path} -A #{$footer_path} --toc #{p} > #{outputDir}/#{outputFileName}.html")  
 end
 
 $rootDir = File.expand_path(File.dirname(__FILE__))
 
-inlineCSS = IO.read("#{$rootDir}/lib/style/comb.css")
-
-title = ''
-
-$header = <<END
-<!DOCTYPE html>
-<html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-	<title>#{title}</title>
-	<style type="text/css">
-	#{inlineCSS}	
-	</style>
-</head>
-<body>
-END
+$inlineCSS = IO.read("#{$rootDir}/lib/style/comb.css")
 
 
 $header_path = $rootDir + '/lib/header'
@@ -63,18 +128,15 @@ if platform == 'win'
   $pandoc = $rootDir + '/tools/win32/pandoc'
 end
 
-if ARGV.size == 1
-  processFile(File.expand_path(ARGV[0]))
-else
-  files = File.find("./", "*.text")
+
+build_dir = ARGV.shift || "."
+
+if File.stat(build_dir).directory?
+  files = File.find(build_dir, "*.text")
   
   files.each { |f| 
     processFile(f)
   }
- 
+else
+  processFile(File.expand_path(ARGV[0]))
 end
-
-
-
-
-

@@ -1,4 +1,4 @@
-﻿% title: 帮助文档 
+﻿% title: 帮助文档
 % author: duoyi
 % date: 2008-07-07
 
@@ -7,6 +7,7 @@
 ### 安装pandoc
 
 使用windows的同学可以跳过，但使用其它系统的同学请阅读[Installing pandoc](http://johnmacfarlane.net/pandoc/INSTALL.html)
+，使用linux的同学可以问玉北，使用mac的同学可以问多益
 
 ### 配置svn
 
@@ -43,7 +44,7 @@
     或
     ../../../buildDoc.exe
     
-### 指定具体文件
+### 指定具体文件或路径
 
 可以指定转化某个文件，这样速度会很快，如
 
@@ -51,6 +52,15 @@
     或
     ../../buildDoc.exe quirk_start.text
 
+也可以自动一个路径，如
+
+    ruby buildDoc.rb docs/projects/weblab
+    或
+    buildDoc.exe docs/projects/weblab
+
+### 集成到编辑器中
+
+同样可以集成到各种支持外部工具的编辑器中，如Editplus，这样就能使用快捷键来生成HTML
 
 ## 需要注意的事项
 
