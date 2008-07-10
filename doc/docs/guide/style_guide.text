@@ -2,11 +2,10 @@
 % wudouoyi@baidu.com
 % 2008-07-06
 
-
 ## 文件注释
+
     /* ==============================================================
      * Base: typegraphy.css
-     *     set 
      * 
      * Author:
      *     nwind@live.com
@@ -21,7 +20,6 @@
      *     http://www.alistapart.com/articles/settingtypeontheweb
      *     http://www.apaddedcell.com/web-fonts
      *	
-     *
     ================================================================== */
 
 ## 区域级别注释

@@ -1,0 +1,37 @@
+require "lib/base"
+
+task :default => [:build]
+
+desc "convert all markdown to html"
+task :build do
+  ruby %{buildDoc.rb}
+end
+
+desc "build Windows native file"
+task :build_exe do
+  def buildExe
+    Dir["*.rb"].each do |file|
+      file_name = File.basename(file)[0..-4]
+      system("dir & exerb #{file_name}.rb")
+      system("dir & mkexy #{file_name}.rb")
+      system("dir & exerb #{file_name}.exy")
+      system("dir & del #{file_name}.exy")
+    end
+  end
+
+  if platform == 'win'
+    buildExe
+    Dir.chdir('tools')
+    buildExe
+  else
+    puts 'must run in MS-Windows'
+  end
+end
+
+
+desc "clean all html files in _output"
+task :clean do
+  Dir["**/_output/*.html"].each do |file|
+    File.delete(file)
+  end
+end

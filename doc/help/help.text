@@ -32,9 +32,14 @@
 
 使用windows的同学可以使用*buildDoc.exe*来替换*buildDoc.rb*，这样就不需要安装ruby环境
 
+注意，只有text文件的修改时间晚于html文件时才会进行转换，如果想要在不改text文件时重新生成HTML，只要
+将相应的HTML文件删除即可
+
 ### 遍历所有目录
 
-直接在根目录下运行buildDoc.rb，会将所有以text后缀结尾的文件生成HTML，文件多时速度可能较慢
+直接在根目录下运行`buildDoc.rb`，会将所有以text后缀结尾的文件生成HTML，文件多时速度可能较慢
+
+另一种方式是在根目录下运行`rake`或`rake build`
 
 ### 遍历子目录
 
