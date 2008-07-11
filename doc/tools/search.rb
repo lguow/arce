@@ -71,7 +71,11 @@ def do_search(keyword)
   end
   
   if find_something
-    puts keyword.center(60, "-")
+    if platform == 'win'
+      puts Iconv.iconv('gbk', 'utf-8', keyword.center(60, "-")).join('')
+    else
+      puts keyword.center(60, "-")
+    end
   else
     puts 'No Results Found'
   end
