@@ -2,6 +2,8 @@ var TimeOut = false;
 var resultControl;
 var STORE;
 
+docData = docData.concat(urlData)
+
 if (isOnLine()) {
 	window.onload = function() {
 		STORE = new Persist.Store('spotLightMemory', {
@@ -101,6 +103,17 @@ var selectMemory = function() {
 		search();
 	};
 	
+	var searchInput = Al.G('search');
+
+	if (Al.isIE) {
+		searchInput.onpropertychange = inputHandle;
+	} else {
+		Al.Event.on(searchInput, 'input', inputHandle);
+	}
+
+	searchInput.onkeydown = inputHandle;
+	
+	
 	function inputHandle(event) {
 		var e = event || window.event;
 		
@@ -121,7 +134,8 @@ var selectMemory = function() {
 			'RIGHT': 39,
 			'LEFT': 37
 		};
-
+    
+        
 		if (code == Keys.UP) {
 			preventDefault();
 			resultControl.moveUp();
@@ -146,18 +160,10 @@ var selectMemory = function() {
 		}		
 	}
 
-	var searchInput = Al.G('search');
 
-	if (Al.isIE) {
-		searchInput.onpropertychange = inputHandle;
-	} else {
-		Al.Event.on(searchInput, 'input', inputHandle);
-	}
-
-	searchInput.onkeydown = inputHandle;
 
 	function search() {
-		var kw = Al.G('search').value;
+		var kw = Al.G('search').value.toLowerCase();
 		var type = Al.G('searchType').getElementsByTagName('select')[0].value;
 		
 		Al.G('result').innerHTML = buildResult(spotLight.search(kw, type));
@@ -221,13 +227,24 @@ var selectMemory = function() {
 					dataTmp[keyWordIdx] = value[o];
 				};
 			}
-			tableTmp.push('<tr>');
+			
+			// fill empty cell in array
+			for (var i = 0, l = keys.length; i < l; i++) {
+			    if (dataTmp[i] == null) {
+			        dataTmp[i] = '';
+			    }
+			}
 			
 			Al.each(dataTmp, function(i, v) {
+
 				if (v) {
 					if (i == urlIdx) {
 						var host = v.match(/^(https?|ftp):\/\/([^\/])*/);
-						v = '<a href="'+v+'" target="_blank">'+ host[0] +'</a>';
+						if (host) {
+						   v = '<a href="'+v+'" target="_blank">'+ host[0] +'</a>'; 
+						} else {
+						   v = '<a href="'+v+'" target="_blank">'+ v +'</a>'; 
+						}
 					}
 				} else {
 					v = '_';

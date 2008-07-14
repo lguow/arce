@@ -1,15 +1,29 @@
-﻿% title: markdown语法快速入门 
-% author: duoyi
-% date: 2008-07-07
-% tag: markdown quirk_start
+% markdown语法快速入门 
+% duoyi
+% 2008-07-13
+
+本文主要介绍markdown中的常见语法，如怎样写标题、插入图片、链接、列表等
+
+## 文档属性
+
+在文档的最前端加入文档的属性可以便于搜索及管理，第一行为标题，第二行为作者姓名，第三行为最后更新时间
+
+    % markdown语法快速入门 
+    % duoyi
+    % 2008-07-07
 
 ## 文档简介
 
-在文档的最前端加入文档的简介可以便于搜索及管理
+紧跟在文档属性后，且在任意标题前的文字都会被当做文档的简介，建议用简短的段落将文章的主要关键字都写进来，
+便于搜索，如
 
-    % title: markdown语法快速入门 
-    % author: duoyi
-    % date: 2008-07-07
+    % markdown语法快速入门 
+    % duoyi
+    % 2008-07-07
+    
+    本文主要介绍markdown中的主要语法，如怎样写标题、插入图片、链接、列表等
+    
+    ## 文档属性
 
 ## 标题
 
@@ -470,7 +484,11 @@
 
 ## 快速学习的途径
 
-[wmd](http://wmd-editor.com/examples/splitscreen)
+在线版的[wmd](http://wmd-editor.com/examples/splitscreen)可以即时显示结果，能快速熟悉语法
+
+如果想了解某段语法最终会解析成怎样的HTML，可以使用如下的方式
+
+    echo "# a" | pandoc
 
 ## 相关资料
 

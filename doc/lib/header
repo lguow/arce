@@ -1,18 +1,18 @@
-      <!DOCTYPE html>
-      <html>
-      <head>
-      	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-      	<title> markdown语法快速入门   by   duoyi</title>
-      	<meta name="author" content=" duoyi" />
-      	<meta name="date" content=" 2008-07-07" />
-      	<style type="text/css">
-      	/* CSSTidy 1.3: Mon Apr  7 13:50:50 2008 */
-body,p,dl,dd,blockquote,h1,h2,h3,h4,h5,h6,pre,table,td,th,ul,ol,li,hr,legend,fieldset,input,textarea,img,form{margin:0;padding:0;}
+    <!DOCTYPE html>
+    <html>
+    <head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    	<title>SpotLight使用帮助  by  duoyi</title>
+    	<meta name="author" content="duoyi" />
+    	<meta name="date" content="2008-07-13" />
+    	<style type="text/css">
+    	@import base.css ;@import base-extra.css ;@import zTable.css ;@import iLink.css ;@import ../script/prettify/prettify.css ;
+/* CSSTidy 1.3: Sun Jul 13 20:39:13 2008 */body,p,dl,dd,blockquote,h1,h2,h3,h4,h5,h6,pre,table,td,th,ul,ol,li,hr,legend,fieldset,input,textarea,img,form{margin:0;padding:0;}
 img,iframe{border:none;}
 blockquote,q{quotes:none;}
 sup{vertical-align:text-top;}
 sub{vertical-align:text-bottom;}
-body{font:87.5%/1.5 Verdana, 'Helvetica Neue', Helvetica, Arial, sans-serif;}
+body{color:#222;font:80%/1.5 Verdana, 'Helvetica Neue', Helvetica, Arial, sans-serif;padding-left:15em;}
 legend{color:#000;font-size:1em;}
 p{margin:0 0 1.5em;}
 h1,h2,h3,h4,h5{color:#111;font-family:"Palatino Linotype", Palatino, Georgia, serif;font-weight:700;}
@@ -27,256 +27,38 @@ small{font-size:.85em;}
 code,pre,samp{font-family:Consolas, Monaco, "Courier New", Courier, monospace;overflow:auto;word-wrap:break-word;}
 acronym,abbr{border-bottom:1px dotted #000;cursor:help;}
 acronym{letter-spacing:.1em;text-transform:uppercase;}
-html{background:#fff;color:#000;}
+html{background:#fff;border:none;color:#000;}
 :link:focus,:visited:focus{color:#C63;}
 :link{color:#356aa0;}
 :visited{color:#6B97A9;}
 :link:hover,:visited:hover{color:#AD7328;}
 :link:active,:visited:active{color:#356a00;}
 table,input{font-size:1em;}
-/* ==============================================================
- * widgets: base-extra
- *     make HTML element more beauty
- * 
- * Author:
- *     nwind@live.com
- * 
- * License:
- *     MIT license
- *
- * Version:
- *     0.2, 2008-01-23
- *
- * Reference:
- *     inspired by Tripoli <http://www.monc.se/tripoli/>
- *	
- *
-================================================================== */
-#container {
-	width: 80%;
-}
-
-html {
-	border:none;
-}
-
-/* 
- * Note:
- *     Tables still need 'cellspacing="0"' in the markup. 
- *     This code may break your <table> layout
- */
-table { border-collapse: separate; border-spacing: 0; }
-
-ul ol {
-	margin-left: 1em;
-}
-
-
-/* -------------- hide Element ----------------- */
-.hide {
-	position:absolute;
-	left: 0.00000em;
-	top: -41.66667em;
-	width: 0.08333em;
-	height: 0.08333em;
-	overflow:hidden;
-}
-
-
-/* ---------------- clearfix ------------------- */
-.clearfix:after {
-	content:"."; 
-	display:block; 
-	height:0; 
-	clear:both; 
-	visibility:hidden; 
-}
-
-.clearfix {
-	display:inline-block; 
-	display:block;
-} 
-
-
-/* ----------------- hasLayout -----------------*/
-.gainlayout { zoom: 1; }
-
-
-/* ----------------- transparency -----------------*/
-.trans { -moz-opacity: 0.8; opacity: 0.8; filter: alpha(Opacity=80);}
-
-
-/*
- * Note:
- *     replace '&' with '<span class="amp">&amp;</span>'
- *
- * Reference:
- *     http://www.simplebits.com
- *
- */
-span.amp {
-	font-family: Baskerville,"Goudy Old Style","Palatino","Book Antiqua",serif;
-	font-style: italic;
-	font-size: 1.1em;
-}
-
-
-/* ------------------------------------------------------------------
- *	## Others ##:
- *		
- */
-
-del {
-	background-color:#fdcccc;
-	border: 0.08333em solid #c99;
-	text-decoration:line-through;
-}
-
-ins {
-	background-color:#CFC;
-	border: 0.08333em solid #9c9;
-}
-
-hr {
-	border:0;
-	height: 0.08333em;
-	background-color:transparent;
-	border-top: 0.25000em solid #f2f2f2;
-	clear:both;
-	margin:.7em 0;
-}
-/* ==============================================================
- * Doc: markdown.css
- *     inspired by http://www.quirksmode.org
- * 
- * Author:
- *     nwind@live.com
- * 
- * License:
- *     MIT license
- *
- * Version:
- *     
- *	
- *
-================================================================== */
-
-@import "base.css" ;
-@import "base-extra.css" ;
-@import "zTable.css" ;
-@import "iLink.css" ;
-
-@import "../script/prettify/prettify.css" ;
-
-
-body {
-	font: 80%/1.5 Verdana, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	color:#222;
-	padding-left:15em;
-}
-
-p, li{
-	max-width:45em;
-}
-
-ul, ol {
-	margin: 0 0 1em 3em; 	
-}
-
-
-ul ul, ol ol {
-	margin-left:3em;
-}
-
-pre {
-	color: #070606;
-	background-color: #eef0eb;
-	margin: 2em 0;
-	padding: 1em 0;
-	border: 1px dotted #b7c4d3;
-	border-width: 1px 0;
-	line-height: 150%;
-	margin-left: -20em;
-	padding-left: 20em;
-	zoom: 1;
-}
-
-#toc {
-	position:fixed;
-	top:10px;
-	right:10px;
-	padding:1em;
-	background:#fff;
-	opacity:0.8;
-	border:1px solid gray;
-	-moz-border-radius: 1em; 
-	 /*webkit*/ 
-	 -webkit-border-radius: 1em; 
-	 /*future proofing*/
-	 border-radius: 1em;
-}
-
-#toc_inner {
-	max-height:40em;
-	max-width:30em;
-	overflow:auto;	
-}
-
-h2:target, h3:target { 
-	color: #4D80B3;
-	text-shadow:1px 1px 2px #ccc;
-}
-
-
-
-/*<![CDATA[*/
-
-table {
-	border-left: 1px solid #727578;
-	width:50em;
-	color: #222;
-	text-indent:1em;
-	line-height:2.5em;
-	margin: 0 0 1.5em;
-}
-
-
-table thead th, table tfoot th{
-	background:url("zTable/zTable.png") no-repeat left top;
-	border: 1px solid #727578;
-	border-left:none;
-	color:#000;
-	font-weight:bold;
-	line-height:3em;
-}
-
-table tfoot th {
-	background-position:left bottom;
-	border:none;
-	line-height:2.5em;
-}
-
-table tbody th, table tbody td, table tfoot th {
-	border-bottom: 1px solid #727578;
-	border-right: 1px solid #727578;
-	vertical-align:top;
-}
-
-table tbody th{
-	color:#1867AF;
-}
-
-table tr-alt {
-	background:#ECF5FD;
-}
-
-table tbody tr:hover td, table tbody tr:hover th{
-	background:#EEF0EB;
-}
-
-/*]]>*/
-
-	
-      	</style>
-      </head>
-      <body>
+#container{width:80%;}
+table{border-collapse:separate;border-left:1px solid #727578;border-spacing:0;color:#222;line-height:2.5em;margin:0 0 1.5em;text-indent:1em;width:50em;}
+ul ol{margin-left:1em;}
+.hide{height:.08333em;left:0;overflow:hidden;position:absolute;top:-41.666672em;width:.08333em;}
+.clearfix:after{clear:both;content:".";display:block;height:0;visibility:hidden;}
+.clearfix{display:block;}
+.gainlayout{zoom:1;}
+.trans{-moz-opacity:.8;filter:alpha(Opacity=80);opacity:.8;}
+span.amp{font-family:Baskerville,"Goudy Old Style",Palatino,"Book Antiqua",serif;font-size:1.1em;font-style:italic;}
+del{background:#fdcccc;border:.08333em solid #c99;text-decoration:line-through;}
+ins{background:#CFC;border:.08333em solid #9c9;}
+hr{border:0;border-top:.25em solid #f2f2f2;clear:both;height:.08333em;margin:.7em 0;}
+p,li{max-width:45em;}
+ul,ol{margin:0 0 1em 3em;}
+ul ul,ol ol{margin-left:3em;}
+pre{background:#eef0eb;border:1px dotted #b7c4d3;border-width:1px 0;color:#070606;line-height:150%;margin:2em 0 2em -20em;padding:1em 0 1em 20em;zoom:1;}
+#toc{-moz-border-radius:1em;-webkit-border-radius:1em;background:#fff;border:1px solid gray;border-radius:1em;opacity:.8;padding:1em;position:fixed;right:10px;top:10px;}
+#toc_inner{max-height:40em;max-width:30em;overflow:auto;}
+h2:target,h3:target{color:#4D80B3;text-shadow:1px 1px 2px #ccc;}
+table thead th,table tfoot th{background:url(zTable/zTable.png) left top no-repeat;border:1px solid #727578;border-left:none;color:#000;font-weight:700;line-height:3em;}
+table tfoot th{background:left bottom;border:none;line-height:2.5em;}
+table tbody th,table tbody td,table tfoot th{border-bottom:1px solid #727578;border-right:1px solid #727578;vertical-align:top;}
+table tbody th{color:#1867AF;}
+table tr-alt{background:#ECF5FD;}
+table tbody tr:hover td,table tbody tr:hover th{background:#EEF0EB;}	
+    	</style>
+    </head>
+    <body>

@@ -25,8 +25,8 @@ def wait_input
   
   print '>> '
   
-  #keyword = gets.chomp
-  keyword = Readline.readline('%.3d> ' % $line, true)
+  keyword = gets.chomp
+  #keyword = Readline.readline('%.3d> ' % $line, true)
   
   $line += 1
    
